@@ -132,7 +132,7 @@ export interface Order {
   discountUSD: number;
   totalUSD: number;
   status: 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
-  paymentMethod: 'Credit Card' | 'Corporate Invoice' | 'Bank Transfer' | 'Installments';
+  paymentMethod: 'Credit Card' | 'Corporate Invoice' | 'Bank Transfer' | 'Installments' | 'Cash';
   paymentStatus: 'Paid' | 'Pending Invoice' | 'In Escrow';
   shippingAddress: string;
   city: string;

@@ -1,17 +1,68 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { ShieldCheck, Building2, CreditCard, Truck, FileText, CheckCircle2, ArrowRight, Lock } from 'lucide-react';
+import {
+  ShieldCheck,
+  Building2,
+  CreditCard,
+  Truck,
+  FileText,
+  CheckCircle2,
+  ArrowRight,
+  Lock,
+  Banknote,
+  Landmark,
+  Hash,
+  User,
+  Phone,
+  Mail,
+  MapPin,
+  Package,
+  Receipt
+} from 'lucide-react';
+
+/**
+ * A labelled field with its own glyph.
+ *
+ * The icon sits inside the control rather than beside the label so the eye
+ * can scan the column of inputs and know what each one wants without
+ * reading. Padding on the input leaves room for it.
+ */
+const Field: React.FC<{
+  label: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  className?: string;
+  children: React.ReactNode;
+}> = ({ label, icon: Icon, className = '', children }) => (
+  <div className={className}>
+    <label className="block text-slate-700 font-bold mb-1">{label}</label>
+    <div className="relative">
+      <Icon size={15} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+      {children}
+    </div>
+  </div>
+);
+
+/** One place to name the payment methods, used by the summary and the receipt. */
+const PAYMENT_LABEL: Record<'wire' | 'card' | 'cash' | 'leasing', string> = {
+  wire: 'Bank oʻtkazmasi',
+  card: 'Karta orqali toʻlov',
+  cash: 'Naqd pul',
+  leasing: 'Lizing / boʻlib toʻlash'
+};
 
 export const CheckoutPage: React.FC = () => {
   const { cart, cartSubtotalUSD, formatPrice, clearCart, setActivePage, showToast, addOrder } = useApp();
 
-  const [companyName, setCompanyName] = useState('MegaLogistics Central LLC');
-  const [taxId, setTaxId] = useState('309887123');
-  const [contactName, setContactName] = useState('Sardor Saidov');
-  const [phone, setPhone] = useState('+998 90 123 45 67');
-  const [email, setEmail] = useState('s.saidov@megalogistics.uz');
-  const [address, setAddress] = useState('Sergeli tumani, 4-sanoat zonasi, Toshkent');
-  const [paymentMethod, setPaymentMethod] = useState<'wire' | 'card' | 'leasing'>('wire');
+  // The fields used to open pre-filled with an invented company, tax number and
+  // contact. On a live checkout that is a real hazard: a customer who does not
+  // notice submits someone else's details, and the order is unusable.
+  const [companyName, setCompanyName] = useState('');
+  const [taxId, setTaxId] = useState('');
+  const [contactName, setContactName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState<'wire' | 'card' | 'leasing' | 'cash'>('wire');
   const [needsRamp, setNeedsRamp] = useState(true);
 
   const [orderComplete, setOrderComplete] = useState(false);
@@ -40,7 +91,14 @@ export const CheckoutPage: React.FC = () => {
       discountUSD: 0,
       totalUSD: cartSubtotalUSD,
       status: 'Processing',
-      paymentMethod: paymentMethod === 'wire' ? 'Bank Transfer' : paymentMethod === 'card' ? 'Credit Card' : 'Installments',
+      paymentMethod:
+        paymentMethod === 'wire'
+          ? 'Bank Transfer'
+          : paymentMethod === 'card'
+            ? 'Credit Card'
+            : paymentMethod === 'cash'
+              ? 'Cash'
+              : 'Installments',
       // Nothing in this app processes a payment, so an order is never 'Paid'
       // on submission — the manager marks it paid from the admin panel.
       paymentStatus: 'Pending Invoice',
@@ -79,7 +137,7 @@ export const CheckoutPage: React.FC = () => {
           </div>
           <div className="flex justify-between font-bold text-[#0B1D3F]">
             <span>Tanlangan toʻlov usuli:</span>
-            <span>{paymentMethod === 'wire' ? 'Bank oʻtkazmasi' : paymentMethod === 'card' ? 'Karta orqali toʻlov' : 'Lizing / boʻlib toʻlash'}</span>
+            <span>{PAYMENT_LABEL[paymentMethod]}</span>
           </div>
         </div>
 
@@ -129,60 +187,60 @@ export const CheckoutPage: React.FC = () => {
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-              <div>
-                <label className="block text-slate-700 font-bold mb-1">Kompaniyaning rasmiy nomi *</label>
-                <input 
-                  type="text" 
+              <Field label="Kompaniyaning rasmiy nomi *" icon={Building2}>
+                <input
+                  type="text"
                   required
                   value={companyName}
+                  placeholder="MChJ Nomi"
                   onChange={(e) => setCompanyName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium"
                 />
-              </div>
+              </Field>
 
-              <div>
-                <label className="block text-slate-700 font-bold mb-1">STIR (soliq toʻlovchi raqami) *</label>
+              <Field label="STIR (soliq toʻlovchi raqami) *" icon={Hash}>
                 <input
                   type="text"
                   required
                   value={taxId}
+                  placeholder="123456789"
                   onChange={(e) => setTaxId(e.target.value)}
-                  className="tabular w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-mono"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-mono tabular"
                 />
-              </div>
+              </Field>
 
-              <div>
-                <label className="block text-slate-700 font-bold mb-1">Masʼul shaxs ismi *</label>
-                <input 
-                  type="text" 
+              <Field label="Masʼul shaxs ismi *" icon={User}>
+                <input
+                  type="text"
                   required
                   value={contactName}
+                  placeholder="Ism Familiya"
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium"
                 />
-              </div>
+              </Field>
 
-              <div>
-                <label className="block text-slate-700 font-bold mb-1">Telefon raqami *</label>
+              <Field label="Telefon raqami *" icon={Phone}>
                 <input
                   type="tel"
                   required
                   value={phone}
+                  placeholder="+998 __ ___ __ __"
                   onChange={(e) => setPhone(e.target.value)}
-                  className="tabular w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium tabular"
                 />
-              </div>
+              </Field>
 
-              <div className="sm:col-span-2">
-                <label className="block text-slate-700 font-bold mb-1">Korporativ elektron pochta *</label>
-                <input 
-                  type="email" 
+              <Field label="Korporativ elektron pochta *" icon={Mail} className="sm:col-span-2">
+                <input
+                  type="email"
                   required
                   value={email}
+                  placeholder="buxgalteriya@kompaniya.uz"
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium"
                 />
-              </div>
+              </Field>
             </div>
           </div>
 
@@ -193,16 +251,16 @@ export const CheckoutPage: React.FC = () => {
             </h2>
 
             <div className="space-y-4 text-xs">
-              <div>
-                <label className="block text-slate-700 font-bold mb-1">Toʻliq manzil *</label>
-                <input 
-                  type="text" 
+              <Field label="Toʻliq manzil *" icon={MapPin}>
+                <input
+                  type="text"
                   required
                   value={address}
+                  placeholder="Ko'cha, uy, tuman, shahar"
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium"
                 />
-              </div>
+              </Field>
 
               <label className="flex items-center gap-2 text-slate-700 font-bold cursor-pointer">
                 <input 
@@ -222,14 +280,14 @@ export const CheckoutPage: React.FC = () => {
               <CreditCard size={18} className="text-blue-600" /> 3. Toʻlov usuli
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div 
                 onClick={() => setPaymentMethod('wire')}
                 className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${
                   paymentMethod === 'wire' ? 'border-blue-600 bg-blue-50/50 font-bold' : 'border-slate-200 hover:border-slate-300'
                 }`}
               >
-                <FileText size={20} className="text-blue-600 mb-1" />
+                <Landmark size={20} className="text-blue-600 mb-1" />
                 <div className="text-slate-900">Bank oʻtkazmasi</div>
                 <div className="text-xs text-slate-500 font-normal mt-1">Rekvizitlar va hisob-faktura menejer bilan tasdiqlanadi</div>
               </div>
@@ -245,7 +303,18 @@ export const CheckoutPage: React.FC = () => {
                 <div className="text-xs text-slate-500 font-normal mt-1">Uzcard, Humo, Visa, Mastercard</div>
               </div>
 
-              <div 
+              <div
+                onClick={() => setPaymentMethod('cash')}
+                className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${
+                  paymentMethod === 'cash' ? 'border-blue-600 bg-blue-50/50 font-bold' : 'border-slate-200 hover:border-slate-300'
+                }`}
+              >
+                <Banknote size={20} className="text-blue-600 mb-1" />
+                <div className="text-slate-900">Naqd pul</div>
+                <div className="text-xs text-slate-500 font-normal mt-1">Ofisda yoki texnika topshirilganda</div>
+              </div>
+
+              <div
                 onClick={() => setPaymentMethod('leasing')}
                 className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${
                   paymentMethod === 'leasing' ? 'border-blue-600 bg-blue-50/50 font-bold' : 'border-slate-200 hover:border-slate-300'
@@ -262,7 +331,9 @@ export const CheckoutPage: React.FC = () => {
 
         {/* Order Summary Right */}
         <div className="lg:col-span-4 surface p-6 space-y-6">
-          <h3 className="font-bold text-[#0B1D3F] text-lg">Buyurtma tarkibi</h3>
+          <h3 className="font-bold text-[#0B1D3F] text-lg flex items-center gap-2">
+            <Package size={18} className="text-blue-600" /> Buyurtma tarkibi
+          </h3>
 
           <div className="space-y-4 divide-y divide-slate-100 text-xs max-h-60 overflow-y-auto">
             {cart.map(c => (
@@ -280,7 +351,9 @@ export const CheckoutPage: React.FC = () => {
 
           <div className="pt-4 border-t border-slate-200 space-y-2 text-xs">
             <div className="flex justify-between items-baseline">
-              <span className="font-bold text-[#0B1D3F] text-base">Jami summa</span>
+              <span className="font-bold text-[#0B1D3F] text-base flex items-center gap-2">
+                <Receipt size={16} className="text-blue-600" /> Jami summa
+              </span>
               <span className="tabular text-xl font-bold text-blue-700 font-mono">{formatPrice(cartSubtotalUSD)}</span>
             </div>
           </div>
