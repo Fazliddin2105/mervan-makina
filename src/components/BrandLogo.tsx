@@ -81,7 +81,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   }
 
   return (
-    <span className={`inline-flex items-center gap-2.5 min-w-0 ${className}`}>
+    <span className={`inline-flex items-center gap-2 min-w-0 ${className}`}>
       {tile}
       <span
         className={`${WORD_SIZE[size]} font-bold tracking-tight text-current truncate`}

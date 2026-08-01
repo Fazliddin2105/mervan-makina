@@ -136,7 +136,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
                 />
               </div>
 
@@ -147,7 +147,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={taxId}
                   onChange={(e) => setTaxId(e.target.value)}
-                  className="tabular w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-mono"
+                  className="tabular w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-mono"
                 />
               </div>
 
@@ -158,7 +158,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={contactName}
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
                 />
               </div>
 
@@ -169,7 +169,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="tabular w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium"
+                  className="tabular w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
                 />
               </div>
 
@@ -180,7 +180,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
                 />
               </div>
             </div>
@@ -192,7 +192,7 @@ export const CheckoutPage: React.FC = () => {
               <Truck size={18} className="text-blue-600" /> 2. Yetkazib berish manzili
             </h2>
 
-            <div className="space-y-3 text-xs">
+            <div className="space-y-4 text-xs">
               <div>
                 <label className="block text-slate-700 font-bold mb-1">Toʻliq manzil *</label>
                 <input 
@@ -200,7 +200,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-medium"
                 />
               </div>
 
@@ -222,7 +222,7 @@ export const CheckoutPage: React.FC = () => {
               <CreditCard size={18} className="text-blue-600" /> 3. Toʻlov usuli
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
               <div 
                 onClick={() => setPaymentMethod('wire')}
                 className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${
@@ -264,7 +264,7 @@ export const CheckoutPage: React.FC = () => {
         <div className="lg:col-span-4 surface p-6 space-y-6">
           <h3 className="font-bold text-[#0B1D3F] text-lg">Buyurtma tarkibi</h3>
 
-          <div className="space-y-3 divide-y divide-slate-100 text-xs max-h-60 overflow-y-auto">
+          <div className="space-y-4 divide-y divide-slate-100 text-xs max-h-60 overflow-y-auto">
             {cart.map(c => (
               <div key={c.product.id} className="pt-2 first:pt-0 flex justify-between items-center">
                 <div>

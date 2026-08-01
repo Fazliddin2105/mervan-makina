@@ -86,10 +86,10 @@ const AdminLoginScreen: React.FC = () => {
 
         <form onSubmit={handleSubmit} className="p-8 space-y-4">
           {isDefault && (
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800">
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-800">
               <b>Boshlangʻich maʼlumotlar:</b><br />
-              Login: <code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono">admin</code><br />
-              Parol: <code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono">admin123</code><br />
+              Login: <code className="bg-amber-100 px-2 py-1 rounded font-mono">admin</code><br />
+              Parol: <code className="bg-amber-100 px-2 py-1 rounded font-mono">admin123</code><br />
               <span className="italic">Kirgach, ushbu maʼlumotlarni almashtiring.</span>
             </div>
           )}
@@ -100,7 +100,7 @@ const AdminLoginScreen: React.FC = () => {
               type="text"
               value={username}
               onChange={e => setUsername(e.target.value)}
-              className="mt-1 w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-600"
+              className="mt-1 w-full border border-slate-300 rounded-xl px-4 py-4 text-sm focus:outline-none focus:border-blue-600"
               placeholder="admin"
               autoFocus
             />
@@ -113,13 +113,13 @@ const AdminLoginScreen: React.FC = () => {
                 type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                className="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-600 pr-11"
+                className="w-full border border-slate-300 rounded-xl px-4 py-4 text-sm focus:outline-none focus:border-blue-600 pr-12"
                 placeholder="••••••••"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(s => !s)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
@@ -132,7 +132,7 @@ const AdminLoginScreen: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#0B1D3F] hover:bg-blue-600 text-white font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors"
+            className="w-full bg-[#0B1D3F] hover:bg-blue-600 text-white font-bold py-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-colors"
           >
             <LogIn size={16} /> Tizimga Kirish
           </button>
@@ -194,25 +194,25 @@ const ProductFormModal: React.FC<{
           <div className="sm:col-span-2">
             <label className="text-xs font-bold text-slate-600 uppercase">Nomi *</label>
             <input required value={p.name} onChange={e => patch({ name: e.target.value })}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Model</label>
             <input value={p.model} onChange={e => patch({ model: e.target.value })}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Brand</label>
             <input value={p.brand} onChange={e => patch({ brand: e.target.value })}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Kategoriya (id)</label>
             <select value={p.category} onChange={e => patch({ category: e.target.value })}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600 bg-white">
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600 bg-white">
               <option value="floor-scrubbers">Pol Yuvish Mashinalari</option>
               <option value="sweepers">Supurish Mashinalari</option>
               <option value="ride-on-machines">Haydaladigan Texnikalar</option>
@@ -229,7 +229,7 @@ const ProductFormModal: React.FC<{
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Mashina Tipi</label>
             <select value={p.machineType} onChange={e => patch({ machineType: e.target.value as Product['machineType'] })}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 bg-white">
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 bg-white">
               <option>Ride-on</option>
               <option>Walk-behind</option>
               <option>Compact</option>
@@ -242,77 +242,77 @@ const ProductFormModal: React.FC<{
             <label className="text-xs font-bold text-slate-600 uppercase">Narx (USD) *</label>
             <input required type="number" min={0} step={0.01} value={p.priceUSD}
               onChange={e => patch({ priceUSD: parseFloat(e.target.value) || 0 })}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Eski Narx (USD)</label>
             <input type="number" min={0} step={0.01} value={p.oldPriceUSD ?? ''}
               onChange={e => patch({ oldPriceUSD: e.target.value ? parseFloat(e.target.value) : undefined })}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Ombordagi Soni</label>
             <input type="number" min={0} value={p.stockCount}
               onChange={e => patch({ stockCount: parseInt(e.target.value) || 0, inStock: (parseInt(e.target.value) || 0) > 0 })}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Kuchlanish</label>
             <input value={p.voltage} onChange={e => patch({ voltage: e.target.value })}
               placeholder="36V Litiy"
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Quvvat</label>
             <input value={p.power} onChange={e => patch({ power: e.target.value })}
               placeholder="1200W"
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Choʻtka Kengligi</label>
             <input value={p.brushWidth} onChange={e => patch({ brushWidth: e.target.value })}
               placeholder="510 mm"
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Bak Sigʻimi</label>
             <input value={p.tankCapacity} onChange={e => patch({ tankCapacity: e.target.value })}
               placeholder="50L / 55L"
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div className="sm:col-span-2">
             <label className="text-xs font-bold text-slate-600 uppercase">Unumdorlik</label>
             <input value={p.productivity} onChange={e => patch({ productivity: e.target.value })}
               placeholder="2,500 m²/soat"
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div className="sm:col-span-2">
             <label className="text-xs font-bold text-slate-600 uppercase">Foydalanish Sohalari (vergul bilan ajrating)</label>
             <input value={usageAreaText} onChange={e => setUsageAreaText(e.target.value)}
               placeholder="Zavodlar, Ombor, Aeroport"
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div className="sm:col-span-2">
             <label className="text-xs font-bold text-slate-600 uppercase">Qisqa Tavsif *</label>
             <textarea required value={p.description} onChange={e => patch({ description: e.target.value })}
               rows={2}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div className="sm:col-span-2">
             <label className="text-xs font-bold text-slate-600 uppercase">Toʻliq Tavsif</label>
             <textarea value={p.longDescription} onChange={e => patch({ longDescription: e.target.value })}
               rows={4}
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div className="sm:col-span-2">
@@ -320,7 +320,7 @@ const ProductFormModal: React.FC<{
             <textarea value={imagesText} onChange={e => setImagesText(e.target.value)}
               rows={3}
               placeholder="https://..."
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
           </div>
 
           <div className="sm:col-span-2">
@@ -328,7 +328,7 @@ const ProductFormModal: React.FC<{
             <textarea value={specsText} onChange={e => setSpecsText(e.target.value)}
               rows={6}
               placeholder="Model | MK-3&#10;Quvvat | 200W"
-              className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
+              className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
           </div>
 
           <div className="flex flex-wrap gap-4 sm:col-span-2 text-xs">
@@ -342,13 +342,13 @@ const ProductFormModal: React.FC<{
             </label>
           </div>
 
-          <div className="sm:col-span-2 flex justify-end gap-3 pt-4 border-t">
+          <div className="sm:col-span-2 flex justify-end gap-4 pt-4 border-t">
             <button type="button" onClick={onClose}
-              className="px-5 py-2.5 border border-slate-300 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-50">
+              className="px-6 py-2 border border-slate-300 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-50">
               Bekor qilish
             </button>
             <button type="submit"
-              className="px-5 py-2.5 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
+              className="px-6 py-2 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
               <Save size={16} /> Saqlash
             </button>
           </div>
@@ -409,7 +409,7 @@ export const AdminDashboardPage: React.FC = () => {
       {/* Top Banner */}
       <div className="bg-gradient-to-r from-[#0B1D3F] to-[#071531] text-white rounded-2xl p-6 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <span className="bg-blue-600 text-white font-mono text-xs font-bold px-2.5 py-0.5 rounded uppercase">
+          <span className="bg-blue-600 text-white font-mono text-xs font-bold px-2 py-1 rounded uppercase">
             {siteSettings.brandName} — Admin Panel
           </span>
           <h1 className="text-2xl font-bold text-white mt-1">Boshqaruv Konsoli</h1>
@@ -424,7 +424,7 @@ export const AdminDashboardPage: React.FC = () => {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="flex flex-wrap gap-2 border-b border-slate-200 pb-3 text-xs">
+      <div className="flex flex-wrap gap-2 border-b border-slate-200 pb-4 text-xs">
         {([
           { id: 'kpi', label: 'Dashboard', icon: BarChart3 },
           { id: 'products', label: `Mahsulotlar (${productsList.length})`, icon: Package },
@@ -439,7 +439,7 @@ export const AdminDashboardPage: React.FC = () => {
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id)}
-              className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-xl font-bold flex items-center gap-2 transition-all cursor-pointer ${
                 activeTab === t.id
                   ? 'bg-[#0B1D3F] text-white shadow'
                   : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
@@ -455,22 +455,22 @@ export const AdminDashboardPage: React.FC = () => {
       {/* --- Dashboard Tab --- */}
       {activeTab === 'kpi' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
             <span className="text-xs text-slate-400 font-bold uppercase">Umumiy Daromad</span>
             <div className="text-2xl font-bold text-[#0B1D3F] mt-1">{formatPrice(totalRevenue)}</div>
             <p className="text-xs text-slate-500 mt-1">{orders.length} buyurtma</p>
           </div>
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
             <span className="text-xs text-slate-400 font-bold uppercase">Mahsulotlar</span>
             <div className="text-2xl font-bold text-[#0B1D3F] mt-1">{productsList.length}</div>
             <p className="text-xs text-slate-500 mt-1">Katalogda</p>
           </div>
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
             <span className="text-xs text-slate-400 font-bold uppercase">Kutilayotgan</span>
             <div className="text-2xl font-bold text-blue-700 mt-1">{pendingOrders}</div>
             <p className="text-xs text-slate-500 mt-1">Buyurtmalar</p>
           </div>
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
             <span className="text-xs text-slate-400 font-bold uppercase">Soʻrovlar</span>
             <div className="text-2xl font-bold text-emerald-600 mt-1">{quoteRequests.length}</div>
             <p className="text-xs text-slate-500 mt-1">Yangi mijozlar</p>
@@ -481,7 +481,7 @@ export const AdminDashboardPage: React.FC = () => {
       {/* --- Products Tab --- */}
       {activeTab === 'products' && (
         <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <h2 className="font-bold text-[#0B1D3F] text-base">Mahsulotlar Katalogi</h2>
             <div className="flex gap-2 w-full sm:w-auto">
               <div className="relative flex-1 sm:w-72">
@@ -490,13 +490,13 @@ export const AdminDashboardPage: React.FC = () => {
                   placeholder="Model, brend yoki nomni qidirish..."
                   value={searchInventory}
                   onChange={e => setSearchInventory(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2 text-xs"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-4 py-2 text-xs"
                 />
-                <Search size={14} className="absolute left-3 top-2.5 text-slate-400" />
+                <Search size={14} className="absolute left-4 top-2 text-slate-400" />
               </div>
               <button
                 onClick={() => setIsCreating(true)}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider flex items-center gap-2 transition-colors"
               >
                 <Plus size={14} /> Qoʻshish
               </button>
@@ -507,35 +507,35 @@ export const AdminDashboardPage: React.FC = () => {
             <table className="w-full text-left text-xs">
               <thead>
                 <tr className="bg-slate-50 text-slate-500 font-bold uppercase text-xs">
-                  <th className="p-3">Mahsulot</th>
-                  <th className="p-3">Brend / Model</th>
-                  <th className="p-3">Narx</th>
-                  <th className="p-3">Ombor</th>
-                  <th className="p-3">Holat</th>
-                  <th className="p-3 text-right">Amallar</th>
+                  <th className="p-4">Mahsulot</th>
+                  <th className="p-4">Brend / Model</th>
+                  <th className="p-4">Narx</th>
+                  <th className="p-4">Ombor</th>
+                  <th className="p-4">Holat</th>
+                  <th className="p-4 text-right">Amallar</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {filteredInventory.map(p => (
                   <tr key={p.id} className="hover:bg-slate-50">
-                    <td className="p-3">
-                      <div className="flex items-center gap-3 font-bold text-slate-900">
+                    <td className="p-4">
+                      <div className="flex items-center gap-4 font-bold text-slate-900">
                         <img width={800} height={600} loading="lazy" decoding="async" src={p.images[0]} alt="" className="w-10 h-10 object-cover bg-slate-100 rounded-lg" referrerPolicy="no-referrer" />
                         <span className="line-clamp-1 max-w-xs">{p.name}</span>
                       </div>
                     </td>
-                    <td className="p-3 text-slate-600">{p.brand}<br /><span className="text-slate-400">{p.model}</span></td>
-                    <td className="p-3 font-mono font-bold text-[#0B1D3F]">{formatPrice(p.priceUSD)}</td>
-                    <td className="p-3 font-mono text-slate-500">{p.stockCount}</td>
-                    <td className="p-3">
-                      <span className={`px-2 py-0.5 rounded text-xs font-bold ${p.inStock ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700'}`}>
+                    <td className="p-4 text-slate-600">{p.brand}<br /><span className="text-slate-400">{p.model}</span></td>
+                    <td className="p-4 font-mono font-bold text-[#0B1D3F]">{formatPrice(p.priceUSD)}</td>
+                    <td className="p-4 font-mono text-slate-500">{p.stockCount}</td>
+                    <td className="p-4">
+                      <span className={`px-2 py-1 rounded text-xs font-bold ${p.inStock ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700'}`}>
                         {p.inStock ? 'Mavjud' : 'Yoʻq'}
                       </span>
                     </td>
-                    <td className="p-3 text-right space-x-1">
+                    <td className="p-4 text-right space-x-1">
                       <button
                         onClick={() => setEditingProduct(p)}
-                        className="p-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg"
+                        className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg"
                         title="Tahrirlash"
                       >
                         <Edit size={13} />
@@ -544,7 +544,7 @@ export const AdminDashboardPage: React.FC = () => {
                         onClick={() => {
                           if (confirm(`"${p.name}" mahsulotini oʻchirasizmi?`)) deleteProduct(p.id);
                         }}
-                        className="p-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg"
+                        className="p-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg"
                         title="Oʻchirish"
                       >
                         <Trash2 size={13} />
@@ -568,7 +568,7 @@ export const AdminDashboardPage: React.FC = () => {
           {orders.length === 0 ? (
             <p className="text-sm text-slate-400 py-8 text-center">Hozircha buyurtmalar yoʻq</p>
           ) : (
-            <div className="space-y-3">
+            <div className="space-y-4">
               {orders.map(o => (
                 <OrderRow key={o.id} order={o} formatPrice={formatPrice} onStatus={updateOrderStatus} onDelete={deleteOrder} />
               ))}
@@ -584,7 +584,7 @@ export const AdminDashboardPage: React.FC = () => {
           {quoteRequests.length === 0 ? (
             <p className="text-sm text-slate-400 py-8 text-center">Hozircha soʻrovlar yoʻq</p>
           ) : (
-            <div className="space-y-3">
+            <div className="space-y-4">
               {quoteRequests.map(q => (
                 <QuoteRow key={q.id} quote={q} onStatus={updateQuoteStatus} onDelete={deleteQuote} />
               ))}
@@ -634,11 +634,11 @@ const OrderRow: React.FC<{
   onDelete: (id: string) => void;
 }> = ({ order, formatPrice, onStatus, onDelete }) => (
   <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-    <div className="flex flex-wrap justify-between items-start gap-3">
+    <div className="flex flex-wrap justify-between items-start gap-4">
       <div>
         <div className="font-bold text-[#0B1D3F] text-sm">#{order.orderNumber}</div>
-        <div className="text-xs text-slate-500 mt-0.5">{order.customerName} • {order.phone}</div>
-        <div className="text-xs text-slate-400 mt-0.5">{order.date} • {order.items.length} mahsulot</div>
+        <div className="text-xs text-slate-500 mt-1">{order.customerName} • {order.phone}</div>
+        <div className="text-xs text-slate-400 mt-1">{order.date} • {order.items.length} mahsulot</div>
       </div>
       <div className="text-right">
         <div className="font-bold text-[#0B1D3F]">{formatPrice(order.totalUSD)}</div>
@@ -655,7 +655,7 @@ const OrderRow: React.FC<{
       </div>
       <button
         onClick={() => { if (confirm('Buyurtmani oʻchirasizmi?')) onDelete(order.id); }}
-        className="p-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg self-start"
+        className="p-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg self-start"
       >
         <Trash2 size={13} />
       </button>
@@ -672,11 +672,11 @@ const QuoteRow: React.FC<{
   onDelete: (id: string) => void;
 }> = ({ quote, onStatus, onDelete }) => (
   <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-    <div className="flex flex-wrap justify-between items-start gap-3">
+    <div className="flex flex-wrap justify-between items-start gap-4">
       <div>
         <div className="font-bold text-[#0B1D3F] text-sm">{quote.companyName}</div>
-        <div className="text-xs text-slate-500 mt-0.5">{quote.contactName} • {quote.phone} • {quote.email}</div>
-        <div className="text-xs text-slate-400 mt-0.5">{quote.city} • {quote.createdAt} • {quote.items.length} pozitsiya</div>
+        <div className="text-xs text-slate-500 mt-1">{quote.contactName} • {quote.phone} • {quote.email}</div>
+        <div className="text-xs text-slate-400 mt-1">{quote.city} • {quote.createdAt} • {quote.items.length} pozitsiya</div>
         {quote.notes && <div className="text-xs italic text-slate-600 mt-2">"{quote.notes}"</div>}
       </div>
       <div className="text-right">
@@ -693,7 +693,7 @@ const QuoteRow: React.FC<{
       </div>
       <button
         onClick={() => { if (confirm('Soʻrovni oʻchirasizmi?')) onDelete(quote.id); }}
-        className="p-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg self-start"
+        className="p-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg self-start"
       >
         <Trash2 size={13} />
       </button>
@@ -736,44 +736,44 @@ const SiteSettingsForm: React.FC<{
         <div>
           <label className="text-xs font-bold text-slate-600 uppercase">Kompaniya Nomi</label>
           <input value={s.brandName} onChange={e => patch({ brandName: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
         <div>
           <label className="text-xs font-bold text-slate-600 uppercase">Qisqa Kod (Logotip harf)</label>
           <input value={s.brandShort} maxLength={4} onChange={e => patch({ brandShort: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600 uppercase" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600 uppercase" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase">Slogan / Tagline</label>
           <input value={s.tagline} onChange={e => patch({ tagline: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase flex items-center gap-1"><ImageIcon size={12} /> Logo URL (boʻsh — harf koʻrsatiladi)</label>
           <input value={s.logoUrl} onChange={e => patch({ logoUrl: e.target.value })}
             placeholder="https://..."
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase">Hero (bosh sahifa) sarlavhasi</label>
           <input value={s.heroTitle} onChange={e => patch({ heroTitle: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase">Hero Kichik matni</label>
           <textarea value={s.heroSubtitle} onChange={e => patch({ heroSubtitle: e.target.value })}
             rows={2}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase">Hero Rasm URL</label>
           <input value={s.heroImage} onChange={e => patch({ heroImage: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
         </div>
 
         <div>
@@ -782,7 +782,7 @@ const SiteSettingsForm: React.FC<{
             <input type="color" value={s.primaryColor} onChange={e => patch({ primaryColor: e.target.value })}
               className="w-14 h-10 border border-slate-300 rounded-lg cursor-pointer" />
             <input value={s.primaryColor} onChange={e => patch({ primaryColor: e.target.value })}
-              className="flex-1 border border-slate-300 rounded-lg px-3 py-2 font-mono text-xs" />
+              className="flex-1 border border-slate-300 rounded-lg px-4 py-2 font-mono text-xs" />
           </div>
         </div>
 
@@ -792,72 +792,72 @@ const SiteSettingsForm: React.FC<{
             <input type="color" value={s.accentColor} onChange={e => patch({ accentColor: e.target.value })}
               className="w-14 h-10 border border-slate-300 rounded-lg cursor-pointer" />
             <input value={s.accentColor} onChange={e => patch({ accentColor: e.target.value })}
-              className="flex-1 border border-slate-300 rounded-lg px-3 py-2 font-mono text-xs" />
+              className="flex-1 border border-slate-300 rounded-lg px-4 py-2 font-mono text-xs" />
           </div>
         </div>
 
         <div>
           <label className="text-xs font-bold text-slate-600 uppercase">Telefon (asosiy)</label>
           <input value={s.phone} onChange={e => patch({ phone: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
         <div>
           <label className="text-xs font-bold text-slate-600 uppercase">Telefon (qoʻshimcha)</label>
           <input value={s.phoneSecondary} onChange={e => patch({ phoneSecondary: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
 
         <div>
           <label className="text-xs font-bold text-slate-600 uppercase">Email (asosiy)</label>
           <input value={s.email} onChange={e => patch({ email: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
         <div>
           <label className="text-xs font-bold text-slate-600 uppercase">Email (qoʻshimcha)</label>
           <input value={s.emailSecondary} onChange={e => patch({ emailSecondary: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase">Manzil</label>
           <input value={s.address} onChange={e => patch({ address: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
         <div>
           <label className="text-xs font-bold text-slate-600 uppercase">Shahar</label>
           <input value={s.city} onChange={e => patch({ city: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
         <div>
           <label className="text-xs font-bold text-slate-600 uppercase">Ish soatlari</label>
           <input value={s.workingHours} onChange={e => patch({ workingHours: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase">Google Maps embed URL</label>
           <input value={s.mapEmbedUrl} onChange={e => patch({ mapEmbedUrl: e.target.value })}
             placeholder="https://maps.google.com/maps?q=..."
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase">Kompaniya haqida qisqa matn</label>
           <textarea value={s.aboutShort} onChange={e => patch({ aboutShort: e.target.value })}
             rows={3}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
 
         <div className="sm:col-span-2">
           <label className="text-xs font-bold text-slate-600 uppercase">Copyright matni</label>
           <input value={s.copyrightText} onChange={e => patch({ copyrightText: e.target.value })}
-            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
+            className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
         </div>
       </div>
 
       <div className="flex justify-end pt-4 border-t">
         <button type="submit"
-          className="px-6 py-3 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
+          className="px-6 py-4 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
           <Save size={16} /> Sozlamalarni Saqlash
         </button>
       </div>
@@ -892,7 +892,7 @@ const SocialsEditor: React.FC<{
         </h2>
         <button
           onClick={add}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1.5"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-2"
         >
           <Plus size={13} /> Qoʻshish
         </button>
@@ -900,9 +900,9 @@ const SocialsEditor: React.FC<{
 
       <div className="space-y-2">
         {list.map(s => (
-          <div key={s.id} className="grid grid-cols-1 sm:grid-cols-[130px_130px_1fr_60px_40px] gap-2 items-center p-3 bg-slate-50 rounded-xl border border-slate-200">
+          <div key={s.id} className="grid grid-cols-1 sm:grid-cols-[130px_130px_1fr_60px_40px] gap-2 items-center p-4 bg-slate-50 rounded-xl border border-slate-200">
             <select value={s.platform} onChange={e => patchOne(s.id, { platform: e.target.value as SocialLink['platform'] })}
-              className="border border-slate-300 rounded-lg px-2 py-1.5 text-xs bg-white">
+              className="border border-slate-300 rounded-lg px-2 py-2 text-xs bg-white">
               <option value="instagram">Instagram</option>
               <option value="telegram">Telegram</option>
               <option value="youtube">YouTube</option>
@@ -915,16 +915,16 @@ const SocialsEditor: React.FC<{
             </select>
             <input value={s.label} onChange={e => patchOne(s.id, { label: e.target.value })}
               placeholder="Koʻrsatiladigan nom"
-              className="border border-slate-300 rounded-lg px-2 py-1.5 text-xs" />
+              className="border border-slate-300 rounded-lg px-2 py-2 text-xs" />
             <input value={s.url} onChange={e => patchOne(s.id, { url: e.target.value })}
               placeholder="https://..."
-              className="border border-slate-300 rounded-lg px-2 py-1.5 text-xs font-mono" />
+              className="border border-slate-300 rounded-lg px-2 py-2 text-xs font-mono" />
             <label className="flex items-center justify-center gap-1 text-xs">
               <input type="checkbox" checked={s.enabled} onChange={e => patchOne(s.id, { enabled: e.target.checked })} />
               <span>Yoq</span>
             </label>
             <button onClick={() => { if (confirm('Oʻchirasizmi?')) remove(s.id); }}
-              className="p-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg">
+              className="p-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg">
               <Trash2 size={13} />
             </button>
           </div>
@@ -937,7 +937,7 @@ const SocialsEditor: React.FC<{
       <div className="flex justify-end pt-4 border-t">
         <button
           onClick={() => onSave(list)}
-          className="px-6 py-3 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
+          className="px-6 py-4 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
           <Save size={16} /> Ijtimoiy tarmoqlarni Saqlash
         </button>
       </div>
@@ -983,7 +983,7 @@ const CredentialsForm: React.FC<{
       <div>
         <label className="text-xs font-bold text-slate-600 uppercase">Yangi Login</label>
         <input value={username} onChange={e => setUsername(e.target.value)}
-          className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-600" />
+          className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
       </div>
 
       <div>
@@ -991,9 +991,9 @@ const CredentialsForm: React.FC<{
         <div className="relative mt-1">
           <input type={showPassword ? 'text' : 'password'} value={password} onChange={e => setPassword(e.target.value)}
             placeholder="••••••••"
-            className="w-full border border-slate-300 rounded-lg px-3 py-2.5 pr-11 focus:outline-none focus:border-blue-600" />
+            className="w-full border border-slate-300 rounded-lg px-4 py-2 pr-12 focus:outline-none focus:border-blue-600" />
           <button type="button" onClick={() => setShowPassword(s => !s)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700">
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700">
             {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
           </button>
         </div>
@@ -1003,14 +1003,14 @@ const CredentialsForm: React.FC<{
         <label className="text-xs font-bold text-slate-600 uppercase">Parolni Tasdiqlash</label>
         <input type={showPassword ? 'text' : 'password'} value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}
           placeholder="••••••••"
-          className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-600" />
+          className="mt-1 w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600" />
       </div>
 
       {error && <div className="text-xs text-rose-600 font-bold">{error}</div>}
 
       <div className="flex justify-end pt-2">
         <button type="submit"
-          className="px-6 py-3 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
+          className="px-6 py-4 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
           <Save size={16} /> Oʻzgarishlarni Saqlash
         </button>
       </div>

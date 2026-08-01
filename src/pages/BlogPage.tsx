@@ -8,7 +8,7 @@ export const BlogPage: React.FC = () => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-12">
       
       <PageBanner
         eyebrow="MAQOLALAR VA MASLAHATLAR"
@@ -32,10 +32,10 @@ export const BlogPage: React.FC = () => {
               />
             </div>
 
-            <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-xs text-slate-400 font-bold">
-                  <span className="bg-blue-50 text-blue-700 px-2.5 py-1 rounded border border-blue-200 uppercase font-bold">{post.category}</span>
+                  <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-200 uppercase font-bold">{post.category}</span>
                   <span className="flex items-center gap-1"><Clock size={11} /> <span className="tabular">{post.readTime}</span></span>
                 </div>
 
@@ -59,7 +59,7 @@ export const BlogPage: React.FC = () => {
       {/* Article Drawer Modal */}
       {selectedPost && (
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-          <div className="relative surface shadow-2xl max-w-3xl w-full overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200 p-6 sm:p-10 space-y-6">
+          <div className="relative surface shadow-2xl max-w-3xl w-full overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200 p-6 sm:p-12 space-y-6">
             
             <button 
               onClick={() => setSelectedPost(null)}
@@ -69,7 +69,7 @@ export const BlogPage: React.FC = () => {
             </button>
 
             <div className="space-y-2">
-              <span className="bg-blue-50 text-blue-700 font-bold text-xs px-3 py-1 rounded-full border border-blue-200 uppercase">
+              <span className="bg-blue-50 text-blue-700 font-bold text-xs px-4 py-1 rounded-full border border-blue-200 uppercase">
                 {selectedPost.category}
               </span>
               <h2 className="text-2xl font-bold text-[#0B1D3F]">
@@ -89,7 +89,7 @@ export const BlogPage: React.FC = () => {
               referrerPolicy="no-referrer"
             />
 
-            <div className="prose prose-slate text-xs sm:text-sm text-slate-700 whitespace-pre-line space-y-3">
+            <div className="prose prose-slate text-xs sm:text-sm text-slate-700 whitespace-pre-line space-y-4">
               {selectedPost.content}
             </div>
 

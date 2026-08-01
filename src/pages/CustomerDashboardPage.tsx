@@ -41,7 +41,7 @@ export const CustomerDashboardPage: React.FC = () => {
       </PageBanner>
 
       {/* Tabs */}
-      <div className="flex gap-2 border-b border-slate-200 pb-3 text-xs">
+      <div className="flex gap-2 border-b border-slate-200 pb-4 text-xs">
         {[
           { id: 'orders', label: `Buyurtmalar (${orders.length})`, icon: Package },
           { id: 'amc', label: 'Texnik xizmat shartnomalari', icon: Wrench },
@@ -52,7 +52,7 @@ export const CustomerDashboardPage: React.FC = () => {
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id as any)}
-              className={`px-4 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-xl font-bold flex items-center gap-2 transition-all cursor-pointer ${
                 activeTab === t.id ? 'bg-[#0B1D3F] text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
               }`}
             >
@@ -72,14 +72,14 @@ export const CustomerDashboardPage: React.FC = () => {
             <div className="space-y-4">
               {orders.map((order) => (
                 <div key={order.id} className="surface p-6 space-y-4 text-xs">
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-100 pb-3">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-100 pb-4">
                     <div>
                       <span className="tabular font-bold text-[#0B1D3F] text-sm">{order.id}</span>
                       <span className="tabular text-slate-400 block font-mono">
                         Sana: {order.date} • {PAYMENT_METHOD_LABELS[order.paymentMethod] || order.paymentMethod}
                       </span>
                     </div>
-                    <span className="bg-emerald-50 text-emerald-700 font-bold px-3 py-1 rounded-full border border-emerald-200">
+                    <span className="bg-emerald-50 text-emerald-700 font-bold px-4 py-1 rounded-full border border-emerald-200">
                       {ORDER_STATUS_LABELS[order.status] || order.status}
                     </span>
                   </div>
@@ -93,7 +93,7 @@ export const CustomerDashboardPage: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-4">
                     <span className="font-bold text-[#0B1D3F]">Jami summa: <span className="tabular">{formatPrice(order.totalUSD)}</span></span>
                     <button
                       onClick={() => showToast('Hisob-fakturani yuklab olish hozircha mavjud emas.')}
@@ -113,7 +113,7 @@ export const CustomerDashboardPage: React.FC = () => {
 
       {activeTab === 'amc' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="surface p-6 space-y-3 text-xs">
+          <div className="surface p-6 space-y-4 text-xs">
             <h3 className="font-bold text-[#0B1D3F] text-base">Texnik xizmat shartnomalari</h3>
             <p className="text-slate-600">
               Hisobingizda hozircha faol texnik xizmat shartnomasi yoʻq. Rejali texnik koʻrik shartnomasini rasmiylashtirish uchun menejerimizga soʻrov qoldiring.

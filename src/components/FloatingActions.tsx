@@ -71,7 +71,7 @@ export const FloatingActions: React.FC = () => {
   return (
     <div
       ref={wrapRef}
-      className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2.5"
+      className="fixed bottom-6 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2"
     >
       {showBackToTop && !open && (
         <button
@@ -97,7 +97,7 @@ export const FloatingActions: React.FC = () => {
               href={c.href}
               target={c.key === 'tel' ? undefined : '_blank'}
               rel="noreferrer"
-              className={`${c.tone} flex items-center gap-2.5 h-11 px-4 rounded-full text-white shadow-lg
+              className={`${c.tone} flex items-center gap-2 h-11 px-4 rounded-full text-white shadow-lg
                           text-xs font-bold whitespace-nowrap transition-colors`}
             >
               <span className="tabular">{c.label}</span>

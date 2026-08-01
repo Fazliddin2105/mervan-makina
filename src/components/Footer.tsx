@@ -52,8 +52,8 @@ export const Footer: React.FC = () => {
 
       {/* -------------------------------- CTA band ------------------------- */}
       <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-1.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-2">
             <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               Qaysi mashina kerakligini bilmayapsizmi?
             </h2>
@@ -63,14 +63,14 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3 shrink-0">
-            <button onClick={() => setIsQuoteModalOpen(true)} className="btn-primary px-6 py-3">
+          <div className="flex flex-wrap gap-4 shrink-0">
+            <button onClick={() => setIsQuoteModalOpen(true)} className="btn-primary px-6 py-4">
               <FileText size={15} />
               Taklif olish
             </button>
             <a
               href={tel}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold text-white bg-white/10 border border-white/20 hover:bg-white/15 transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-xs font-bold text-white bg-white/10 border border-white/20 hover:bg-white/15 transition-colors duration-200"
             >
               <Phone size={15} />
               <span className="tabular">{siteSettings.phone}</span>
@@ -80,13 +80,13 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* ------------------------------- link grid ------------------------- */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12">
 
         {/* Brand + contact */}
-        <div className="lg:col-span-5 space-y-5">
+        <div className="lg:col-span-5 space-y-6">
           <button
             onClick={() => setActivePage('home')}
-            className="flex items-center gap-2.5 cursor-pointer"
+            className="flex items-center gap-2 cursor-pointer"
           >
             {siteSettings.logoUrl ? (
               <img width={160} height={44} loading="lazy" decoding="async"
@@ -103,15 +103,15 @@ export const Footer: React.FC = () => {
             {siteSettings.aboutShort}
           </p>
 
-          <address className="not-italic space-y-3 text-sm">
-            <div className="flex items-start gap-2.5">
-              <MapPin size={16} className="text-blue-600 shrink-0 mt-0.5" />
+          <address className="not-italic space-y-4 text-sm">
+            <div className="flex items-start gap-2">
+              <MapPin size={16} className="text-blue-600 shrink-0 mt-1" />
               <span className="text-slate-300">
                 {siteSettings.address}, {siteSettings.city}
               </span>
             </div>
 
-            <a href={tel} className="flex items-center gap-2.5 hover:text-white transition-colors">
+            <a href={tel} className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone size={16} className="text-blue-600 shrink-0" />
               <span className="text-slate-300 tabular">
                 {siteSettings.phone}
@@ -123,15 +123,15 @@ export const Footer: React.FC = () => {
             {siteSettings.email && (
               <a
                 href={`mailto:${siteSettings.email}`}
-                className="flex items-center gap-2.5 hover:text-white transition-colors"
+                className="flex items-center gap-2 hover:text-white transition-colors"
               >
                 <Mail size={16} className="text-blue-600 shrink-0" />
                 <span className="text-slate-300">{siteSettings.email}</span>
               </a>
             )}
 
-            <div className="flex items-start gap-2.5">
-              <Clock size={16} className="text-blue-600 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2">
+              <Clock size={16} className="text-blue-600 shrink-0 mt-1" />
               <span className="text-slate-400">{siteSettings.workingHours}</span>
             </div>
           </address>
@@ -163,7 +163,7 @@ export const Footer: React.FC = () => {
           <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">
             Sahifalar
           </h3>
-          <ul className="space-y-2.5 text-sm">
+          <ul className="space-y-2 text-sm">
             {NAV_LINKS.map(link => (
               <li key={link.page}>
                 <button
@@ -182,7 +182,7 @@ export const Footer: React.FC = () => {
           <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">
             Texnika
           </h3>
-          <ul className="space-y-2.5 text-sm">
+          <ul className="space-y-2 text-sm">
             {machineLinks.map(p => (
               <li key={p.id}>
                 <button
@@ -207,7 +207,7 @@ export const Footer: React.FC = () => {
 
       {/* ------------------------------- bottom bar ------------------------ */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>{siteSettings.copyrightText}</p>
           <button
             onClick={() => setActivePage('admin')}

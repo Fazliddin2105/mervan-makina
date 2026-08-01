@@ -19,11 +19,11 @@ export const SearchModal: React.FC = () => {
     : [];
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-start justify-center pt-20 px-4 overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-start justify-center pt-24 px-4 overflow-y-auto">
       <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden border border-slate-200 animate-in fade-in slide-in-from-top-10 duration-200">
         
         {/* Search Input Bar */}
-        <div className="p-4 border-b border-slate-100 flex items-center gap-3">
+        <div className="p-4 border-b border-slate-100 flex items-center gap-4">
           <Search size={22} className="text-blue-600 shrink-0" />
           <input
             type="text"
@@ -56,9 +56,9 @@ export const SearchModal: React.FC = () => {
                       setActivePage('product-detail');
                       setIsSearchModalOpen(false);
                     }}
-                    className="p-3 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 flex items-center justify-between gap-4 cursor-pointer transition-all"
+                    className="p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 flex items-center justify-between gap-4 cursor-pointer transition-all"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
                       <img width={800} height={600} loading="lazy" decoding="async" 
                         src={product.images[0]} 
                         alt="" 
@@ -66,7 +66,7 @@ export const SearchModal: React.FC = () => {
                         referrerPolicy="no-referrer"
                       />
                       <div>
-                        <span className="text-xs font-bold text-blue-700 uppercase bg-blue-50 px-1.5 py-0.5 rounded">
+                        <span className="text-xs font-bold text-blue-700 uppercase bg-blue-50 px-2 py-1 rounded">
                           {product.brand}
                         </span>
                         <h4 className="font-bold text-slate-900 text-xs line-clamp-1">{product.name}</h4>
@@ -87,14 +87,14 @@ export const SearchModal: React.FC = () => {
               </div>
             )
           ) : (
-            <div className="space-y-3 p-2">
+            <div className="space-y-4 p-2">
               <span className="text-xs text-slate-400 font-bold block uppercase tracking-wider">Ommabop qidiruvlar</span>
               <div className="flex flex-wrap gap-2 text-xs">
                 {['MK-3', 'MK-6', 'Supurish mashinasi', 'Pol yuvish', 'Changyutgich', 'Litiy batareya'].map((tag) => (
                   <button
                     key={tag}
                     onClick={() => setQuery(tag)}
-                    className="bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 px-3 py-1.5 rounded-xl font-medium transition-colors cursor-pointer"
+                    className="bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 px-4 py-2 rounded-xl font-medium transition-colors cursor-pointer"
                   >
                     {tag}
                   </button>

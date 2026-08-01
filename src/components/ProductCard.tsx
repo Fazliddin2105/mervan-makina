@@ -82,7 +82,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
 
   const stockLine = (
     <span
-      className={`inline-flex items-center gap-1.5 text-xs font-bold shrink-0 ${
+      className={`inline-flex items-center gap-2 text-xs font-bold shrink-0 ${
         product.inStock ? 'text-emerald-600' : 'text-slate-500'
       }`}
     >
@@ -113,14 +113,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
       </div>
 
       {badges.length > 0 && (
-        <div className="absolute top-3 left-3 z-20 flex flex-col items-start gap-1.5">
+        <div className="absolute top-4 left-4 z-20 flex flex-col items-start gap-2">
           {badges.map(b => (
             <span key={b.key} className={`pill shadow-sm ${b.className}`}>{b.label}</span>
           ))}
         </div>
       )}
 
-      <div className="absolute top-3 right-3 z-20 flex flex-col gap-1.5">
+      <div className="absolute top-4 right-4 z-20 flex flex-col gap-2">
         <button
           onClick={() => toggleWishlist(product)}
           className={`w-8 h-8 rounded-full flex items-center justify-center border transition-colors duration-200 cursor-pointer ${
@@ -148,10 +148,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
 
       {/* Hidden until hover, and non-clickable while hidden so a tap on the
           photo always opens the product instead of the quick view. */}
-      <div className="absolute bottom-3 inset-x-3 z-20 flex opacity-0 translate-y-2 pointer-events-none transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
+      <div className="absolute bottom-4 inset-x-4 z-20 flex opacity-0 translate-y-2 pointer-events-none transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
         <button
           onClick={() => setQuickViewProduct(product)}
-          className="flex-1 min-w-0 bg-[#0B1D3F]/90 backdrop-blur text-white text-xs font-bold py-2 rounded-xl flex items-center justify-center gap-1.5 shadow-lg hover:bg-[#0B1D3F] transition-colors duration-200 cursor-pointer"
+          className="flex-1 min-w-0 bg-[#0B1D3F]/90 backdrop-blur text-white text-xs font-bold py-2 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:bg-[#0B1D3F] transition-colors duration-200 cursor-pointer"
         >
           <Eye size={14} className="shrink-0" />
           <span className="truncate">Tezkor Koʻrish</span>
@@ -161,7 +161,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
   );
 
   const priceBlock = (
-    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
       <span className="text-xl font-bold text-[#0B1D3F] tabular">
         {formatPrice(product.priceUSD)}
       </span>
@@ -182,7 +182,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
   /* ============================== LIST ============================== */
   if (viewMode === 'list') {
     return (
-      <div onMouseMove={trackPointer} className={`${CARD_SHELL} flex-col md:flex-row md:items-stretch p-4 sm:p-5 gap-5 md:gap-6`}>
+      <div onMouseMove={trackPointer} className={`${CARD_SHELL} flex-col md:flex-row md:items-stretch p-4 sm:p-6 gap-6 md:gap-6`}>
 
         {renderPlate(
           'w-full h-52 md:w-56 md:h-44 lg:w-64 lg:h-48 shrink-0 rounded-xl border border-slate-200/70',
@@ -191,8 +191,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
 
         {/* Info */}
         <div className="flex-1 min-w-0 flex flex-col">
-          <div className="flex items-center justify-between gap-3">
-            <span className="flex items-center gap-2.5 min-w-0">
+          <div className="flex items-center justify-between gap-4">
+            <span className="flex items-center gap-2 min-w-0">
               <BrandLogo brandId={product.brandId} name={product.brand} variant="tile" size="sm" />
               <span className="truncate text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
                 {product.machineType} Uskunasi
@@ -210,7 +210,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
           <h3
             onClick={handleCardClick}
             title={product.name}
-            className="mt-3 text-lg font-bold text-[#0B1D3F] hover:text-blue-700 cursor-pointer transition-colors duration-200"
+            className="mt-4 text-lg font-bold text-[#0B1D3F] hover:text-blue-700 cursor-pointer transition-colors duration-200"
           >
             {product.name}
           </h3>
@@ -220,11 +220,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
           </p>
 
           {specs.length > 0 && (
-            <dl className="mt-4 pt-4 border-t border-slate-200/70 flex flex-wrap gap-x-8 gap-y-3">
+            <dl className="mt-4 pt-4 border-t border-slate-200/70 flex flex-wrap gap-x-8 gap-y-4">
               {specs.map(s => (
                 <div key={s.label} className="min-w-0">
                   <dt className="text-xs text-slate-500">{s.label}</dt>
-                  <dd className="mt-0.5 text-xs font-bold text-[#0B1D3F] tabular">{s.value}</dd>
+                  <dd className="mt-1 text-xs font-bold text-[#0B1D3F] tabular">{s.value}</dd>
                 </div>
               ))}
             </dl>
@@ -232,14 +232,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
         </div>
 
         {/* Price & actions */}
-        <div className="w-full md:w-52 lg:w-56 shrink-0 flex flex-col justify-between gap-5 pt-4 md:pt-0 md:pl-6 border-t md:border-t-0 md:border-l border-slate-200/70">
+        <div className="w-full md:w-52 lg:w-56 shrink-0 flex flex-col justify-between gap-6 pt-4 md:pt-0 md:pl-6 border-t md:border-t-0 md:border-l border-slate-200/70">
           <div>
             <div className="flex items-center justify-between gap-2">
               {priceCaption}
               <span className="md:hidden">{stockLine}</span>
             </div>
-            <div className="mt-1.5">{priceBlock}</div>
-            <div className="hidden md:block mt-2.5">{stockLine}</div>
+            <div className="mt-2">{priceBlock}</div>
+            <div className="hidden md:block mt-2">{stockLine}</div>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -252,7 +252,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
             </button>
             <button
               onClick={() => { setQuoteModalProduct(product); setIsQuoteModalOpen(true); }}
-              className="btn-ghost w-full px-4 py-2.5"
+              className="btn-ghost w-full px-4 py-2"
             >
               <FileText size={14} className="shrink-0" />
               <span className="truncate">Tijorat Taklifi</span>
@@ -268,12 +268,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
   return (
     <div onMouseMove={trackPointer} className={`${CARD_SHELL} h-full flex-col overflow-hidden`}>
 
-      {renderPlate('aspect-[4/3] w-full border-b border-slate-200/70', 'p-6 sm:p-7')}
+      {renderPlate('aspect-[4/3] w-full border-b border-slate-200/70', 'p-6 sm:p-8')}
 
-      <div className="flex-1 flex flex-col p-5">
+      <div className="flex-1 flex flex-col p-6">
 
-        <div className="flex items-center justify-between gap-3">
-          <span className="flex items-center gap-2.5 min-w-0">
+        <div className="flex items-center justify-between gap-4">
+          <span className="flex items-center gap-2 min-w-0">
             <BrandLogo brandId={product.brandId} name={product.brand} variant="tile" size="sm" />
             <span className="truncate text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
               {product.machineType} Uskunasi
@@ -291,7 +291,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
         <h3
           onClick={handleCardClick}
           title={product.name}
-          className="mt-3 text-sm font-bold text-[#0B1D3F] line-clamp-2 min-h-[2.6rem] hover:text-blue-700 cursor-pointer transition-colors duration-200"
+          className="mt-4 text-sm font-bold text-[#0B1D3F] line-clamp-2 min-h-[2.6rem] hover:text-blue-700 cursor-pointer transition-colors duration-200"
         >
           {product.name}
         </h3>
@@ -299,7 +299,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
         {specs.length > 0 && (
           <dl className="mt-4 border-t border-slate-100 divide-y divide-slate-100">
             {specs.map(s => (
-              <div key={s.label} className="flex items-baseline justify-between gap-3 py-2">
+              <div key={s.label} className="flex items-baseline justify-between gap-4 py-2">
                 <dt className="text-xs text-slate-500 truncate">{s.label}</dt>
                 <dd className="text-xs font-bold text-[#0B1D3F] tabular text-right shrink-0">{s.value}</dd>
               </div>
@@ -313,7 +313,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
             {stockLine}
           </div>
 
-          <div className="mt-1.5">{priceBlock}</div>
+          <div className="mt-2">{priceBlock}</div>
 
           <div className="mt-4 flex items-center gap-2">
             <button
@@ -325,7 +325,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
             </button>
             <button
               onClick={() => { setQuoteModalProduct(product); setIsQuoteModalOpen(true); }}
-              className="btn-ghost shrink-0 px-3.5"
+              className="btn-ghost shrink-0 px-4"
               title="Tijorat Taklifi"
               aria-label="Tijorat Taklifi"
             >

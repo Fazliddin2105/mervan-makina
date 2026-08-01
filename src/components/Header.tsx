@@ -75,7 +75,7 @@ export const Header: React.FC = () => {
       {children}
       {count > 0 && (
         <span
-          className={`absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full text-xs font-bold
+          className={`absolute -top-2 -right-2 min-w-5 h-5 px-1 rounded-full text-xs font-bold
                       flex items-center justify-center text-white tabular ring-2 ring-[#0B1D3F]
                       ${accent === 'rose' ? 'bg-rose-500' : 'bg-blue-600'}`}
         >
@@ -95,8 +95,8 @@ export const Header: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-4">
 
-          <div className="flex items-center gap-5 min-w-0">
-            <a href={tel} className="flex items-center gap-1.5 hover:text-white transition-colors shrink-0">
+          <div className="flex items-center gap-6 min-w-0">
+            <a href={tel} className="flex items-center gap-2 hover:text-white transition-colors shrink-0">
               <Phone size={12} className="text-blue-600" />
               <span className="font-medium text-slate-300 tabular">{siteSettings.phone}</span>
             </a>
@@ -105,20 +105,20 @@ export const Header: React.FC = () => {
             {siteSettings.email && (
               <a
                 href={`mailto:${siteSettings.email}`}
-                className="hidden md:flex items-center gap-1.5 hover:text-white transition-colors"
+                className="hidden md:flex items-center gap-2 hover:text-white transition-colors"
               >
                 <Mail size={12} className="text-blue-600" />
                 <span>{siteSettings.email}</span>
               </a>
             )}
 
-            <span className="hidden lg:flex items-center gap-1.5 truncate">
+            <span className="hidden lg:flex items-center gap-2 truncate">
               <Clock size={12} />
               <span className="truncate">{siteSettings.workingHours}</span>
             </span>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-4 shrink-0">
             <label className="flex items-center gap-1 cursor-pointer hover:text-white transition-colors">
               <Globe size={12} />
               <span className="sr-only">Til</span>
@@ -155,7 +155,7 @@ export const Header: React.FC = () => {
               <div className="relative hidden sm:block">
                 <button
                   onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
-                  className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
+                  className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
                 >
                   <User size={12} className="text-blue-600" />
                   <span className="max-w-[110px] truncate text-slate-300">{user.name}</span>
@@ -163,28 +163,28 @@ export const Header: React.FC = () => {
                 </button>
 
                 {isUserDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-52 bg-[#0B1D3F] border border-white/10 rounded-xl shadow-2xl py-1.5 z-50 text-xs overflow-hidden">
-                    <div className="px-3 py-2 border-b border-white/10">
+                  <div className="absolute right-0 mt-2 w-52 bg-[#0B1D3F] border border-white/10 rounded-xl shadow-2xl py-2 z-50 text-xs overflow-hidden">
+                    <div className="px-4 py-2 border-b border-white/10">
                       <p className="font-bold text-white truncate">{user.name}</p>
                       {user.company && <p className="text-slate-400 text-xs truncate">{user.company}</p>}
                     </div>
                     <button
                       onClick={() => { setActivePage('dashboard'); setIsUserDropdownOpen(false); }}
-                      className="w-full text-left px-3 py-2 text-slate-300 hover:bg-white/5 hover:text-blue-400 flex items-center gap-2 cursor-pointer"
+                      className="w-full text-left px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-blue-400 flex items-center gap-2 cursor-pointer"
                     >
                       <User size={13} /> Mijoz kabineti
                     </button>
                     {user.role === 'admin' && (
                       <button
                         onClick={() => { setActivePage('admin'); setIsUserDropdownOpen(false); }}
-                        className="w-full text-left px-3 py-2 text-slate-300 hover:bg-white/5 hover:text-blue-400 flex items-center gap-2 cursor-pointer"
+                        className="w-full text-left px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-blue-400 flex items-center gap-2 cursor-pointer"
                       >
                         <ShieldAlert size={13} className="text-blue-400" /> Admin panel
                       </button>
                     )}
                     <button
                       onClick={() => { logout(); setIsUserDropdownOpen(false); }}
-                      className="w-full text-left px-3 py-2 text-rose-400 hover:bg-white/5 flex items-center gap-2 border-t border-white/10 cursor-pointer"
+                      className="w-full text-left px-4 py-2 text-rose-400 hover:bg-white/5 flex items-center gap-2 border-t border-white/10 cursor-pointer"
                     >
                       Chiqish
                     </button>
@@ -194,7 +194,7 @@ export const Header: React.FC = () => {
             ) : (
               <button
                 onClick={() => setActivePage('login')}
-                className="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
+                className="hidden sm:flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
               >
                 <User size={12} /> Kirish
               </button>
@@ -216,7 +216,7 @@ export const Header: React.FC = () => {
           {/* Wordmark */}
           <button
             onClick={() => setActivePage('home')}
-            className="flex items-center gap-2.5 cursor-pointer group shrink-0"
+            className="flex items-center gap-2 cursor-pointer group shrink-0"
           >
             {siteSettings.logoUrl ? (
               <img width={160} height={40} loading="eager" decoding="async"
@@ -237,12 +237,12 @@ export const Header: React.FC = () => {
                 <button
                   key={item.page}
                   onClick={() => setActivePage(item.page)}
-                  className={`relative px-3 py-2 rounded-lg text-xs font-medium transition-colors duration-200 cursor-pointer
+                  className={`relative px-4 py-2 rounded-lg text-xs font-medium transition-colors duration-200 cursor-pointer
                     ${isActive ? 'text-white' : 'text-slate-300 hover:text-white hover:bg-white/5'}`}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute left-3 right-3 -bottom-[1px] h-0.5 bg-blue-600 rounded-full" />
+                    <span className="absolute left-4 right-4 -bottom-[1px] h-0.5 bg-blue-600 rounded-full" />
                   )}
                 </button>
               );
@@ -280,7 +280,7 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="btn-primary hidden md:inline-flex px-4 py-2.5 ml-1"
+              className="btn-primary hidden md:inline-flex px-4 py-2 ml-1"
             >
               <FileText size={15} />
               Taklif olish
@@ -305,7 +305,7 @@ export const Header: React.FC = () => {
                 <button
                   key={item.page}
                   onClick={() => { setActivePage(item.page); setIsMobileMenuOpen(false); }}
-                  className={`text-left py-3 px-3 rounded-lg text-sm transition-colors cursor-pointer
+                  className={`text-left py-4 px-4 rounded-lg text-sm transition-colors cursor-pointer
                     ${activePage === item.page
                       ? 'bg-blue-600/15 text-blue-400 font-bold'
                       : 'text-slate-300 hover:bg-white/5'}`}
@@ -315,16 +315,16 @@ export const Header: React.FC = () => {
               ))}
             </nav>
 
-            <div className="grid grid-cols-2 gap-2 pt-3 border-t border-white/10 text-xs">
+            <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/10 text-xs">
               <button
                 onClick={() => { setActivePage('wishlist'); setIsMobileMenuOpen(false); }}
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-white/5 text-slate-300 cursor-pointer"
+                className="flex items-center justify-center gap-2 py-2 rounded-lg bg-white/5 text-slate-300 cursor-pointer"
               >
                 <Heart size={14} /> Saqlanganlar <span className="tabular">({wishlist.length})</span>
               </button>
               <button
                 onClick={() => { setActivePage('compare'); setIsMobileMenuOpen(false); }}
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-white/5 text-slate-300 cursor-pointer"
+                className="flex items-center justify-center gap-2 py-2 rounded-lg bg-white/5 text-slate-300 cursor-pointer"
               >
                 <GitCompare size={14} /> Solishtirish <span className="tabular">({compareList.length})</span>
               </button>
@@ -332,12 +332,12 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => { setIsQuoteModalOpen(true); setIsMobileMenuOpen(false); }}
-              className="btn-primary w-full py-3"
+              className="btn-primary w-full py-4"
             >
               <FileText size={16} /> Tijorat taklifi olish
             </button>
 
-            <a href={tel} className="btn-secondary w-full py-3">
+            <a href={tel} className="btn-secondary w-full py-4">
               <Phone size={16} /> <span className="tabular">{siteSettings.phone}</span>
             </a>
 

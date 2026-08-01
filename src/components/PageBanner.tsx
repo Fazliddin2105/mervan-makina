@@ -37,7 +37,7 @@ export const PageBanner: React.FC<PageBannerProps> = ({ eyebrow, title, subtitle
       )}
 
       {children && (
-        <div className="rise-in pt-5" style={{ animationDelay: '340ms' }}>
+        <div className="rise-in pt-6" style={{ animationDelay: '340ms' }}>
           {children}
         </div>
       )}

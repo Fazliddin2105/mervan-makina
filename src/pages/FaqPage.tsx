@@ -19,7 +19,7 @@ export const FaqPage: React.FC = () => {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-12">
       
       <PageBanner
         eyebrow="YORDAM MARKAZI"
@@ -33,9 +33,9 @@ export const FaqPage: React.FC = () => {
             placeholder="Savollarni qidiring (masalan: kafolat, litiy batareya, ehtiyot qismlar)..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-600"
+            className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-12 pr-4 py-4 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-600"
           />
-          <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+          <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
         </div>
       </PageBanner>
 
@@ -68,9 +68,9 @@ export const FaqPage: React.FC = () => {
               <button
                 onClick={() => setOpenId(isOpen ? null : faq.id)}
                 aria-expanded={isOpen}
-                className="w-full text-left p-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 transition-colors"
+                className="w-full text-left p-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 transition-colors"
               >
-                <div className="flex items-center gap-3 min-w-0">
+                <div className="flex items-center gap-4 min-w-0">
                   <HelpCircle
                     size={18}
                     className={`shrink-0 transition-colors ${isOpen ? 'text-blue-600' : 'text-slate-400'}`}
@@ -94,7 +94,7 @@ export const FaqPage: React.FC = () => {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-5 pb-5 pt-4 text-xs text-slate-600 border-t border-slate-100 bg-slate-50/50">
+                  <div className="px-6 pb-6 pt-4 text-xs text-slate-600 border-t border-slate-100 bg-slate-50/50">
                     {faq.answer}
                   </div>
                 </div>
@@ -105,10 +105,10 @@ export const FaqPage: React.FC = () => {
       </div>
 
       {/* Contact CTA */}
-      <div className="bg-slate-100 rounded-2xl p-8 text-center space-y-3 max-w-xl mx-auto border border-slate-200">
+      <div className="bg-slate-100 rounded-2xl p-8 text-center space-y-4 max-w-xl mx-auto border border-slate-200">
         <h3 className="font-bold text-[#0B1D3F] text-base">Hali ham savollaringiz bormi?</h3>
         <p className="text-xs text-slate-500">Texnik qoʻllab-quvvatlash: {siteSettings.workingHours}</p>
-        <div className="pt-2 flex flex-wrap justify-center gap-3">
+        <div className="pt-2 flex flex-wrap justify-center gap-4">
           <a href={`tel:${siteSettings.phone.replace(/\s/g, '')}`} className="btn-primary">
             <span><span className="tabular">{siteSettings.phone}</span> ga qoʻngʻiroq qiling</span>
           </a>

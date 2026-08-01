@@ -47,7 +47,7 @@ export const CartPage: React.FC = () => {
                       referrerPolicy="no-referrer"
                     />
                     <div>
-                      <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded uppercase">
+                      <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded uppercase">
                         {item.product.brand}
                       </span>
                       <h3 className="font-bold text-[#0B1D3F] text-sm">{item.product.name}</h3>
@@ -107,7 +107,7 @@ export const CartPage: React.FC = () => {
           <div className="lg:col-span-4 surface p-6 space-y-6">
             <h2 className="text-lg font-bold text-[#0B1D3F]">Buyurtma hisobi</h2>
 
-            <div className="space-y-3 text-xs divide-y divide-slate-100">
+            <div className="space-y-4 text-xs divide-y divide-slate-100">
               <div className="flex justify-between pt-2">
                 <span className="text-slate-500 font-medium">Uskunalar summasi</span>
                 <span className="tabular font-bold font-mono text-slate-900">{formatPrice(cartSubtotalUSD)}</span>
@@ -125,7 +125,7 @@ export const CartPage: React.FC = () => {
                 <span className="font-bold text-slate-700">Kelishuv asosida</span>
               </div>
 
-              <div className="flex justify-between items-baseline pt-3 text-sm">
+              <div className="flex justify-between items-baseline pt-4 text-sm">
                 <span className="font-bold text-[#0B1D3F]">Umumiy summa</span>
                 <span className="tabular text-xl font-bold text-blue-700 font-mono">{formatPrice(grandTotalUSD)}</span>
               </div>
@@ -138,14 +138,14 @@ export const CartPage: React.FC = () => {
                 placeholder="Promokod (MEGAVAN10)"
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value)}
-                className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs uppercase"
+                className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-xs uppercase"
               />
               <button type="submit" className="btn-secondary px-4 py-2">
                 Qoʻllash
               </button>
             </form>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-4 pt-2">
               <button
                 onClick={() => setActivePage('checkout')}
                 className="btn-secondary w-full uppercase tracking-wider"
@@ -162,8 +162,8 @@ export const CartPage: React.FC = () => {
               </button>
             </div>
 
-            <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-500 space-y-1">
-              <div className="flex items-center gap-1.5 font-bold text-slate-800">
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-500 space-y-1">
+              <div className="flex items-center gap-2 font-bold text-slate-800">
                 <ShieldCheck size={14} className="text-emerald-500" /> Toʻlov va hisob-faktura
               </div>
               <p>Toʻlov shartlari va hisob-faktura menejerimiz bilan tasdiqlanadi.</p>

@@ -84,7 +84,7 @@ export const ContactPage: React.FC = () => {
         subtitle={siteSettings.aboutShort}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
         {/* Info & Form Left */}
         <div className="lg:col-span-6 space-y-8">
@@ -93,16 +93,16 @@ export const ContactPage: React.FC = () => {
             <h2 className="text-xl font-bold text-[#0B1D3F]">Aloqa Maʼlumotlari</h2>
 
             <div className="space-y-4 text-sm text-slate-700">
-              <div className="flex items-start gap-3">
-                <MapPin size={20} className="text-blue-600 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <MapPin size={20} className="text-blue-600 shrink-0 mt-1" />
                 <div>
                   <span className="font-bold text-[#0B1D3F] block text-sm">Manzil</span>
                   <span>{siteSettings.address}, {siteSettings.city}</span>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <Phone size={20} className="text-blue-600 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <Phone size={20} className="text-blue-600 shrink-0 mt-1" />
                 <div>
                   <span className="font-bold text-[#0B1D3F] block text-sm">Telefon</span>
                   <span className="tabular">{siteSettings.phone}{siteSettings.phoneSecondary && ` / ${siteSettings.phoneSecondary}`}</span>
@@ -110,8 +110,8 @@ export const ContactPage: React.FC = () => {
               </div>
 
               {siteSettings.email && (
-                <div className="flex items-start gap-3">
-                  <Mail size={20} className="text-blue-600 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-4">
+                  <Mail size={20} className="text-blue-600 shrink-0 mt-1" />
                   <div>
                     <span className="font-bold text-[#0B1D3F] block text-sm">Email</span>
                     <span>{siteSettings.email}{siteSettings.emailSecondary && ` / ${siteSettings.emailSecondary}`}</span>
@@ -119,8 +119,8 @@ export const ContactPage: React.FC = () => {
                 </div>
               )}
 
-              <div className="flex items-start gap-3">
-                <Clock size={20} className="text-blue-600 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-4">
+                <Clock size={20} className="text-blue-600 shrink-0 mt-1" />
                 <div>
                   <span className="font-bold text-[#0B1D3F] block text-sm">Ish Vaqti</span>
                   <span className="tabular">{siteSettings.workingHours}</span>
@@ -130,7 +130,7 @@ export const ContactPage: React.FC = () => {
 
             {/* Social Media Icons */}
             {enabledSocials.length > 0 && (
-              <div className="pt-4 border-t border-slate-100 space-y-3">
+              <div className="pt-4 border-t border-slate-100 space-y-4">
                 <p className="text-xs font-bold text-[#0B1D3F] uppercase tracking-wider">Ijtimoiy tarmoqlarda kuzatib boring</p>
                 <div className="flex flex-wrap gap-2">
                   {enabledSocials.map(s => {
@@ -143,7 +143,7 @@ export const ContactPage: React.FC = () => {
                         href={s.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${isGradient ? 'bg-gradient-to-br ' + colorCls : colorCls} text-white font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 transition-all hover:scale-105`}
+                        className={`${isGradient ? 'bg-gradient-to-br ' + colorCls : colorCls} text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition-all hover:scale-105`}
                       >
                         <Icon size={16} />
                         <span>{s.label}</span>
@@ -159,7 +159,7 @@ export const ContactPage: React.FC = () => {
           <form onSubmit={handleSubmit} className="surface p-6 sm:p-8 space-y-4 text-xs">
             <h3 className="text-base font-bold text-[#0B1D3F]">Tezkor Xabar Yuborish</h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-slate-700 font-bold mb-1">Ismingiz *</label>
                 <input
@@ -168,7 +168,7 @@ export const ContactPage: React.FC = () => {
                   placeholder="Ismingizni yozing"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"
                 />
               </div>
 
@@ -180,7 +180,7 @@ export const ContactPage: React.FC = () => {
                   placeholder="+998 90 123 45 67"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"
                 />
               </div>
             </div>
@@ -192,7 +192,7 @@ export const ContactPage: React.FC = () => {
                 placeholder="Kompaniya nomi"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"
               />
             </div>
 
@@ -203,7 +203,7 @@ export const ContactPage: React.FC = () => {
                 placeholder="Qanday mahsulot va qancha miqdorda kerak..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"
               />
             </div>
 
@@ -235,7 +235,7 @@ export const ContactPage: React.FC = () => {
             ) : (
               <div className="relative h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center p-6 text-center">
                 <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
-                <div className="relative z-10 space-y-3">
+                <div className="relative z-10 space-y-4">
                   <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center mx-auto shadow-2xl animate-bounce">
                     <Building2 size={32} />
                   </div>

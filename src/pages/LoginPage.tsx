@@ -20,11 +20,11 @@ export const LoginPage: React.FC = () => {
     <div className="min-h-[70vh] bg-[radial-gradient(circle_at_top,_rgba(255,138,0,0.18),_transparent_45%)] px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 lg:flex-row lg:items-center">
         <div className="flex-1 space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-blue-700 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-blue-700 shadow-sm">
             <Sparkles size={14} />
             B2B kabinet
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4">
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1D3F]">
               {siteSettings.brandName} kabinetiga kiring
             </h1>
@@ -61,7 +61,7 @@ export const LoginPage: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <label className="block text-sm font-bold text-slate-700">
               Elektron pochta
-              <div className="mt-2 flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+              <div className="mt-2 flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
                 <Mail size={16} className="text-slate-400" />
                 <input
                   type="email"
@@ -76,7 +76,7 @@ export const LoginPage: React.FC = () => {
 
             <label className="block text-sm font-bold text-slate-700">
               Parol
-              <div className="mt-2 flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+              <div className="mt-2 flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
                 <Lock size={16} className="text-slate-400" />
                 <input
                   type="password"
@@ -97,11 +97,11 @@ export const LoginPage: React.FC = () => {
             </button>
           </form>
 
-          <div className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-6 text-sm text-slate-600">
+          <div className="mt-6 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-600">
             <button
               type="button"
               onClick={() => setActivePage('admin')}
-              className="rounded-2xl border border-slate-200 px-4 py-3 text-left font-bold text-slate-700 transition hover:border-blue-300 hover:text-blue-700 cursor-pointer"
+              className="rounded-2xl border border-slate-200 px-4 py-4 text-left font-bold text-slate-700 transition hover:border-blue-300 hover:text-blue-700 cursor-pointer"
             >
               Administrator panelini ochish
             </button>
@@ -109,7 +109,7 @@ export const LoginPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActivePage('dashboard')}
-                className="rounded-2xl bg-blue-50 px-4 py-3 text-left font-bold text-blue-800 transition hover:bg-blue-100 cursor-pointer"
+                className="rounded-2xl bg-blue-50 px-4 py-4 text-left font-bold text-blue-800 transition hover:bg-blue-100 cursor-pointer"
               >
                 Siz allaqachon tizimdasiz. Kabinetga oʻtish.
               </button>

@@ -73,7 +73,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
     <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
       <div className="max-w-2xl">
         <span
-          className={`inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] ${
+          className={`inline-flex items-center gap-4 text-xs font-bold uppercase tracking-[0.18em] ${
             dark ? 'text-blue-400' : 'text-blue-700'
           }`}
         >
@@ -100,7 +100,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         {/* Heading steps up a size from the previous pass — section titles were
             competing with card titles instead of leading them. */}
         <h2
-          className={`mt-3 text-2xl  lg:text-2xl font-bold tracking-[-0.03em] ${
+          className={`mt-4 text-2xl  lg:text-2xl font-bold tracking-[-0.03em] ${
             dark ? 'text-white' : 'text-[#0B1D3F]'
           }`}
         >
@@ -108,7 +108,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         </h2>
 
         {description && (
-          <p className={`mt-3 text-sm ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
+          <p className={`mt-4 text-sm ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
             {description}
           </p>
         )}
@@ -120,7 +120,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           {action && (
             <button
               onClick={action.onClick}
-              className={`group inline-flex items-center gap-1.5 text-left text-xs font-bold
+              className={`group inline-flex items-center gap-2 text-left text-xs font-bold
                           transition-colors cursor-pointer ${
                             dark ? 'text-white hover:text-blue-400' : 'text-[#0B1D3F] hover:text-blue-700'
                           }`}
@@ -240,12 +240,12 @@ export const HomePage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#071531] via-transparent to-[#071531]/45" />
         <div className="absolute inset-0 bg-[#071531]/55 lg:hidden" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-6 lg:pt-16 lg:pb-8">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-6 lg:pt-16 lg:pb-8">
 
           <AnimatedLogo className="h-16 sm:h-24 lg:h-32 mb-6 sm:mb-8" />
 
           <span
-            className="rise-in flex items-center gap-3 text-xs font-bold tracking-[0.24em] uppercase text-blue-300"
+            className="rise-in flex items-center gap-4 text-xs font-bold tracking-[0.24em] uppercase text-blue-300"
             style={{ animationDelay: '1900ms' }}
           >
             <span className="h-px w-9 bg-blue-400" />
@@ -257,7 +257,7 @@ export const HomePage: React.FC = () => {
 
           {/* Deliberately oversized: at these sizes the second and third lines
               run past the scrim and onto the photograph, which is the point. */}
-          <h1 className="mt-5 font-bold tracking-[-0.045em] text-3xl">
+          <h1 className="mt-6 font-bold tracking-[-0.045em] text-3xl">
             <span className="block">
               <SplitText text="Sanoat" delay={2000} />
             </span>
@@ -269,7 +269,7 @@ export const HomePage: React.FC = () => {
             </span>
           </h1>
 
-          <div className="mt-7 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <p
               className="rise-in max-w-md text-sm sm:text-base text-slate-300/80"
               style={{ animationDelay: '2380ms' }}
@@ -278,7 +278,7 @@ export const HomePage: React.FC = () => {
             </p>
 
             <div
-              className="rise-in flex flex-wrap items-center gap-3 shrink-0"
+              className="rise-in flex flex-wrap items-center gap-4 shrink-0"
               style={{ animationDelay: '2460ms' }}
             >
               <button
@@ -329,7 +329,7 @@ export const HomePage: React.FC = () => {
               </button>
             </div>
 
-            <dl className="flex items-center gap-6 sm:gap-10 shrink-0 overflow-x-auto lg:ml-auto">
+            <dl className="flex items-center gap-6 sm:gap-12 shrink-0 overflow-x-auto lg:ml-auto">
               {[
                 { label: 'Unumdorlik', value: heroProduct?.productivity, icon: Gauge },
                 { label: 'Kuchlanish', value: heroProduct?.voltage, icon: Zap },
@@ -340,11 +340,11 @@ export const HomePage: React.FC = () => {
                   const Icon = spec.icon;
                   return (
                     <div key={spec.label} className="shrink-0">
-                      <dt className="flex items-center gap-1.5 text-xs uppercase tracking-wider text-slate-400">
+                      <dt className="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-400">
                         <Icon size={12} className="text-blue-400" />
                         {spec.label}
                       </dt>
-                      <dd className="mt-0.5 text-sm font-bold text-white tabular whitespace-nowrap">{spec.value}</dd>
+                      <dd className="mt-1 text-sm font-bold text-white tabular whitespace-nowrap">{spec.value}</dd>
                     </div>
                   );
                 })}
@@ -383,7 +383,7 @@ export const HomePage: React.FC = () => {
 
       {/* ================= FACTS STRIP — deep navy, tight ================= */}
       <section className="bg-[#071531] border-y border-white/5">
-        <dl className="max-w-7xl mx-auto px-4 sm:px-6 py-9 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-9">
+        <dl className="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-8">
           {[
             { icon: Box, label: 'Texnika modeli', value: productsList.length },
             { icon: Layers, label: 'Texnika toifasi', value: stockedCategories.length },
@@ -392,8 +392,8 @@ export const HomePage: React.FC = () => {
           ].map(stat => {
             const Icon = stat.icon;
             return (
-              <div key={stat.label} className="flex items-start gap-3.5">
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-600/15 text-blue-400 ring-1 ring-blue-500/25">
+              <div key={stat.label} className="flex items-start gap-4">
+                <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-600/15 text-blue-400 ring-1 ring-blue-500/25">
                   <Icon size={17} />
                 </span>
                 <HeroStat label={stat.label} value={stat.value} />
@@ -404,7 +404,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ================= CATEGORIES GRID — white band ================= */}
-      <Reveal as="section" className="bg-white py-16 sm:py-20">
+      <Reveal as="section" className="bg-white py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeader
             index={1}
@@ -413,7 +413,7 @@ export const HomePage: React.FC = () => {
             title="Uskuna Kategoriyalarini Tanlang"
           />
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {stockedCategories.map(({ category, products, cover }) => (
               <button
                 key={category.id}
@@ -432,7 +432,7 @@ export const HomePage: React.FC = () => {
                   <span className="tabular">{products.length}</span> ta
                 </span>
 
-                <span className="absolute inset-x-0 bottom-0 p-5 flex flex-col gap-1.5">
+                <span className="absolute inset-x-0 bottom-0 p-6 flex flex-col gap-2">
                   <span className="text-base font-bold text-white">
                     {category.name}
                   </span>
@@ -454,7 +454,7 @@ export const HomePage: React.FC = () => {
       </Reveal>
 
       {/* ================= FEATURED PRODUCTS SHOWCASE — canvas band ================= */}
-      <Reveal as="section" className="bg-[#F5F7FA] py-16 sm:py-20">
+      <Reveal as="section" className="bg-[#F5F7FA] py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeader
             index={2}
@@ -468,7 +468,7 @@ export const HomePage: React.FC = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`rounded-xl px-3.5 py-2 text-xs font-bold transition-colors cursor-pointer ${
+                    className={`rounded-xl px-4 py-2 text-xs font-bold transition-colors cursor-pointer ${
                       activeTab === tab.id
                         ? 'bg-[#0B1D3F] text-white shadow-sm'
                         : 'text-slate-600 hover:bg-slate-100 hover:text-[#0B1D3F]'
@@ -482,7 +482,7 @@ export const HomePage: React.FC = () => {
           />
 
           {filteredProducts.length > 0 ? (
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
@@ -490,11 +490,11 @@ export const HomePage: React.FC = () => {
           ) : (
             /* A filter can legitimately match nothing; an empty grid just looks
                like the page failed to load. */
-            <div className="mt-10 surface p-10 sm:p-14 text-center">
+            <div className="mt-12 surface p-12 sm:p-16 text-center">
               <p className="text-sm text-slate-600">
                 Tanlangan filtr boʻyicha model topilmadi.
               </p>
-              <button onClick={() => setActiveTab('all')} className="btn-ghost mt-5">
+              <button onClick={() => setActiveTab('all')} className="btn-ghost mt-6">
                 Barcha saralanganlarni koʻrsatish
               </button>
             </div>
@@ -503,9 +503,9 @@ export const HomePage: React.FC = () => {
       </Reveal>
 
       {/* ================= ROI CALCULATOR — white band =================
-          RoiCalculator carries its own my-10, so the band padding is reduced
+          RoiCalculator carries its own my-12, so the band padding is reduced
           to keep the gap identical to every other section. */}
-      <Reveal as="section" className="bg-white py-6 sm:py-10">
+      <Reveal as="section" className="bg-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <RoiCalculator />
         </div>
@@ -514,8 +514,8 @@ export const HomePage: React.FC = () => {
       {/* ================= WHY CHOOSE US — canvas band =================
           Six identical cards read as filler. Split into a fixed header column
           and a hairline-ruled spec table, which is how the trade reads specs. */}
-      <Reveal as="section" className="bg-[#F5F7FA] py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+      <Reveal as="section" className="bg-[#F5F7FA] py-24 sm:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12">
 
           <div className="lg:col-span-4">
             <SectionHeader
@@ -573,7 +573,7 @@ export const HomePage: React.FC = () => {
                       </span>
                       <div className="min-w-0">
                         <h3 className="text-sm font-bold text-[#0B1D3F]">{item.title}</h3>
-                        <p className="mt-1.5 text-sm text-slate-600">{item.desc}</p>
+                        <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
                       </div>
                     </div>
                   );
@@ -586,7 +586,7 @@ export const HomePage: React.FC = () => {
       </Reveal>
 
       {/* ================= SERVICES PREVIEW — navy band ================= */}
-      <Reveal as="section" className="relative overflow-hidden bg-[#071531] py-16 sm:py-20">
+      <Reveal as="section" className="relative overflow-hidden bg-[#071531] py-24 sm:py-32">
         {/* Same drafting grid as the hero, so the dark bands read as a family. */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.05]"
@@ -610,16 +610,16 @@ export const HomePage: React.FC = () => {
             }}
           />
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {SERVICES_DATA.slice(0, 3).map((svc) => (
               <div
                 key={svc.id}
                 className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-blue-600/40 hover:bg-white/[0.07]"
               >
                 <h3 className="text-base font-bold text-white">{svc.title}</h3>
-                <p className="mt-3 text-sm text-slate-300">{svc.summary}</p>
+                <p className="mt-4 text-sm text-slate-300">{svc.summary}</p>
 
-                <ul className="mt-5 space-y-2 border-t border-white/10 pt-5 text-xs text-slate-400">
+                <ul className="mt-6 space-y-2 border-t border-white/10 pt-6 text-xs text-slate-400">
                   {svc.benefits.map((b, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <CheckCircle2 size={14} className="mt-px shrink-0 text-emerald-400" />
@@ -631,7 +631,7 @@ export const HomePage: React.FC = () => {
                 <div className="mt-auto pt-6">
                   <button
                     onClick={() => setIsQuoteModalOpen(true)}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 py-3 text-xs font-bold text-white transition-colors hover:border-blue-600 hover:bg-blue-600 cursor-pointer"
+                    className="w-full rounded-xl border border-white/15 bg-white/5 py-4 text-xs font-bold text-white transition-colors hover:border-blue-600 hover:bg-blue-600 cursor-pointer"
                   >
                     Servis Konsultatsiyasini Olish
                   </button>
@@ -643,7 +643,7 @@ export const HomePage: React.FC = () => {
       </Reveal>
 
       {/* ================= BLOG PREVIEW — canvas band ================= */}
-      <Reveal as="section" className="bg-[#F5F7FA] py-16 sm:py-20">
+      <Reveal as="section" className="bg-[#F5F7FA] py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeader
             index={5}
@@ -656,7 +656,7 @@ export const HomePage: React.FC = () => {
             }}
           />
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {BLOG_POSTS.map((post) => (
               <article
                 key={post.id}
@@ -686,7 +686,7 @@ export const HomePage: React.FC = () => {
                     {post.summary}
                   </p>
 
-                  <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold text-blue-700">
+                  <span className="mt-auto pt-6 inline-flex items-center gap-2 text-xs font-bold text-blue-700">
                     Maqolani Oʻqish
                     <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                   </span>
@@ -700,9 +700,9 @@ export const HomePage: React.FC = () => {
       {/* ================= FINAL QUOTE CTA BANNER — white band =================
           The loudest moment after the hero, and it deliberately echoes it:
           same navy gradient, same accent wash, same drafting grid. */}
-      <Reveal as="section" className="bg-white py-16 sm:py-20">
+      <Reveal as="section" className="bg-white py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#071531] via-[#0B1D3F] to-[#12305F] px-6 py-10 sm:px-12 sm:py-14 shadow-[0_40px_80px_-40px_rgba(10,37,64,0.7)]">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#071531] via-[#0B1D3F] to-[#12305F] px-6 py-12 sm:px-12 sm:py-16 shadow-[0_40px_80px_-40px_rgba(10,37,64,0.7)]">
 
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full bg-blue-600/25 blur-[140px]" />
@@ -716,7 +716,7 @@ export const HomePage: React.FC = () => {
               />
             </div>
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:items-center">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-center">
 
               <div className="lg:col-span-7 text-center lg:text-left">
                 <span className="pill bg-blue-600 text-white">
@@ -732,7 +732,7 @@ export const HomePage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3">
+              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-4">
                 <button
                   onClick={() => setIsQuoteModalOpen(true)}
                   className="btn-primary sm:flex-1 px-6 sm:px-8 py-4 uppercase tracking-wider"
@@ -742,7 +742,7 @@ export const HomePage: React.FC = () => {
 
                 <a
                   href={`tel:${siteSettings.phone.replace(/\s/g, '')}`}
-                  className="sm:flex-1 inline-flex flex-wrap items-center justify-center gap-x-1.5 rounded-xl border border-white/20 bg-white/10 px-6 sm:px-8 py-4 text-center text-xs font-bold text-white transition-all hover:bg-white/20 active:scale-[0.98] cursor-pointer"
+                  className="sm:flex-1 inline-flex flex-wrap items-center justify-center gap-x-2 rounded-xl border border-white/20 bg-white/10 px-6 sm:px-8 py-4 text-center text-xs font-bold text-white transition-all hover:bg-white/20 active:scale-[0.98] cursor-pointer"
                 >
                   <span className="tabular">{siteSettings.phone}</span>
                   <span>ga qoʻngʻiroq qiling</span>

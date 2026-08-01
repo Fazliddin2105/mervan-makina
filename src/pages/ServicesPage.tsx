@@ -8,7 +8,7 @@ export const ServicesPage: React.FC = () => {
   const { setIsQuoteModalOpen, siteSettings } = useApp();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-12">
       
       <PageBanner
         eyebrow="TOʻLIQ TEXNIK XIZMAT"
@@ -19,12 +19,12 @@ export const ServicesPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {SERVICES_DATA.map((svc) => (
           <div key={svc.id} className="surface p-6 sm:p-8 space-y-4 flex flex-col justify-between">
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-600/20 text-blue-700 flex items-center justify-center font-bold">
                   <Wrench size={24} />
                 </div>
-                <span className="text-xs font-mono text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full font-bold">
+                <span className="text-xs font-mono text-emerald-700 bg-emerald-50 border border-emerald-200 px-4 py-1 rounded-full font-bold">
                 </span>
               </div>
 
@@ -33,7 +33,7 @@ export const ServicesPage: React.FC = () => {
 
               <div className="pt-2">
                 <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">Xizmatning asosiy afzalliklari:</h4>
-                <ul className="space-y-1.5 text-xs text-slate-600">
+                <ul className="space-y-2 text-xs text-slate-600">
                   {svc.benefits.map((b, i) => (
                     <li key={i} className="flex items-center gap-2">
                       <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />

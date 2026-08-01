@@ -62,7 +62,7 @@ interface LogoProps {
 
 /** Full lockup: mark plus the two-line wordmark. */
 export const Logo: React.FC<LogoProps> = ({ tone = 'dark', className = '' }) => (
-  <span className={`inline-flex items-center gap-2.5 ${className}`}>
+  <span className={`inline-flex items-center gap-2 ${className}`}>
     <LogoMark className="w-9 h-9 shrink-0" />
     <span className="leading-none text-left">
       <span
@@ -72,7 +72,7 @@ export const Logo: React.FC<LogoProps> = ({ tone = 'dark', className = '' }) => 
       >
         MERVAN
       </span>
-      <span className="block text-xs font-bold tracking-[0.34em] text-blue-500 mt-0.5">
+      <span className="block text-xs font-bold tracking-[0.34em] text-blue-500 mt-1">
         MAKINA
       </span>
     </span>

@@ -83,7 +83,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
         
         {/* Header */}
         <div className="bg-[#0B1D3F] text-white p-6 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white">
               <FileText size={20} />
             </div>
@@ -100,7 +100,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-5">
+        <form onSubmit={handleSubmit} className="p-6 space-y-6">
           
           {/* Machine Items Summary */}
           <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
@@ -110,12 +110,12 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
             {targetProducts.length > 0 ? (
               <div className="space-y-2 max-h-36 overflow-y-auto pr-2">
                 {targetProducts.map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-between text-xs bg-white p-2.5 rounded-xl border border-slate-200/70">
+                  <div key={idx} className="flex items-center justify-between text-xs bg-white p-2 rounded-xl border border-slate-200/70">
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-blue-700">[{item.product.brand}]</span>
                       <span className="font-bold text-slate-800 line-clamp-1">{item.product.name}</span>
                     </div>
-                    <div className="flex items-center gap-3 shrink-0 font-bold">
+                    <div className="flex items-center gap-4 shrink-0 font-bold">
                       <span>Qty: {item.quantity}</span>
                       <span className="text-[#0B1D3F]">{formatPrice(item.product.priceUSD * item.quantity)}</span>
                     </div>
@@ -126,7 +126,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
               <p className="text-xs text-slate-500 italic">Select products from catalog or cart to request specific quotation.</p>
             )}
             
-            <div className="flex items-center justify-between pt-3 mt-2 border-t border-slate-200 text-sm font-bold text-[#0B1D3F]">
+            <div className="flex items-center justify-between pt-4 mt-2 border-t border-slate-200 text-sm font-bold text-[#0B1D3F]">
               <span>Estimated Equipment Subtotal:</span>
               <span className="text-blue-700 text-base">{formatPrice(totalEstimateUSD)}</span>
             </div>
@@ -143,7 +143,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
                 placeholder="e.g. Tashkent Logistics Park LLC"
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
               />
             </div>
 
@@ -155,7 +155,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
                 placeholder="e.g. Jasur Saidov"
                 value={contactName}
                 onChange={(e) => setContactName(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
               />
             </div>
 
@@ -167,7 +167,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
                 placeholder="j.saidov@company.uz"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
               />
             </div>
 
@@ -179,7 +179,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
                 placeholder="+998 90 123 45 67"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
               />
             </div>
 
@@ -190,7 +190,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
                 placeholder="9-digit TIN number"
                 value={tinNumber}
                 onChange={(e) => setTinNumber(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
               />
             </div>
 
@@ -199,7 +199,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
               <select 
                 value={facilityType}
                 onChange={(e) => setFacilityType(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
               >
                 <option value="Factory / Manufacturing">Factory / Manufacturing</option>
                 <option value="Logistics Warehouse">Logistics Warehouse</option>
@@ -220,23 +220,23 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
               placeholder="Specify floor area m², special requirements, corporate installment plans, or AMC preferences..."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-xs text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl p-4 text-xs text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-none"
             />
           </div>
 
           {/* Action Buttons */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
             <button 
               type="button"
               onClick={handleDownloadDraft}
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors cursor-pointer"
+              className="w-full sm:w-auto px-4 py-2 rounded-xl border border-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors cursor-pointer"
             >
               <Download size={15} /> Download PDF Estimate Draft
             </button>
 
             <button 
               type="submit"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-6 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
             >
               <CheckCircle2 size={16} /> Submit Quotation Request
             </button>

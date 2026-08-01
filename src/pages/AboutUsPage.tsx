@@ -10,7 +10,7 @@ export const AboutUsPage: React.FC = () => {
 
       {/* Banner */}
       <div className="bg-[#0B1D3F] text-white rounded-2xl p-8 sm:p-12 shadow-xl border border-slate-800 space-y-4 text-center sm:text-left">
-        <span className="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+        <span className="bg-blue-600 text-white font-bold text-xs px-4 py-1 rounded-full uppercase tracking-wider">
           Biz haqimizda
         </span>
         <h1 className="text-3xl font-bold text-white">{siteSettings.brandName}</h1>
@@ -23,7 +23,7 @@ export const AboutUsPage: React.FC = () => {
       </div>
 
       {/* Main Info Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-4">
           <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">Nima taklif qilamiz</span>
           <h2 className="text-2xl font-bold text-[#0B1D3F]">
@@ -54,13 +54,13 @@ export const AboutUsPage: React.FC = () => {
           <div className="pt-4 flex flex-wrap gap-4">
             <button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-blue-600 text-white font-bold px-6 py-3 rounded-xl text-xs hover:bg-blue-700 transition-colors cursor-pointer"
+              className="bg-blue-600 text-white font-bold px-6 py-4 rounded-xl text-xs hover:bg-blue-700 transition-colors cursor-pointer"
             >
               Tijorat taklifi soʻrash
             </button>
             <button
               onClick={() => setActivePage('contact')}
-              className="bg-slate-100 text-slate-800 font-bold px-6 py-3 rounded-xl text-xs hover:bg-slate-200 transition-colors cursor-pointer"
+              className="bg-slate-100 text-slate-800 font-bold px-6 py-4 rounded-xl text-xs hover:bg-slate-200 transition-colors cursor-pointer"
             >
               Bogʻlanish
             </button>
@@ -99,7 +99,7 @@ export const AboutUsPage: React.FC = () => {
       </div>
 
       {/* Service */}
-      <div className="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-4">
         <div className="w-12 h-12 rounded-xl bg-[#0B1D3F] text-white flex items-center justify-center">
           <Wrench size={22} />
         </div>

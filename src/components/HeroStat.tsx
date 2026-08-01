@@ -14,7 +14,7 @@ export const HeroStat: React.FC<HeroStatProps> = ({ label, value }) => {
   const counted = useCountUp(numeric ? value : 0, inView);
 
   return (
-    <div ref={ref} className="flex flex-col-reverse gap-1.5 min-w-0">
+    <div ref={ref} className="flex flex-col-reverse gap-2 min-w-0">
       <dt className="text-xs text-slate-400">{label}</dt>
       <dd className="text-xl sm:text-xl font-bold text-white tabular truncate">
         {numeric ? counted : value}

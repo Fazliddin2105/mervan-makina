@@ -160,11 +160,11 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
           <span className="block text-2xl font-bold tracking-[-0.02em] text-white">
             {letters(WORD, DRIVE_MS, 'inline-block')}
           </span>
-          <span className="mt-2.5 block text-xs font-bold tracking-[0.46em] text-blue-400">
+          <span className="mt-2 block text-xs font-bold tracking-[0.46em] text-blue-400">
             {letters(SUB, DRIVE_MS + WORD.length * LETTER_STEP_MS + 60, 'inline-block')}
           </span>
           <span
-            className={`mt-3.5 block h-[3px] w-full origin-left rounded-full bg-gradient-to-r from-blue-500 to-blue-400 ${
+            className={`mt-4 block h-[3px] w-full origin-left rounded-full bg-gradient-to-r from-blue-500 to-blue-400 ${
               isStatic ? '' : 'logo-rule'
             }`}
           />
