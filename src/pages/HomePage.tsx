@@ -79,7 +79,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         >
           {Icon && (
             <span
-              className={`flex h-8 w-8 items-center justify-center rounded-xl ${
+              className={`flex h-8 w-8 items-center justify-center rounded-lg ${
                 dark
                   ? 'bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/25'
                   : 'bg-blue-600/10 text-blue-700 ring-1 ring-blue-600/15'
@@ -294,7 +294,7 @@ export const HomePage: React.FC = () => {
 
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xs font-bold text-white bg-white/10 border border-white/25 backdrop-blur-md hover:bg-white/20 transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-xs font-bold text-white bg-white/10 border border-white/25 backdrop-blur-md hover:bg-white/20 transition-all duration-200 cursor-pointer active:scale-[0.98]"
               >
                 <FileText size={17} />
                 Narxini so&apos;rash
@@ -393,7 +393,7 @@ export const HomePage: React.FC = () => {
             const Icon = stat.icon;
             return (
               <div key={stat.label} className="flex items-start gap-4">
-                <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-600/15 text-blue-400 ring-1 ring-blue-500/25">
+                <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-600/15 text-blue-400 ring-1 ring-blue-500/25">
                   <Icon size={17} />
                 </span>
                 <HeroStat label={stat.label} value={stat.value} />
@@ -418,7 +418,7 @@ export const HomePage: React.FC = () => {
               <button
                 key={category.id}
                 onClick={() => { setSelectedCategoryId(category.id); setActivePage('products'); }}
-                className="group relative h-64 lg:h-72 rounded-2xl overflow-hidden text-left cursor-pointer ring-1 ring-[#0B1D3F]/10 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_28px_55px_-28px_rgba(10,37,64,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                className="group relative h-64 lg:h-72 rounded-lg overflow-hidden text-left cursor-pointer ring-1 ring-[#0B1D3F]/10 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
                 <img width={800} height={600} loading="lazy" decoding="async"
                   src={cover.images[0]}
@@ -463,12 +463,12 @@ export const HomePage: React.FC = () => {
             title="Saralangan Sanoat Uskunalari"
             trailing={
               /* Segmented control: one bordered track, the active segment filled. */
-              <div className="flex flex-wrap gap-1 rounded-xl border border-slate-200 bg-white p-1 shadow-sm">
+              <div className="flex flex-wrap gap-1 rounded-lg border border-slate-200 bg-white p-1 shadow-sm">
                 {featuredTabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`rounded-xl px-4 py-2 text-xs font-bold transition-colors cursor-pointer ${
+                    className={`rounded-lg px-4 py-2 text-xs font-bold transition-colors cursor-pointer ${
                       activeTab === tab.id
                         ? 'bg-[#0B1D3F] text-white shadow-sm'
                         : 'text-slate-600 hover:bg-slate-100 hover:text-[#0B1D3F]'
@@ -568,7 +568,7 @@ export const HomePage: React.FC = () => {
                       key={idx}
                       className="bg-white p-6 flex gap-4 transition-colors hover:bg-slate-50"
                     >
-                      <span className="shrink-0 w-10 h-10 rounded-xl bg-[#0B1D3F] text-blue-400 flex items-center justify-center">
+                      <span className="shrink-0 w-10 h-10 rounded-lg bg-[#0B1D3F] text-blue-400 flex items-center justify-center">
                         <Icon size={18} />
                       </span>
                       <div className="min-w-0">
@@ -614,7 +614,7 @@ export const HomePage: React.FC = () => {
             {SERVICES_DATA.slice(0, 3).map((svc) => (
               <div
                 key={svc.id}
-                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-blue-600/40 hover:bg-white/[0.07]"
+                className="flex flex-col rounded-lg border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-blue-600/40 hover:bg-white/[0.07]"
               >
                 <h3 className="text-base font-bold text-white">{svc.title}</h3>
                 <p className="mt-4 text-sm text-slate-300">{svc.summary}</p>
@@ -631,7 +631,7 @@ export const HomePage: React.FC = () => {
                 <div className="mt-auto pt-6">
                   <button
                     onClick={() => setIsQuoteModalOpen(true)}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 py-4 text-xs font-bold text-white transition-colors hover:border-blue-600 hover:bg-blue-600 cursor-pointer"
+                    className="w-full rounded-lg border border-white/15 bg-white/5 py-4 text-xs font-bold text-white transition-colors hover:border-blue-600 hover:bg-blue-600 cursor-pointer"
                   >
                     Servis Konsultatsiyasini Olish
                   </button>
@@ -702,7 +702,7 @@ export const HomePage: React.FC = () => {
           same navy gradient, same accent wash, same drafting grid. */}
       <Reveal as="section" className="bg-white py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#071531] via-[#0B1D3F] to-[#12305F] px-6 py-12 sm:px-12 sm:py-16 shadow-[0_40px_80px_-40px_rgba(10,37,64,0.7)]">
+          <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-[#071531] via-[#0B1D3F] to-[#12305F] px-6 py-12 sm:px-12 sm:py-16 shadow-lg">
 
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full bg-blue-600/25 blur-[140px]" />
@@ -742,7 +742,7 @@ export const HomePage: React.FC = () => {
 
                 <a
                   href={`tel:${siteSettings.phone.replace(/\s/g, '')}`}
-                  className="sm:flex-1 inline-flex flex-wrap items-center justify-center gap-x-2 rounded-xl border border-white/20 bg-white/10 px-6 sm:px-8 py-4 text-center text-xs font-bold text-white transition-all hover:bg-white/20 active:scale-[0.98] cursor-pointer"
+                  className="sm:flex-1 inline-flex flex-wrap items-center justify-center gap-x-2 rounded-lg border border-white/20 bg-white/10 px-6 sm:px-8 py-4 text-center text-xs font-bold text-white transition-all hover:bg-white/20 active:scale-[0.98] cursor-pointer"
                 >
                   <span className="tabular">{siteSettings.phone}</span>
                   <span>ga qoʻngʻiroq qiling</span>

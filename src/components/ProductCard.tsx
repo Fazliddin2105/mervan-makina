@@ -19,9 +19,9 @@ interface ProductCardProps {
 /* One hover signature for both layouts: a single lift plus a single shadow.
    Grid and list are the same card in two shapes, so they must react the same way. */
 const CARD_SHELL =
-  'group spotlight relative flex bg-white rounded-2xl border border-slate-200/80 shadow-sm ' +
+  'group spotlight relative flex bg-white rounded-lg border border-slate-200/80 shadow-sm ' +
   'transition-all duration-300 ease-out hover:-translate-y-1 hover:border-slate-300 ' +
-  'hover:shadow-[0_24px_48px_-24px_rgba(11,29,63,0.45)]';
+  'hover:shadow-md';
 
 /* Feeds the .spotlight highlight in index.css. Writing CSS variables straight
    onto the node keeps this off React's render path — moving the pointer never
@@ -151,7 +151,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
       <div className="absolute bottom-4 inset-x-4 z-20 flex opacity-0 translate-y-2 pointer-events-none transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
         <button
           onClick={() => setQuickViewProduct(product)}
-          className="flex-1 min-w-0 bg-[#0B1D3F]/90 backdrop-blur text-white text-xs font-bold py-2 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:bg-[#0B1D3F] transition-colors duration-200 cursor-pointer"
+          className="flex-1 min-w-0 bg-[#0B1D3F]/90 backdrop-blur text-white text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-2 shadow-lg hover:bg-[#0B1D3F] transition-colors duration-200 cursor-pointer"
         >
           <Eye size={14} className="shrink-0" />
           <span className="truncate">Tezkor Koʻrish</span>
@@ -185,7 +185,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
       <div onMouseMove={trackPointer} className={`${CARD_SHELL} flex-col md:flex-row md:items-stretch p-4 sm:p-6 gap-6 md:gap-6`}>
 
         {renderPlate(
-          'w-full h-52 md:w-56 md:h-44 lg:w-64 lg:h-48 shrink-0 rounded-xl border border-slate-200/70',
+          'w-full h-52 md:w-56 md:h-44 lg:w-64 lg:h-48 shrink-0 rounded-lg border border-slate-200/70',
           'p-6'
         )}
 

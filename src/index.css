@@ -109,9 +109,21 @@
     color: #ffffff;
   }
 
+  /* Keyboard focus must always be visible. The ring is drawn on the element
+     itself rather than as a box-shadow so it survives overflow:hidden parents,
+     and the white halo keeps it legible on both light and navy surfaces. */
   :focus-visible {
     outline: 2px solid #2563EB;
     outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* On the dark bands the accent alone is too close to the background. */
+  .bg-\[\#0B1D3F\] :focus-visible,
+  .bg-\[\#071531\] :focus-visible,
+  footer :focus-visible,
+  header :focus-visible {
+    outline-color: #93B4E8;
   }
 }
 
@@ -127,7 +139,7 @@
   .btn-secondary,
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-bold text-xs
-           rounded-xl transition-all duration-200 cursor-pointer
+           rounded-lg transition-all duration-200 ease-out cursor-pointer
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
            focus-visible:ring-blue-600 active:scale-[0.98]
            disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
@@ -147,7 +159,7 @@
   }
 
   .btn-icon {
-    @apply inline-flex items-center justify-center p-2.5 rounded-xl cursor-pointer
+    @apply inline-flex items-center justify-center p-2.5 rounded-lg cursor-pointer
            bg-slate-800/80 text-slate-200 border border-slate-700/60
            hover:bg-slate-700 hover:text-white transition-all duration-200
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600;
@@ -156,12 +168,13 @@
   /* One card surface. Elevation is reserved for modals and sticky panels. */
   .surface,
   .surface-interactive {
-    @apply bg-white rounded-2xl border border-slate-200/80 shadow-sm;
+    @apply bg-white rounded-lg border border-slate-200/80 shadow-sm;
   }
 
   .surface-interactive {
-    @apply transition-all duration-300 ease-out cursor-pointer
-           hover:-translate-y-1 hover:shadow-lg hover:border-slate-300;
+    @apply transition-all duration-200 ease-out cursor-pointer
+           hover:-translate-y-1 hover:shadow-md hover:border-slate-300
+           focus-within:border-blue-500;
   }
 
   .pill {

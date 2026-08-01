@@ -22,7 +22,7 @@ export const Toast: React.FC = () => {
       aria-live="polite"
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] max-w-[calc(100vw-2rem)] sm:max-w-md"
     >
-      <div className="flex items-start gap-4 bg-[#0B1D3F] text-white px-4 py-4 rounded-2xl shadow-2xl border border-slate-700 animate-in fade-in slide-in-from-bottom-4 duration-200">
+      <div className="flex items-start gap-4 bg-[#0B1D3F] text-white px-4 py-4 rounded-lg shadow-lg border border-slate-700 animate-in fade-in slide-in-from-bottom-4 duration-200">
         <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-1" />
         <p className="text-xs flex-1 min-w-0">{toastMessage}</p>
         <button

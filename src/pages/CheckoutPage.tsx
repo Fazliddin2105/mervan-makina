@@ -114,7 +114,7 @@ export const CheckoutPage: React.FC = () => {
   if (orderComplete) {
     return (
       <div className="max-w-2xl mx-auto my-12 surface p-8 sm:p-12 text-center space-y-6 font-sans">
-        <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-xl animate-bounce">
+        <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-lg animate-bounce">
           <CheckCircle2 size={44} />
         </div>
 
@@ -126,7 +126,7 @@ export const CheckoutPage: React.FC = () => {
           <p className="text-xs text-slate-500 font-mono">Buyurtma raqami: <span className="tabular font-bold text-slate-900">{completedOrderNum}</span></p>
         </div>
 
-        <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs text-slate-600 space-y-2 text-left">
+        <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs text-slate-600 space-y-2 text-left">
           <div className="flex justify-between font-bold text-[#0B1D3F]">
             <span>Tashkilot:</span>
             <span>{companyName}</span>
@@ -194,7 +194,7 @@ export const CheckoutPage: React.FC = () => {
                   value={companyName}
                   placeholder="MChJ Nomi"
                   onChange={(e) => setCompanyName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 pl-10 pr-4 font-medium"
                 />
               </Field>
 
@@ -205,7 +205,7 @@ export const CheckoutPage: React.FC = () => {
                   value={taxId}
                   placeholder="123456789"
                   onChange={(e) => setTaxId(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-mono tabular"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 pl-10 pr-4 font-mono tabular"
                 />
               </Field>
 
@@ -216,7 +216,7 @@ export const CheckoutPage: React.FC = () => {
                   value={contactName}
                   placeholder="Ism Familiya"
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 pl-10 pr-4 font-medium"
                 />
               </Field>
 
@@ -227,7 +227,7 @@ export const CheckoutPage: React.FC = () => {
                   value={phone}
                   placeholder="+998 __ ___ __ __"
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium tabular"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 pl-10 pr-4 font-medium tabular"
                 />
               </Field>
 
@@ -238,7 +238,7 @@ export const CheckoutPage: React.FC = () => {
                   value={email}
                   placeholder="buxgalteriya@kompaniya.uz"
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 pl-10 pr-4 font-medium"
                 />
               </Field>
             </div>
@@ -258,7 +258,7 @@ export const CheckoutPage: React.FC = () => {
                   value={address}
                   placeholder="Ko'cha, uy, tuman, shahar"
                   onChange={(e) => setAddress(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl py-2 pl-10 pr-4 font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 pl-10 pr-4 font-medium"
                 />
               </Field>
 
@@ -283,7 +283,7 @@ export const CheckoutPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div 
                 onClick={() => setPaymentMethod('wire')}
-                className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                   paymentMethod === 'wire' ? 'border-blue-600 bg-blue-50/50 font-bold' : 'border-slate-200 hover:border-slate-300'
                 }`}
               >
@@ -294,7 +294,7 @@ export const CheckoutPage: React.FC = () => {
 
               <div 
                 onClick={() => setPaymentMethod('card')}
-                className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                   paymentMethod === 'card' ? 'border-blue-600 bg-blue-50/50 font-bold' : 'border-slate-200 hover:border-slate-300'
                 }`}
               >
@@ -305,7 +305,7 @@ export const CheckoutPage: React.FC = () => {
 
               <div
                 onClick={() => setPaymentMethod('cash')}
-                className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                   paymentMethod === 'cash' ? 'border-blue-600 bg-blue-50/50 font-bold' : 'border-slate-200 hover:border-slate-300'
                 }`}
               >
@@ -316,7 +316,7 @@ export const CheckoutPage: React.FC = () => {
 
               <div
                 onClick={() => setPaymentMethod('leasing')}
-                className={`p-4 rounded-2xl border-2 cursor-pointer transition-all ${
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                   paymentMethod === 'leasing' ? 'border-blue-600 bg-blue-50/50 font-bold' : 'border-slate-200 hover:border-slate-300'
                 }`}
               >

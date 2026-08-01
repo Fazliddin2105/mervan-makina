@@ -49,7 +49,7 @@ export const ComparePage: React.FC = () => {
                       <img width={800} height={600} loading="lazy" decoding="async" 
                         src={p.images[0]} 
                         alt="" 
-                        className="h-28 object-contain mx-auto bg-white p-2 rounded-xl border border-slate-200" 
+                        className="h-28 object-contain mx-auto bg-white p-2 rounded-lg border border-slate-200" 
                         referrerPolicy="no-referrer"
                       />
                     </div>

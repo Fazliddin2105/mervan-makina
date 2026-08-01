@@ -26,7 +26,7 @@ export const RoiCalculator: React.FC = () => {
     : null;
 
   return (
-    <div className="bg-gradient-to-br from-[#0B1D3F] via-[#12305F] to-[#0B1D3F] text-white rounded-2xl p-6 md:p-12 shadow-2xl border border-slate-700/80 my-12 font-sans">
+    <div className="bg-gradient-to-br from-[#0B1D3F] via-[#12305F] to-[#0B1D3F] text-white rounded-lg p-6 md:p-12 shadow-lg border border-slate-700/80 my-12 font-sans">
       
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-700/80">
         <div className="space-y-2">
@@ -43,7 +43,7 @@ export const RoiCalculator: React.FC = () => {
 
         <button 
           onClick={() => setIsQuoteModalOpen(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-4 rounded-2xl text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30 transition-all cursor-pointer shrink-0"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-4 rounded-lg text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30 transition-all cursor-pointer shrink-0"
         >
           Shaxsiy ROI Hisobotini Olish
         </button>
@@ -108,7 +108,7 @@ export const RoiCalculator: React.FC = () => {
               <select
                 value={machineId}
                 onChange={(e) => setMachineId(e.target.value)}
-                className="w-full bg-slate-800 border border-slate-700 text-white text-xs rounded-xl p-2 cursor-pointer focus:outline-none focus:border-blue-600"
+                className="w-full bg-slate-800 border border-slate-700 text-white text-xs rounded-lg p-2 cursor-pointer focus:border-blue-600"
               >
                 {machines.map(m => (
                   <option key={m.id} value={m.id}>{m.name} — {formatPrice(m.priceUSD)}</option>
@@ -122,7 +122,7 @@ export const RoiCalculator: React.FC = () => {
         {/* Output Cards Right */}
         <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
           
-          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+          <div className="bg-slate-800/80 border border-slate-700 rounded-lg p-6 flex flex-col justify-between">
             <div className="flex items-center gap-2 text-xs text-slate-400 font-bold">
               <TrendingUp size={16} className="text-emerald-400" />
               <span>OYLIK TEJALADIGAN MABLAG'</span>
@@ -136,7 +136,7 @@ export const RoiCalculator: React.FC = () => {
             <p className="text-xs text-slate-400">Hisob {cleanersCount} ta xodim oʻrniga 1 ta operator qolishi taxminiga asoslangan.</p>
           </div>
 
-          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+          <div className="bg-slate-800/80 border border-slate-700 rounded-lg p-6 flex flex-col justify-between">
             <div className="flex items-center gap-2 text-xs text-slate-400 font-bold">
               <DollarSign size={16} className="text-blue-400" />
               <span>YILLIK SOF TEJASH</span>
@@ -150,7 +150,7 @@ export const RoiCalculator: React.FC = () => {
             <p className="text-xs text-slate-400">Korxonangiz byudjetiga qaytadigan tejalgan mablag'.</p>
           </div>
 
-          <div className="sm:col-span-2 bg-gradient-to-r from-blue-600/20 to-blue-500/10 border border-blue-600/40 rounded-2xl p-6 flex items-center justify-between gap-4">
+          <div className="sm:col-span-2 bg-gradient-to-r from-blue-600/20 to-blue-500/10 border border-blue-600/40 rounded-lg p-6 flex items-center justify-between gap-4">
             <div className="min-w-0">
               <span className="text-xs text-blue-300 font-bold uppercase tracking-wider block">
                 Oʻzini oqlash muddati

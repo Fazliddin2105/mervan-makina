@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
             </button>
             <a
               href={tel}
-              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-xs font-bold text-white bg-white/10 border border-white/20 hover:bg-white/15 transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg text-xs font-bold text-white bg-white/10 border border-white/20 hover:bg-white/15 transition-colors duration-200"
             >
               <Phone size={15} />
               <span className="tabular">{siteSettings.phone}</span>
@@ -148,7 +148,7 @@ export const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     title={s.label}
                     aria-label={s.label}
-                    className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white flex items-center justify-center transition-colors duration-200"
+                    className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white flex items-center justify-center transition-colors duration-200"
                   >
                     <Icon size={16} />
                   </a>

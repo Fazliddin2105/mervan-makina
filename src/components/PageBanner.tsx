@@ -16,7 +16,7 @@ interface PageBannerProps {
 }
 
 export const PageBanner: React.FC<PageBannerProps> = ({ eyebrow, title, subtitle, children }) => (
-  <div className="relative overflow-hidden bg-[#0B1D3F] text-white rounded-2xl p-8 sm:p-12 shadow-xl border border-white/10 text-center sm:text-left">
+  <div className="relative overflow-hidden bg-[#0B1D3F] text-white rounded-lg p-8 sm:p-12 shadow-lg border border-white/10 text-center sm:text-left">
     {/* Single soft wash for depth. No pattern — it would compete with the copy. */}
     <div className="pointer-events-none absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full bg-blue-600/15 blur-[140px]" />
 

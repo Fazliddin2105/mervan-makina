@@ -64,7 +64,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   const tile = (
     <span
       aria-hidden="true"
-      className={`${TILE_SIZE[size]} shrink-0 rounded-xl flex items-center justify-center font-bold tracking-tight shadow-sm ring-1 ring-black/5`}
+      className={`${TILE_SIZE[size]} shrink-0 rounded-lg flex items-center justify-center font-bold tracking-tight shadow-sm ring-1 ring-black/5`}
       style={{ backgroundColor: tone.bg, color: tone.fg }}
     >
       {monogram}

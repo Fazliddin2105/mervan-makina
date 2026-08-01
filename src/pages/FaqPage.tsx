@@ -33,7 +33,7 @@ export const FaqPage: React.FC = () => {
             placeholder="Savollarni qidiring (masalan: kafolat, litiy batareya, ehtiyot qismlar)..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-12 pr-4 py-4 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-600"
+            className="w-full bg-slate-900 border border-slate-700 rounded-lg pl-12 pr-4 py-4 text-xs text-white placeholder-slate-400 focus:border-blue-600"
           />
           <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
         </div>
@@ -45,7 +45,7 @@ export const FaqPage: React.FC = () => {
           <button
             key={cat}
             onClick={() => setActiveCat(cat)}
-            className={`px-4 py-2 rounded-xl font-bold transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-lg font-bold transition-all cursor-pointer ${
               activeCat === cat ? 'bg-[#0B1D3F] text-white shadow' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
             }`}
           >
@@ -105,7 +105,7 @@ export const FaqPage: React.FC = () => {
       </div>
 
       {/* Contact CTA */}
-      <div className="bg-slate-100 rounded-2xl p-8 text-center space-y-4 max-w-xl mx-auto border border-slate-200">
+      <div className="bg-slate-100 rounded-lg p-8 text-center space-y-4 max-w-xl mx-auto border border-slate-200">
         <h3 className="font-bold text-[#0B1D3F] text-base">Hali ham savollaringiz bormi?</h3>
         <p className="text-xs text-slate-500">Texnik qoʻllab-quvvatlash: {siteSettings.workingHours}</p>
         <div className="pt-2 flex flex-wrap justify-center gap-4">

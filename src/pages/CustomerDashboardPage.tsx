@@ -52,7 +52,7 @@ export const CustomerDashboardPage: React.FC = () => {
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id as any)}
-              className={`px-4 py-2 rounded-xl font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all cursor-pointer ${
                 activeTab === t.id ? 'bg-[#0B1D3F] text-white shadow' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
               }`}
             >

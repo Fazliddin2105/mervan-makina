@@ -12,7 +12,7 @@ const hasValue = (value?: string) => {
 const KeySpec: React.FC<{ label: string; value: string; icon?: React.ReactNode }> = ({ label, value, icon }) => {
   const filled = hasValue(value);
   return (
-    <div className="rounded-xl border border-slate-200/80 bg-slate-50/80 px-2 py-2">
+    <div className="rounded-lg border border-slate-200/80 bg-slate-50/80 px-2 py-2">
       <span className="block text-xs font-bold uppercase tracking-[0.1em] text-slate-400">
         {label}
       </span>
@@ -40,12 +40,12 @@ export const QuickViewModal: React.FC = () => {
     <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
       {/* Capped to the visible area and scrolled internally, so the modal stays
           usable on short/landscape viewports instead of overflowing them. */}
-      <div className="relative flex max-h-[calc(100vh-2rem)] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative flex max-h-[calc(100vh-2rem)] w-full max-w-4xl flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg animate-in fade-in zoom-in-95 duration-200">
 
         {/* Close Button — outside the scroll area so it stays reachable. */}
         <button
           onClick={() => setQuickViewProduct(null)}
-          className="absolute top-4 right-4 z-20 flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white/90 text-slate-600 backdrop-blur-sm transition-colors hover:bg-slate-100 hover:text-[#0B1D3F] cursor-pointer"
+          className="absolute top-4 right-4 z-20 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-white/90 text-slate-600 backdrop-blur-sm transition-colors hover:bg-slate-100 hover:text-[#0B1D3F] cursor-pointer"
           aria-label="Yopish"
         >
           <X size={18} />
@@ -64,7 +64,7 @@ export const QuickViewModal: React.FC = () => {
                   src={product.images[selectedImgIndex] || product.images[0]}
                   alt={product.name}
                   referrerPolicy="no-referrer"
-                  className="max-h-full max-w-full object-contain drop-shadow-[0_14px_22px_rgba(10,37,64,0.14)]"
+                  className="max-h-full max-w-full object-contain drop-shadow-sm"
                 />
               </div>
 
@@ -82,7 +82,7 @@ export const QuickViewModal: React.FC = () => {
                       onClick={() => setSelectedImgIndex(i)}
                       aria-label={`${i + 1}-surat`}
                       aria-current={selectedImgIndex === i}
-                      className={`h-12 w-12 shrink-0 rounded-xl border bg-white p-1 transition-all cursor-pointer ${
+                      className={`h-12 w-12 shrink-0 rounded-lg border bg-white p-1 transition-all cursor-pointer ${
                         selectedImgIndex === i
                           ? 'border-[#0B1D3F] ring-2 ring-blue-600/70 ring-offset-1 ring-offset-slate-50'
                           : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
@@ -171,11 +171,11 @@ export const QuickViewModal: React.FC = () => {
                   </div>
 
                   {product.inStock ? (
-                    <span className="flex shrink-0 items-center gap-2 rounded-xl bg-emerald-50 px-2 py-1 text-xs font-bold text-emerald-700">
+                    <span className="flex shrink-0 items-center gap-2 rounded-lg bg-emerald-50 px-2 py-1 text-xs font-bold text-emerald-700">
                       <CheckCircle2 size={12} /> Omborda bor
                     </span>
                   ) : (
-                    <span className="flex shrink-0 items-center gap-2 rounded-xl bg-amber-50 px-2 py-1 text-xs font-bold text-amber-700">
+                    <span className="flex shrink-0 items-center gap-2 rounded-lg bg-amber-50 px-2 py-1 text-xs font-bold text-amber-700">
                       <span className="h-1.5 w-1.5 rounded-full bg-blue-500" /> Buyurtma asosida
                     </span>
                   )}

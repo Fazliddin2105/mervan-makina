@@ -34,15 +34,15 @@ export const LoginPage: React.FC = () => {
           </div>
 
           <div className="grid gap-4 surface p-6 sm:grid-cols-2">
-            <div className="rounded-2xl bg-slate-50 p-4">
-              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600">
+            <div className="rounded-lg bg-slate-50 p-4">
+              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600/10 text-blue-600">
                 <ShieldCheck size={18} />
               </div>
               <h2 className="font-bold text-[#0B1D3F]">Buyurtmalarni kuzatish</h2>
               <p className="mt-1 text-sm text-slate-600">Xaridlar tarixi va yuborilgan soʻrovlaringizni koʻrib chiqing.</p>
             </div>
-            <div className="rounded-2xl bg-slate-50 p-4">
-              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600">
+            <div className="rounded-lg bg-slate-50 p-4">
+              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600/10 text-blue-600">
                 <Lock size={18} />
               </div>
               <h2 className="font-bold text-[#0B1D3F]">Maʼlumotlar brauzeringizda</h2>
@@ -51,7 +51,7 @@ export const LoginPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-xl surface p-8 shadow-2xl">
+        <div className="w-full max-w-xl surface p-8 shadow-lg">
           <div className="mb-6">
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-blue-600">Xush kelibsiz</p>
             <h2 className="mt-2 text-2xl font-bold text-[#0B1D3F]">Tizimga kirish</h2>
@@ -61,7 +61,7 @@ export const LoginPage: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <label className="block text-sm font-bold text-slate-700">
               Elektron pochta
-              <div className="mt-2 flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+              <div className="mt-2 flex items-center gap-4 rounded-lg border border-slate-200 bg-slate-50 px-4 py-4">
                 <Mail size={16} className="text-slate-400" />
                 <input
                   type="email"
@@ -76,7 +76,7 @@ export const LoginPage: React.FC = () => {
 
             <label className="block text-sm font-bold text-slate-700">
               Parol
-              <div className="mt-2 flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+              <div className="mt-2 flex items-center gap-4 rounded-lg border border-slate-200 bg-slate-50 px-4 py-4">
                 <Lock size={16} className="text-slate-400" />
                 <input
                   type="password"
@@ -101,7 +101,7 @@ export const LoginPage: React.FC = () => {
             <button
               type="button"
               onClick={() => setActivePage('admin')}
-              className="rounded-2xl border border-slate-200 px-4 py-4 text-left font-bold text-slate-700 transition hover:border-blue-300 hover:text-blue-700 cursor-pointer"
+              className="rounded-lg border border-slate-200 px-4 py-4 text-left font-bold text-slate-700 transition hover:border-blue-300 hover:text-blue-700 cursor-pointer"
             >
               Administrator panelini ochish
             </button>
@@ -109,7 +109,7 @@ export const LoginPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActivePage('dashboard')}
-                className="rounded-2xl bg-blue-50 px-4 py-4 text-left font-bold text-blue-800 transition hover:bg-blue-100 cursor-pointer"
+                className="rounded-lg bg-blue-50 px-4 py-4 text-left font-bold text-blue-800 transition hover:bg-blue-100 cursor-pointer"
               >
                 Siz allaqachon tizimdasiz. Kabinetga oʻtish.
               </button>

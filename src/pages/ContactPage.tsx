@@ -143,7 +143,7 @@ export const ContactPage: React.FC = () => {
                         href={s.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${isGradient ? 'bg-gradient-to-br ' + colorCls : colorCls} text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition-all hover:scale-105`}
+                        className={`${isGradient ? 'bg-gradient-to-br ' + colorCls : colorCls} text-white font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-2 transition-all hover:scale-105`}
                       >
                         <Icon size={16} />
                         <span>{s.label}</span>
@@ -168,7 +168,7 @@ export const ContactPage: React.FC = () => {
                   placeholder="Ismingizni yozing"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2"
                 />
               </div>
 
@@ -180,7 +180,7 @@ export const ContactPage: React.FC = () => {
                   placeholder="+998 90 123 45 67"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2"
                 />
               </div>
             </div>
@@ -192,7 +192,7 @@ export const ContactPage: React.FC = () => {
                 placeholder="Kompaniya nomi"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"
+                className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2"
               />
             </div>
 
@@ -203,7 +203,7 @@ export const ContactPage: React.FC = () => {
                 placeholder="Qanday mahsulot va qancha miqdorda kerak..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"
+                className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2"
               />
             </div>
 
@@ -216,14 +216,14 @@ export const ContactPage: React.FC = () => {
 
         {/* Map & location card */}
         <div className="lg:col-span-6 space-y-6">
-          <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl flex flex-col justify-between text-white space-y-6">
+          <div className="bg-slate-900 rounded-lg p-6 border border-slate-800 shadow-lg flex flex-col justify-between text-white space-y-6">
             <div className="space-y-1">
               <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">Joylashuv</span>
               <h3 className="font-bold text-xl">{siteSettings.brandName} — {siteSettings.city}</h3>
             </div>
 
             {siteSettings.mapEmbedUrl ? (
-              <div className="relative h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
+              <div className="relative h-80 bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
                 <iframe
                   src={siteSettings.mapEmbedUrl}
                   className="w-full h-full border-0"
@@ -233,10 +233,10 @@ export const ContactPage: React.FC = () => {
                 />
               </div>
             ) : (
-              <div className="relative h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 flex items-center justify-center p-6 text-center">
+              <div className="relative h-80 bg-slate-800 rounded-lg overflow-hidden border border-slate-700 flex items-center justify-center p-6 text-center">
                 <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
                 <div className="relative z-10 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center mx-auto shadow-2xl animate-bounce">
+                  <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center mx-auto shadow-lg animate-bounce">
                     <Building2 size={32} />
                   </div>
                   <div>
@@ -247,7 +247,7 @@ export const ContactPage: React.FC = () => {
               </div>
             )}
 
-            <div className="p-4 bg-slate-800/80 rounded-2xl border border-slate-700 text-xs text-slate-300 flex items-center justify-between">
+            <div className="p-4 bg-slate-800/80 rounded-lg border border-slate-700 text-xs text-slate-300 flex items-center justify-between">
               <span className="tabular">{siteSettings.workingHours}</span>
               <span className="text-blue-400 font-bold">Bugun ochiq</span>
             </div>

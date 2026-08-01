@@ -9,7 +9,7 @@ export const AboutUsPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-12">
 
       {/* Banner */}
-      <div className="bg-[#0B1D3F] text-white rounded-2xl p-8 sm:p-12 shadow-xl border border-slate-800 space-y-4 text-center sm:text-left">
+      <div className="bg-[#0B1D3F] text-white rounded-lg p-8 sm:p-12 shadow-lg border border-slate-800 space-y-4 text-center sm:text-left">
         <span className="bg-blue-600 text-white font-bold text-xs px-4 py-1 rounded-full uppercase tracking-wider">
           Biz haqimizda
         </span>
@@ -54,13 +54,13 @@ export const AboutUsPage: React.FC = () => {
           <div className="pt-4 flex flex-wrap gap-4">
             <button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-blue-600 text-white font-bold px-6 py-4 rounded-xl text-xs hover:bg-blue-700 transition-colors cursor-pointer"
+              className="bg-blue-600 text-white font-bold px-6 py-4 rounded-lg text-xs hover:bg-blue-700 transition-colors cursor-pointer"
             >
               Tijorat taklifi soʻrash
             </button>
             <button
               onClick={() => setActivePage('contact')}
-              className="bg-slate-100 text-slate-800 font-bold px-6 py-4 rounded-xl text-xs hover:bg-slate-200 transition-colors cursor-pointer"
+              className="bg-slate-100 text-slate-800 font-bold px-6 py-4 rounded-lg text-xs hover:bg-slate-200 transition-colors cursor-pointer"
             >
               Bogʻlanish
             </button>
@@ -71,7 +71,7 @@ export const AboutUsPage: React.FC = () => {
           <img width={1280} height={960} loading="lazy" decoding="async"
             src="/images/scrubber-hero.jpg"
             alt={`${siteSettings.brandName} pol yuvish mashinasi`}
-            className="rounded-2xl shadow-2xl border border-slate-200 object-cover w-full h-96"
+            className="rounded-lg shadow-lg border border-slate-200 object-cover w-full h-96"
           />
         </div>
       </div>
@@ -87,8 +87,8 @@ export const AboutUsPage: React.FC = () => {
         ].map((item, i) => {
           const Icon = item.icon;
           return (
-            <div key={i} className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-2">
-              <div className="w-11 h-11 rounded-xl bg-blue-600/10 border border-blue-600/20 text-blue-700 flex items-center justify-center">
+            <div key={i} className="p-6 bg-white rounded-lg border border-slate-200 shadow-sm space-y-2">
+              <div className="w-11 h-11 rounded-lg bg-blue-600/10 border border-blue-600/20 text-blue-700 flex items-center justify-center">
                 <Icon size={20} />
               </div>
               <h3 className="font-bold text-[#0B1D3F] text-sm">{item.label}</h3>
@@ -99,8 +99,8 @@ export const AboutUsPage: React.FC = () => {
       </div>
 
       {/* Service */}
-      <div className="bg-white rounded-2xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-4">
-        <div className="w-12 h-12 rounded-xl bg-[#0B1D3F] text-white flex items-center justify-center">
+      <div className="bg-white rounded-lg p-8 sm:p-12 border border-slate-200 shadow-sm space-y-4">
+        <div className="w-12 h-12 rounded-lg bg-[#0B1D3F] text-white flex items-center justify-center">
           <Wrench size={22} />
         </div>
         <h2 className="text-xl font-bold text-[#0B1D3F]">Servis va ehtiyot qismlar</h2>

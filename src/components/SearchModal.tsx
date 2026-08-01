@@ -20,7 +20,7 @@ export const SearchModal: React.FC = () => {
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-start justify-center pt-24 px-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden border border-slate-200 animate-in fade-in slide-in-from-top-10 duration-200">
+      <div className="bg-white rounded-lg max-w-2xl w-full shadow-lg overflow-hidden border border-slate-200 animate-in fade-in slide-in-from-top-10 duration-200">
         
         {/* Search Input Bar */}
         <div className="p-4 border-b border-slate-100 flex items-center gap-4">
@@ -31,7 +31,7 @@ export const SearchModal: React.FC = () => {
             placeholder="Model, nom yoki turi boʻyicha qidiring (MK-3, pol yuvish...)"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full text-base font-medium text-slate-800 placeholder-slate-400 focus:outline-none"
+            className="w-full text-base font-medium text-slate-800 placeholder-slate-400"
           />
           <button
             onClick={() => setIsSearchModalOpen(false)}
@@ -56,13 +56,13 @@ export const SearchModal: React.FC = () => {
                       setActivePage('product-detail');
                       setIsSearchModalOpen(false);
                     }}
-                    className="p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 flex items-center justify-between gap-4 cursor-pointer transition-all"
+                    className="p-4 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 flex items-center justify-between gap-4 cursor-pointer transition-all"
                   >
                     <div className="flex items-center gap-4">
                       <img width={800} height={600} loading="lazy" decoding="async" 
                         src={product.images[0]} 
                         alt="" 
-                        className="w-12 h-12 object-contain bg-slate-100 rounded-xl p-1 shrink-0" 
+                        className="w-12 h-12 object-contain bg-slate-100 rounded-lg p-1 shrink-0" 
                         referrerPolicy="no-referrer"
                       />
                       <div>
@@ -94,7 +94,7 @@ export const SearchModal: React.FC = () => {
                   <button
                     key={tag}
                     onClick={() => setQuery(tag)}
-                    className="bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 px-4 py-2 rounded-xl font-medium transition-colors cursor-pointer"
+                    className="bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer"
                   >
                     {tag}
                   </button>

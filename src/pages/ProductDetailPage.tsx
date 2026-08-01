@@ -41,7 +41,7 @@ const KeySpec: React.FC<{
 }> = ({ label, value, icon }) => {
   const filled = hasValue(value);
   return (
-    <div className="rounded-xl border border-slate-200/80 bg-slate-50/80 px-4 py-2">
+    <div className="rounded-lg border border-slate-200/80 bg-slate-50/80 px-4 py-2">
       <span className="block text-xs font-bold uppercase tracking-[0.1em] text-slate-400">
         {label}
       </span>
@@ -161,7 +161,7 @@ export const ProductDetailPage: React.FC = () => {
                   decoding="async"
                   loading={i === 0 ? 'eager' : 'lazy'}
                   className={`absolute inset-0 h-full w-full object-contain p-6 sm:p-12
-                              drop-shadow-[0_18px_28px_rgba(11,29,63,0.14)]
+                              drop-shadow-sm
                               transition-opacity duration-500 ease-out
                               ${i === activeImgIndex ? 'opacity-100' : 'opacity-0'}`}
                 />
@@ -177,19 +177,19 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   onClick={() => setActiveImgIndex(i => (i - 1 + product.images.length) % product.images.length)}
                   aria-label="Oldingi surat"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-white/95 border border-slate-200 shadow-sm flex items-center justify-center text-[#0B1D3F] hover:bg-white hover:border-slate-300 hover:shadow transition-all cursor-pointer"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-lg bg-white/95 border border-slate-200 shadow-sm flex items-center justify-center text-[#0B1D3F] hover:bg-white hover:border-slate-300 hover:shadow transition-all cursor-pointer"
                 >
                   <ChevronLeft size={18} />
                 </button>
                 <button
                   onClick={() => setActiveImgIndex(i => (i + 1) % product.images.length)}
                   aria-label="Keyingi surat"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-white/95 border border-slate-200 shadow-sm flex items-center justify-center text-[#0B1D3F] hover:bg-white hover:border-slate-300 hover:shadow transition-all cursor-pointer"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-lg bg-white/95 border border-slate-200 shadow-sm flex items-center justify-center text-[#0B1D3F] hover:bg-white hover:border-slate-300 hover:shadow transition-all cursor-pointer"
                 >
                   <ChevronRight size={18} />
                 </button>
 
-                <span className="absolute bottom-4 right-4 rounded-xl bg-[#0B1D3F]/90 px-2 py-1 text-xs font-bold text-white backdrop-blur-sm">
+                <span className="absolute bottom-4 right-4 rounded-lg bg-[#0B1D3F]/90 px-2 py-1 text-xs font-bold text-white backdrop-blur-sm">
                   <span className="tabular">{activeImgIndex + 1}</span>
                   <span className="text-white/50"> / </span>
                   <span className="tabular text-white/70">{product.images.length}</span>
@@ -206,7 +206,7 @@ export const ProductDetailPage: React.FC = () => {
                   onClick={() => setActiveImgIndex(i)}
                   aria-label={`${i + 1}-surat`}
                   aria-current={activeImgIndex === i}
-                  className={`relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-xl p-2 bg-white shrink-0 cursor-pointer border transition-all ${
+                  className={`relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-lg p-2 bg-white shrink-0 cursor-pointer border transition-all ${
                     activeImgIndex === i
                       ? 'border-[#0B1D3F] ring-2 ring-blue-600/70 ring-offset-1 ring-offset-[#F5F7FA]'
                       : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
@@ -285,7 +285,7 @@ export const ProductDetailPage: React.FC = () => {
           </div>
 
           {/* Price — the anchor of the panel */}
-          <div className="mt-6 rounded-2xl border border-slate-200/80 bg-gradient-to-b from-slate-50 to-white p-4">
+          <div className="mt-6 rounded-lg border border-slate-200/80 bg-gradient-to-b from-slate-50 to-white p-4">
             <span className="block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">
               Narxi
             </span>
@@ -320,11 +320,11 @@ export const ProductDetailPage: React.FC = () => {
           {/* Quantity & Add to Cart / Quote */}
           <div className="mt-4 space-y-2">
             <div className="flex items-center gap-2">
-              <div className="flex items-center rounded-xl border border-slate-200 bg-slate-100 p-1 shrink-0">
+              <div className="flex items-center rounded-lg border border-slate-200 bg-slate-100 p-1 shrink-0">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   aria-label="Sonini kamaytirish"
-                  className="w-8 h-8 rounded-xl bg-white text-slate-700 font-bold flex items-center justify-center border border-slate-200/80 hover:bg-slate-50 hover:text-[#0B1D3F] transition-colors cursor-pointer"
+                  className="w-8 h-8 rounded-lg bg-white text-slate-700 font-bold flex items-center justify-center border border-slate-200/80 hover:bg-slate-50 hover:text-[#0B1D3F] transition-colors cursor-pointer"
                 >
                   <Minus size={14} />
                 </button>
@@ -332,7 +332,7 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   onClick={() => setQuantity(quantity + 1)}
                   aria-label="Sonini oshirish"
-                  className="w-8 h-8 rounded-xl bg-white text-slate-700 font-bold flex items-center justify-center border border-slate-200/80 hover:bg-slate-50 hover:text-[#0B1D3F] transition-colors cursor-pointer"
+                  className="w-8 h-8 rounded-lg bg-white text-slate-700 font-bold flex items-center justify-center border border-slate-200/80 hover:bg-slate-50 hover:text-[#0B1D3F] transition-colors cursor-pointer"
                 >
                   <Plus size={14} />
                 </button>
@@ -360,7 +360,7 @@ export const ProductDetailPage: React.FC = () => {
           <div className="mt-4 grid grid-cols-3 gap-1 border-t border-slate-100 pt-4">
             <button
               onClick={() => toggleWishlist(product)}
-              className={`flex flex-col items-center gap-2 rounded-xl px-1 py-2 text-xs font-bold text-center transition-colors cursor-pointer ${
+              className={`flex flex-col items-center gap-2 rounded-lg px-1 py-2 text-xs font-bold text-center transition-colors cursor-pointer ${
                 isWish ? 'text-rose-500' : 'text-slate-600 hover:bg-slate-50 hover:text-blue-700'
               }`}
             >
@@ -370,7 +370,7 @@ export const ProductDetailPage: React.FC = () => {
 
             <button
               onClick={() => addToCompare(product)}
-              className={`flex flex-col items-center gap-2 rounded-xl px-1 py-2 text-xs font-bold text-center transition-colors cursor-pointer ${
+              className={`flex flex-col items-center gap-2 rounded-lg px-1 py-2 text-xs font-bold text-center transition-colors cursor-pointer ${
                 isComp ? 'text-blue-700' : 'text-slate-600 hover:bg-slate-50 hover:text-blue-700'
               }`}
             >
@@ -380,7 +380,7 @@ export const ProductDetailPage: React.FC = () => {
 
             <button
               onClick={() => { navigator.clipboard.writeText(window.location.href); showToast('Mahsulot havolasi nusxalandi!'); }}
-              className="flex flex-col items-center gap-2 rounded-xl px-1 py-2 text-xs font-bold text-center text-slate-600 hover:bg-slate-50 hover:text-blue-700 transition-colors cursor-pointer"
+              className="flex flex-col items-center gap-2 rounded-lg px-1 py-2 text-xs font-bold text-center text-slate-600 hover:bg-slate-50 hover:text-blue-700 transition-colors cursor-pointer"
             >
               <Share2 size={16} />
               <span>Ulashish</span>
@@ -407,7 +407,7 @@ export const ProductDetailPage: React.FC = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
                   aria-current={isActive}
-                  className={`rounded-xl px-4 py-2 text-xs font-bold transition-all cursor-pointer ${
+                  className={`rounded-lg px-4 py-2 text-xs font-bold transition-all cursor-pointer ${
                     isActive
                       ? 'bg-[#0B1D3F] text-white shadow-sm'
                       : 'bg-white text-slate-600 border border-slate-200/80 hover:border-slate-300 hover:text-[#0B1D3F]'
@@ -436,7 +436,7 @@ export const ProductDetailPage: React.FC = () => {
 
             {/* The table keeps a minimum width and scrolls inside this container,
                 so long spec values never stretch the page at 360px. */}
-            <div className="overflow-x-auto rounded-2xl border border-slate-200">
+            <div className="overflow-x-auto rounded-lg border border-slate-200">
               <table className="w-full min-w-[520px] border-collapse text-left">
                 <thead>
                   <tr className="bg-[#0B1D3F] text-white">
@@ -489,7 +489,7 @@ export const ProductDetailPage: React.FC = () => {
                 {product.usageArea.map((area, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-bold text-slate-700"
+                    className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-bold text-slate-700"
                   >
                     <span className="h-1.5 w-1.5 rounded-full bg-blue-600 shrink-0" />
                     {area}
@@ -522,7 +522,7 @@ export const ProductDetailPage: React.FC = () => {
               ].map((doc, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start justify-between gap-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50/60 p-4"
+                  className="flex items-start justify-between gap-4 rounded-lg border border-dashed border-slate-300 bg-slate-50/60 p-4"
                 >
                   <div className="min-w-0 space-y-2">
                     <FileText size={16} className="text-slate-400" />
@@ -531,7 +531,7 @@ export const ProductDetailPage: React.FC = () => {
                   </div>
                   <button
                     onClick={() => showToast('Hujjat hozircha yuklab olish uchun mavjud emas.')}
-                    className="shrink-0 rounded-xl border border-slate-200 bg-white p-2 text-slate-400 hover:text-slate-600 hover:border-slate-300 transition-colors cursor-pointer"
+                    className="shrink-0 rounded-lg border border-slate-200 bg-white p-2 text-slate-400 hover:text-slate-600 hover:border-slate-300 transition-colors cursor-pointer"
                     aria-label="Hujjatni yuklab olish"
                   >
                     <Download size={16} />
@@ -554,7 +554,7 @@ export const ProductDetailPage: React.FC = () => {
             </div>
 
             {product.videoUrl ? (
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-200 bg-[#071531]">
+              <div className="relative aspect-video rounded-lg overflow-hidden border border-slate-200 bg-[#071531]">
                 <iframe
                   src={product.videoUrl}
                   title={`${product.name} — video`}
@@ -565,8 +565,8 @@ export const ProductDetailPage: React.FC = () => {
                 />
               </div>
             ) : (
-              <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-16 text-center">
-                <div className="mx-auto w-12 h-12 rounded-xl bg-slate-200 text-slate-500 flex items-center justify-center mb-4">
+              <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 px-6 py-16 text-center">
+                <div className="mx-auto w-12 h-12 rounded-lg bg-slate-200 text-slate-500 flex items-center justify-center mb-4">
                   <Play size={22} />
                 </div>
                 <p className="text-sm font-bold text-[#0B1D3F]">
@@ -596,7 +596,7 @@ export const ProductDetailPage: React.FC = () => {
             <div className="space-y-4">
               {product.reviews && product.reviews.length > 0 ? (
                 product.reviews.map((r) => (
-                  <div key={r.id} className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 space-y-2">
+                  <div key={r.id} className="rounded-lg border border-slate-200 bg-slate-50/70 p-4 space-y-2">
                     <div className="flex items-start justify-between gap-4">
                       <div className="min-w-0">
                         <span className="block text-sm font-bold text-[#0B1D3F] truncate">{r.userName}</span>
@@ -612,8 +612,8 @@ export const ProductDetailPage: React.FC = () => {
                   </div>
                 ))
               ) : (
-                <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50/60 px-6 py-12 text-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white">
+                <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-slate-300 bg-slate-50/60 px-6 py-12 text-center">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-slate-200 bg-white">
                     <MessageSquare size={20} className="text-slate-400" />
                   </div>
                   <h3 className="mt-4 text-sm font-bold text-[#0B1D3F]">
@@ -627,7 +627,7 @@ export const ProductDetailPage: React.FC = () => {
             </div>
 
             {/* Write Review Form */}
-            <form onSubmit={handleAddReview} className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 space-y-4">
+            <form onSubmit={handleAddReview} className="rounded-lg border border-slate-200 bg-slate-50/70 p-6 space-y-4">
               <h3 className="text-sm font-bold text-[#0B1D3F]">Sharh qoldirish</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
@@ -636,14 +636,14 @@ export const ProductDetailPage: React.FC = () => {
                   placeholder="Ismingiz *"
                   value={reviewName}
                   onChange={(e) => setReviewName(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs text-slate-800 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none transition-colors"
+                  className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-xs text-slate-800 placeholder:text-slate-400 focus:border-blue-600 transition-colors"
                 />
                 <input
                   type="text"
                   placeholder="Tashkilot / kompaniya nomi"
                   value={reviewCompany}
                   onChange={(e) => setReviewCompany(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs text-slate-800 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none transition-colors"
+                  className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-xs text-slate-800 placeholder:text-slate-400 focus:border-blue-600 transition-colors"
                 />
               </div>
               <textarea
@@ -652,7 +652,7 @@ export const ProductDetailPage: React.FC = () => {
                 placeholder="Mashina unumdorligi, batareya ish vaqti va tozalash natijalari haqida yozing..."
                 value={reviewText}
                 onChange={(e) => setReviewText(e.target.value)}
-                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs text-slate-800 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none transition-colors resize-y"
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-xs text-slate-800 placeholder:text-slate-400 focus:border-blue-600 transition-colors resize-y"
               />
               <button type="submit" className="btn-secondary">
                 Sharhni yuborish
@@ -678,9 +678,9 @@ export const ProductDetailPage: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {accessories.map((acc) => (
-              <div key={acc.id} className="flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
+              <div key={acc.id} className="flex items-center justify-between gap-4 rounded-lg border border-slate-200 bg-slate-50/70 p-4">
                 <div className="flex min-w-0 items-center gap-4">
-                  <img width={800} height={600} loading="lazy" decoding="async" src={acc.images[0]} alt="" className="h-14 w-14 shrink-0 rounded-xl bg-white p-1 object-contain border border-slate-200/80" referrerPolicy="no-referrer" />
+                  <img width={800} height={600} loading="lazy" decoding="async" src={acc.images[0]} alt="" className="h-14 w-14 shrink-0 rounded-lg bg-white p-1 object-contain border border-slate-200/80" referrerPolicy="no-referrer" />
                   <div className="min-w-0">
                     <h3 className="text-xs font-bold text-[#0B1D3F] line-clamp-2">{acc.name}</h3>
                     <span className="tabular mt-1 block text-sm font-bold text-[#0B1D3F]">{formatPrice(acc.priceUSD)}</span>

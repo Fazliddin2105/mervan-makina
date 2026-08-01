@@ -43,7 +43,7 @@ export const CartPage: React.FC = () => {
                     <img width={800} height={600} loading="lazy" decoding="async" 
                       src={item.product.images[0]} 
                       alt="" 
-                      className="w-20 h-20 object-contain bg-slate-50 rounded-2xl p-2 border border-slate-200 shrink-0" 
+                      className="w-20 h-20 object-contain bg-slate-50 rounded-lg p-2 border border-slate-200 shrink-0" 
                       referrerPolicy="no-referrer"
                     />
                     <div>
@@ -61,7 +61,7 @@ export const CartPage: React.FC = () => {
                   <div className="flex items-center justify-between w-full sm:w-auto gap-6">
                     
                     {/* Quantity Stepper */}
-                    <div className="flex items-center bg-slate-100 rounded-xl p-1 border border-slate-200">
+                    <div className="flex items-center bg-slate-100 rounded-lg p-1 border border-slate-200">
                       <button 
                         onClick={() => updateCartQuantity(item.product.id, item.quantity - 1)}
                         className="w-7 h-7 rounded-lg bg-white text-slate-700 font-bold flex items-center justify-center hover:bg-slate-200 cursor-pointer"
@@ -138,7 +138,7 @@ export const CartPage: React.FC = () => {
                 placeholder="Promokod (MEGAVAN10)"
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value)}
-                className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-4 py-2 text-xs uppercase"
+                className="flex-1 bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs uppercase"
               />
               <button type="submit" className="btn-secondary px-4 py-2">
                 Qoʻllash
@@ -162,7 +162,7 @@ export const CartPage: React.FC = () => {
               </button>
             </div>
 
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-500 space-y-1">
+            <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-500 space-y-1">
               <div className="flex items-center gap-2 font-bold text-slate-800">
                 <ShieldCheck size={14} className="text-emerald-500" /> Toʻlov va hisob-faktura
               </div>

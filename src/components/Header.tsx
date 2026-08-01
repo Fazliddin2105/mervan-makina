@@ -68,7 +68,7 @@ export const Header: React.FC = () => {
       onClick={onClick}
       title={label}
       aria-label={label}
-      className={`relative flex items-center justify-center w-10 h-10 rounded-xl text-slate-300
+      className={`relative flex items-center justify-center w-10 h-10 rounded-lg text-slate-300
                   bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white
                   transition-colors duration-200 cursor-pointer ${className}`}
     >
@@ -125,7 +125,7 @@ export const Header: React.FC = () => {
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value as Language)}
-                className="bg-transparent focus:outline-none cursor-pointer text-xs text-slate-300"
+                className="bg-transparent cursor-pointer text-xs text-slate-300"
               >
                 <option value="UZ" className="bg-[#0B1D3F] text-white">Oʻzbekcha</option>
                 <option value="EN" className="bg-[#0B1D3F] text-white">English</option>
@@ -141,7 +141,7 @@ export const Header: React.FC = () => {
               <select
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value as Currency)}
-                className="bg-transparent focus:outline-none cursor-pointer text-xs text-slate-300"
+                className="bg-transparent cursor-pointer text-xs text-slate-300"
               >
                 <option value="UZS" className="bg-[#0B1D3F] text-white">UZS</option>
                 <option value="USD" className="bg-[#0B1D3F] text-white">USD</option>
@@ -163,7 +163,7 @@ export const Header: React.FC = () => {
                 </button>
 
                 {isUserDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-52 bg-[#0B1D3F] border border-white/10 rounded-xl shadow-2xl py-2 z-50 text-xs overflow-hidden">
+                  <div className="absolute right-0 mt-2 w-52 bg-[#0B1D3F] border border-white/10 rounded-lg shadow-lg py-2 z-50 text-xs overflow-hidden">
                     <div className="px-4 py-2 border-b border-white/10">
                       <p className="font-bold text-white truncate">{user.name}</p>
                       {user.company && <p className="text-slate-400 text-xs truncate">{user.company}</p>}
@@ -290,7 +290,7 @@ export const Header: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Menyu"
               aria-expanded={isMobileMenuOpen}
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:text-white cursor-pointer"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:text-white cursor-pointer"
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>

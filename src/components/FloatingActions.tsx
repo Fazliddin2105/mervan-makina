@@ -111,7 +111,7 @@ export const FloatingActions: React.FC = () => {
         onClick={() => setOpen(v => !v)}
         aria-expanded={open}
         aria-label={open ? 'Yopish' : "Bogʻlanish"}
-        className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-900/30 flex items-center justify-center transition-all duration-200 cursor-pointer active:scale-95"
+        className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-900/30 flex items-center justify-center transition-all duration-200 cursor-pointer active:scale-95"
       >
         {open ? <X size={22} /> : <MessageCircle size={23} />}
       </button>

@@ -21,7 +21,7 @@ export const ServicesPage: React.FC = () => {
           <div key={svc.id} className="surface p-6 sm:p-8 space-y-4 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-600/20 text-blue-700 flex items-center justify-center font-bold">
+                <div className="w-12 h-12 rounded-lg bg-blue-600/10 border border-blue-600/20 text-blue-700 flex items-center justify-center font-bold">
                   <Wrench size={24} />
                 </div>
                 <span className="text-xs font-mono text-emerald-700 bg-emerald-50 border border-emerald-200 px-4 py-1 rounded-full font-bold">

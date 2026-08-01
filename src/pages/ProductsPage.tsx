@@ -29,9 +29,9 @@ const MACHINE_TYPE_LABELS: Record<string, string> = {
    single panel instead of six unrelated controls. */
 const GROUP_LABEL = 'block text-xs font-bold uppercase tracking-[0.18em] text-slate-400';
 const FIELD =
-  'w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 pl-4 pr-8 py-2 ' +
+  'w-full appearance-none rounded-lg border border-slate-200 bg-slate-50 pl-4 pr-8 py-2 ' +
   'text-xs font-bold text-[#0B1D3F] cursor-pointer transition-colors duration-200 ' +
-  'hover:border-slate-300 focus:outline-none focus:border-blue-600';
+  'hover:border-slate-300 focus:border-blue-600';
 
 export const ProductsPage: React.FC = () => {
   const { productsList, filters, setFilters, resetFilters, formatPrice } = useApp();
@@ -79,12 +79,12 @@ export const ProductsPage: React.FC = () => {
     Boolean(filters.searchQuery);
 
   const chip = (label: string, value: string, onClear: () => void) => (
-    <span className="inline-flex items-center gap-2 max-w-full rounded-xl border border-slate-200 bg-slate-50 pl-2 pr-1 py-1 text-xs">
+    <span className="inline-flex items-center gap-2 max-w-full rounded-lg border border-slate-200 bg-slate-50 pl-2 pr-1 py-1 text-xs">
       <span className="text-slate-400 font-medium shrink-0">{label}:</span>
       <span className="font-bold text-[#0B1D3F] truncate">{value}</span>
       <button
         onClick={onClear}
-        className="shrink-0 rounded-xl p-1 text-slate-400 hover:text-rose-600 transition-colors duration-200 cursor-pointer"
+        className="shrink-0 rounded-lg p-1 text-slate-400 hover:text-rose-600 transition-colors duration-200 cursor-pointer"
         aria-label={`${label} filtrini olib tashlash`}
       >
         <X size={12} />
@@ -109,7 +109,7 @@ export const ProductsPage: React.FC = () => {
             placeholder="Model yoki nom boʻyicha qidiring..."
             value={filters.searchQuery}
             onChange={(e) => setFilters(prev => ({ ...prev, searchQuery: e.target.value }))}
-            className="w-full rounded-xl border border-white/15 bg-white/5 pl-12 pr-4 py-4 text-xs font-medium text-white placeholder-slate-400 transition-colors duration-200 hover:border-white/25 focus:outline-none focus:border-blue-600"
+            className="w-full rounded-lg border border-white/15 bg-white/5 pl-12 pr-4 py-4 text-xs font-medium text-white placeholder-slate-400 transition-colors duration-200 hover:border-white/25 focus:border-blue-600"
           />
         </div>
       </PageBanner>
@@ -128,13 +128,13 @@ export const ProductsPage: React.FC = () => {
             <div className="flex items-center gap-1 shrink-0">
               <button
                 onClick={resetFilters}
-                className="inline-flex items-center gap-1 rounded-xl px-2 py-1 text-xs font-bold text-slate-500 hover:text-blue-700 transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-bold text-slate-500 hover:text-blue-700 transition-colors duration-200 cursor-pointer"
               >
                 <RotateCcw size={12} /> Tozalash
               </button>
               <button
                 onClick={() => setIsMobileFilterOpen(false)}
-                className="lg:hidden rounded-xl p-2 text-slate-400 hover:text-[#0B1D3F] hover:bg-slate-100 transition-colors duration-200 cursor-pointer"
+                className="lg:hidden rounded-lg p-2 text-slate-400 hover:text-[#0B1D3F] hover:bg-slate-100 transition-colors duration-200 cursor-pointer"
                 aria-label="Filtrlarni yopish"
               >
                 <X size={16} />
@@ -191,7 +191,7 @@ export const ProductsPage: React.FC = () => {
                   return (
                     <label
                       key={type}
-                      className="flex items-center gap-2 -mx-2 px-2 py-2 rounded-xl cursor-pointer transition-colors duration-200 hover:bg-slate-50"
+                      className="flex items-center gap-2 -mx-2 px-2 py-2 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-slate-50"
                     >
                       <input
                         type="radio"
@@ -285,7 +285,7 @@ export const ProductsPage: React.FC = () => {
                     <select
                       value={filters.sortBy}
                       onChange={(e) => setFilters(prev => ({ ...prev, sortBy: e.target.value as any }))}
-                      className="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 pl-4 pr-8 py-2 text-xs font-bold text-[#0B1D3F] cursor-pointer transition-colors duration-200 hover:border-slate-300 focus:outline-none focus:border-blue-600"
+                      className="w-full appearance-none rounded-lg border border-slate-200 bg-slate-50 pl-4 pr-8 py-2 text-xs font-bold text-[#0B1D3F] cursor-pointer transition-colors duration-200 hover:border-slate-300 focus:border-blue-600"
                       aria-label="Saralash"
                     >
                       <option value="featured">Tavsiya etilganlar</option>
@@ -299,10 +299,10 @@ export const ProductsPage: React.FC = () => {
                 </div>
 
                 {/* View Switcher */}
-                <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200/80 shrink-0">
+                <div className="flex items-center gap-1 p-1 rounded-lg bg-slate-100 border border-slate-200/80 shrink-0">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-xl transition-colors duration-200 cursor-pointer ${
+                    className={`p-2 rounded-lg transition-colors duration-200 cursor-pointer ${
                       viewMode === 'grid' ? 'bg-white text-[#0B1D3F] shadow-sm' : 'text-slate-400 hover:text-slate-700'
                     }`}
                     title="Katak koʻrinishi"
@@ -312,7 +312,7 @@ export const ProductsPage: React.FC = () => {
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-xl transition-colors duration-200 cursor-pointer ${
+                    className={`p-2 rounded-lg transition-colors duration-200 cursor-pointer ${
                       viewMode === 'list' ? 'bg-white text-[#0B1D3F] shadow-sm' : 'text-slate-400 hover:text-slate-700'
                     }`}
                     title="Roʻyxat koʻrinishi"
@@ -368,7 +368,7 @@ export const ProductsPage: React.FC = () => {
             </div>
           ) : (
             <div className="surface px-6 py-24 sm:py-32 text-center">
-              <div className="mx-auto w-14 h-14 rounded-2xl bg-slate-100 border border-slate-200/80 flex items-center justify-center text-slate-400">
+              <div className="mx-auto w-14 h-14 rounded-lg bg-slate-100 border border-slate-200/80 flex items-center justify-center text-slate-400">
                 <Search size={22} />
               </div>
               <h2 className="mt-6 text-2xl font-bold text-[#0B1D3F]">

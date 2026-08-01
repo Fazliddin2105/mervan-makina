@@ -59,7 +59,7 @@ export const BlogPage: React.FC = () => {
       {/* Article Drawer Modal */}
       {selectedPost && (
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-          <div className="relative surface shadow-2xl max-w-3xl w-full overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200 p-6 sm:p-12 space-y-6">
+          <div className="relative surface shadow-lg max-w-3xl w-full overflow-hidden my-8 animate-in fade-in zoom-in-95 duration-200 p-6 sm:p-12 space-y-6">
             
             <button 
               onClick={() => setSelectedPost(null)}
@@ -85,7 +85,7 @@ export const BlogPage: React.FC = () => {
             <img width={800} height={600} loading="lazy" decoding="async" 
               src={selectedPost.image} 
               alt="" 
-              className="w-full h-64 object-cover rounded-2xl border border-slate-200" 
+              className="w-full h-64 object-cover rounded-lg border border-slate-200" 
               referrerPolicy="no-referrer"
             />
 
