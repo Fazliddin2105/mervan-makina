@@ -59,7 +59,7 @@ export const SearchModal: React.FC = () => {
                     className="p-3 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 flex items-center justify-between gap-4 cursor-pointer transition-all"
                   >
                     <div className="flex items-center gap-3">
-                      <img 
+                      <img width={800} height={600} loading="lazy" decoding="async" 
                         src={product.images[0]} 
                         alt="" 
                         className="w-12 h-12 object-contain bg-slate-100 rounded-xl p-1 shrink-0" 

@@ -91,7 +91,7 @@ export const Footer: React.FC = () => {
             className="flex items-center gap-2.5 cursor-pointer"
           >
             {siteSettings.logoUrl ? (
-              <img
+              <img width={160} height={44} loading="lazy" decoding="async"
                 src={siteSettings.logoUrl}
                 alt={siteSettings.brandName}
                 className="h-11 w-auto object-contain"

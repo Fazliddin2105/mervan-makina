@@ -24,6 +24,7 @@ import {
 import { useApp } from '../context/AppContext';
 import { PRODUCTS_DATA } from '../data/mockData';
 import { ProductCard } from '../components/ProductCard';
+import { useProductSchema } from '../lib/seo';
 
 /* Several products carry "—" in the data for specs that do not apply to that
    machine type. Rendering that at full contrast reads as a rendering fault, so
@@ -94,6 +95,8 @@ export const ProductDetailPage: React.FC = () => {
 
   const product = productsList.find(p => p.id === selectedProductId) || productsList[0];
 
+  useProductSchema(product);
+
   const isWish = isInWishlist(product.id);
   const isComp = isInCompare(product.id);
 
@@ -145,12 +148,12 @@ export const ProductDetailPage: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-slate-100/70" />
             <div className="absolute inset-x-0 bottom-0 h-px bg-slate-200/70" />
 
-            {/* All frames stay mounted and crossfade. Swapping a single <img>
+            {/* All frames stay mounted and crossfade. Swapping a single <img width={800} height={600}>
                 showed a blank beat while the next file decoded, which read as a
                 flicker every time a thumbnail was clicked. */}
             <div className="relative h-[300px] sm:h-[400px] lg:h-[460px]">
               {product.images.map((img, i) => (
-                <img
+                <img width={800} height={600}
                   key={img}
                   src={img}
                   alt={i === activeImgIndex ? product.name : ''}
@@ -209,7 +212,7 @@ export const ProductDetailPage: React.FC = () => {
                       : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
                   }`}
                 >
-                  <img src={img} alt="" referrerPolicy="no-referrer" className="w-full h-full object-contain" />
+                  <img width={800} height={600} loading="lazy" decoding="async" src={img} alt="" referrerPolicy="no-referrer" className="w-full h-full object-contain" />
                 </button>
               ))}
             </div>
@@ -677,7 +680,7 @@ export const ProductDetailPage: React.FC = () => {
             {accessories.map((acc) => (
               <div key={acc.id} className="flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
                 <div className="flex min-w-0 items-center gap-3">
-                  <img src={acc.images[0]} alt="" className="h-14 w-14 shrink-0 rounded-xl bg-white p-1 object-contain border border-slate-200/80" referrerPolicy="no-referrer" />
+                  <img width={800} height={600} loading="lazy" decoding="async" src={acc.images[0]} alt="" className="h-14 w-14 shrink-0 rounded-xl bg-white p-1 object-contain border border-slate-200/80" referrerPolicy="no-referrer" />
                   <div className="min-w-0">
                     <h3 className="text-xs font-bold text-[#0B1D3F] leading-snug line-clamp-2">{acc.name}</h3>
                     <span className="tabular mt-0.5 block text-sm font-black text-[#0B1D3F]">{formatPrice(acc.priceUSD)}</span>

@@ -520,7 +520,7 @@ export const AdminDashboardPage: React.FC = () => {
                   <tr key={p.id} className="hover:bg-slate-50">
                     <td className="p-3">
                       <div className="flex items-center gap-3 font-bold text-slate-900">
-                        <img src={p.images[0]} alt="" className="w-10 h-10 object-cover bg-slate-100 rounded-lg" referrerPolicy="no-referrer" />
+                        <img width={800} height={600} loading="lazy" decoding="async" src={p.images[0]} alt="" className="w-10 h-10 object-cover bg-slate-100 rounded-lg" referrerPolicy="no-referrer" />
                         <span className="line-clamp-1 max-w-xs">{p.name}</span>
                       </div>
                     </td>

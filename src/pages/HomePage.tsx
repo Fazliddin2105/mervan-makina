@@ -426,7 +426,7 @@ export const HomePage: React.FC = () => {
                            hover:shadow-[0_28px_55px_-28px_rgba(10,37,64,0.55)]
                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
-                <img
+                <img width={800} height={600} loading="lazy" decoding="async"
                   src={cover.images[0]}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -672,7 +672,7 @@ export const HomePage: React.FC = () => {
                 className="surface-interactive group flex flex-col overflow-hidden"
               >
                 <div className="relative h-48 overflow-hidden bg-slate-100">
-                  <img
+                  <img width={800} height={600} loading="lazy" decoding="async"
                     src={post.image}
                     alt={post.title}
                     referrerPolicy="no-referrer"

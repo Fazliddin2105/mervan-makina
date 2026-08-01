@@ -103,7 +103,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
       />
 
       <div className={`absolute inset-0 flex items-center justify-center pointer-events-none ${padClass}`}>
-        <img
+        <img width={800} height={600} decoding="async"
           src={product.images[0]}
           alt={product.name}
           referrerPolicy="no-referrer"

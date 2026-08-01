@@ -24,7 +24,7 @@ export const BlogPage: React.FC = () => {
             className="surface-interactive overflow-hidden flex flex-col justify-between group"
           >
             <div className="h-52 overflow-hidden bg-slate-100">
-              <img 
+              <img width={800} height={600} loading="lazy" decoding="async" 
                 src={post.image} 
                 alt={post.title} 
                 referrerPolicy="no-referrer"
@@ -82,7 +82,7 @@ export const BlogPage: React.FC = () => {
               </div>
             </div>
 
-            <img 
+            <img width={800} height={600} loading="lazy" decoding="async" 
               src={selectedPost.image} 
               alt="" 
               className="w-full h-64 object-cover rounded-2xl border border-slate-200" 

@@ -60,7 +60,7 @@ export const QuickViewModal: React.FC = () => {
             {/* Gallery Left */}
             <div className="relative flex flex-col justify-between border-b border-slate-100 bg-gradient-to-b from-slate-50 to-slate-100/70 p-5 md:border-b-0 md:border-r">
               <div className="flex h-56 w-full items-center justify-center p-3 sm:h-64">
-                <img
+                <img width={800} height={600} loading="lazy" decoding="async"
                   src={product.images[selectedImgIndex] || product.images[0]}
                   alt={product.name}
                   referrerPolicy="no-referrer"
@@ -88,7 +88,7 @@ export const QuickViewModal: React.FC = () => {
                           : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-300'
                       }`}
                     >
-                      <img src={img} alt="" className="h-full w-full object-contain" referrerPolicy="no-referrer" />
+                      <img width={800} height={600} loading="lazy" decoding="async" src={img} alt="" className="h-full w-full object-contain" referrerPolicy="no-referrer" />
                     </button>
                   ))}
                 </div>

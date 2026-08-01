@@ -40,7 +40,7 @@ export const CartPage: React.FC = () => {
                 <div key={item.product.id} className="pt-4 first:pt-0 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   
                   <div className="flex items-center gap-4">
-                    <img 
+                    <img width={800} height={600} loading="lazy" decoding="async" 
                       src={item.product.images[0]} 
                       alt="" 
                       className="w-20 h-20 object-contain bg-slate-50 rounded-2xl p-2 border border-slate-200 shrink-0" 

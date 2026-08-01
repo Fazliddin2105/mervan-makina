@@ -68,7 +68,7 @@ export const AboutUsPage: React.FC = () => {
         </div>
 
         <div className="relative">
-          <img
+          <img width={1280} height={960} loading="lazy" decoding="async"
             src="/images/scrubber-hero.jpg"
             alt={`${siteSettings.brandName} pol yuvish mashinasi`}
             className="rounded-2xl shadow-2xl border border-slate-200 object-cover w-full h-96"

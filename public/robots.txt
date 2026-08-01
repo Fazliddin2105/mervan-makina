@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Account and checkout views hold no public content and should not be indexed.
+Disallow: /admin
+Disallow: /login
+Disallow: /checkout
+Disallow: /dashboard
+Disallow: /cart
+
+Sitemap: https://cleancore-industrial-equipment.vercel.app/sitemap.xml

@@ -8,6 +8,7 @@ import { SearchModal } from './components/SearchModal';
 import { FloatingActions } from './components/FloatingActions';
 import { Toast } from './components/Toast';
 import { ScrollProgress } from './components/ScrollProgress';
+import { useCanonical } from './lib/seo';
 
 import { HomePage } from './pages/HomePage';
 import { ProductsPage } from './pages/ProductsPage';
@@ -31,6 +32,10 @@ import { LoginPage } from './pages/LoginPage';
 
 const MainContent: React.FC = () => {
   const { activePage } = useApp();
+
+  // One HTML file serves every route, so the canonical URL has to be kept in
+  // step with the view by hand.
+  useCanonical(activePage);
 
   const renderPage = () => {
     switch (activePage) {
