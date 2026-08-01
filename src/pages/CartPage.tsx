@@ -11,9 +11,9 @@ export const CartPage: React.FC = () => {
     e.preventDefault();
     if (promoCode.trim().toUpperCase() === 'MEGAVAN10') {
       setDiscountPercent(10);
-      showToast('10% korporativ chegirma qo\'llandi!');
+      showToast('10% korporativ chegirma qoʻllandi!');
     } else {
-      showToast('Promokod noto\'g\'ri. MEGAVAN10 kodini sinab ko\'ring.');
+      showToast('Promokod notoʻgʻri. MEGAVAN10 kodini sinab koʻring.');
     }
   };
 
@@ -24,7 +24,7 @@ export const CartPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-8">
       
       <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F] flex items-center gap-2">
+        <h1 className="text-2xl font-bold text-[#0B1D3F] flex items-center gap-2">
           <ShoppingBag size={28} className="text-blue-600" /> Savat
         </h1>
         <span className="tabular text-xs text-slate-500 font-bold">{cart.length} ta pozitsiya</span>
@@ -47,12 +47,12 @@ export const CartPage: React.FC = () => {
                       referrerPolicy="no-referrer"
                     />
                     <div>
-                      <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded uppercase">
+                      <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded uppercase">
                         {item.product.brand}
                       </span>
                       <h3 className="font-bold text-[#0B1D3F] text-sm">{item.product.name}</h3>
                       <span className="tabular text-xs text-slate-400 font-mono">Model: {item.product.model}</span>
-                      <div className="tabular text-xs font-black text-slate-900 mt-1 sm:hidden">
+                      <div className="tabular text-xs font-bold text-slate-900 mt-1 sm:hidden">
                         {formatPrice(item.product.priceUSD)}
                       </div>
                     </div>
@@ -79,10 +79,10 @@ export const CartPage: React.FC = () => {
 
                     {/* Subtotal */}
                     <div className="text-right hidden sm:block">
-                      <div className="tabular text-sm font-black text-[#0B1D3F]">
+                      <div className="tabular text-sm font-bold text-[#0B1D3F]">
                         {formatPrice(item.product.priceUSD * item.quantity)}
                       </div>
-                      <div className="tabular text-[10px] text-slate-400">
+                      <div className="tabular text-xs text-slate-400">
                         {item.quantity} × {formatPrice(item.product.priceUSD)}
                       </div>
                     </div>
@@ -105,7 +105,7 @@ export const CartPage: React.FC = () => {
 
           {/* Cart Order Summary Right */}
           <div className="lg:col-span-4 surface p-6 space-y-6">
-            <h2 className="text-lg font-extrabold text-[#0B1D3F]">Buyurtma hisobi</h2>
+            <h2 className="text-lg font-bold text-[#0B1D3F]">Buyurtma hisobi</h2>
 
             <div className="space-y-3 text-xs divide-y divide-slate-100">
               <div className="flex justify-between pt-2">
@@ -114,7 +114,7 @@ export const CartPage: React.FC = () => {
               </div>
 
               {discountAmount > 0 && (
-                <div className="flex justify-between pt-2 text-emerald-600 font-semibold">
+                <div className="flex justify-between pt-2 text-emerald-600 font-bold">
                   <span className="tabular">Korporativ chegirma ({discountPercent}%)</span>
                   <span className="tabular">-{formatPrice(discountAmount)}</span>
                 </div>
@@ -126,8 +126,8 @@ export const CartPage: React.FC = () => {
               </div>
 
               <div className="flex justify-between items-baseline pt-3 text-sm">
-                <span className="font-black text-[#0B1D3F]">Umumiy summa</span>
-                <span className="tabular text-xl font-black text-blue-700 font-mono">{formatPrice(grandTotalUSD)}</span>
+                <span className="font-bold text-[#0B1D3F]">Umumiy summa</span>
+                <span className="tabular text-xl font-bold text-blue-700 font-mono">{formatPrice(grandTotalUSD)}</span>
               </div>
             </div>
 
@@ -141,7 +141,7 @@ export const CartPage: React.FC = () => {
                 className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs uppercase"
               />
               <button type="submit" className="btn-secondary px-4 py-2">
-                Qo'llash
+                Qoʻllash
               </button>
             </form>
 
@@ -158,15 +158,15 @@ export const CartPage: React.FC = () => {
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="btn-ghost w-full uppercase tracking-wider"
               >
-                <FileText size={16} /> Tijorat taklifini so'rash
+                <FileText size={16} /> Tijorat taklifini soʻrash
               </button>
             </div>
 
-            <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200 text-[11px] text-slate-500 space-y-1">
+            <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-500 space-y-1">
               <div className="flex items-center gap-1.5 font-bold text-slate-800">
-                <ShieldCheck size={14} className="text-emerald-500" /> To'lov va hisob-faktura
+                <ShieldCheck size={14} className="text-emerald-500" /> Toʻlov va hisob-faktura
               </div>
-              <p>To'lov shartlari va hisob-faktura menejerimiz bilan tasdiqlanadi.</p>
+              <p>Toʻlov shartlari va hisob-faktura menejerimiz bilan tasdiqlanadi.</p>
             </div>
 
           </div>
@@ -177,7 +177,7 @@ export const CartPage: React.FC = () => {
           <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
             <ShoppingBag size={32} />
           </div>
-          <h3 className="text-lg font-bold text-[#0B1D3F]">Savatingiz bo'sh</h3>
+          <h3 className="text-lg font-bold text-[#0B1D3F]">Savatingiz boʻsh</h3>
           <p className="text-xs text-slate-500">
             Katalogdan pol yuvish mashinasi yoki boshqa tozalash texnikasini tanlang.
           </p>
@@ -185,7 +185,7 @@ export const CartPage: React.FC = () => {
             onClick={() => setActivePage('products')}
             className="btn-secondary"
           >
-            Katalogni ko'rish
+            Katalogni koʻrish
           </button>
         </div>
       )}

@@ -13,11 +13,11 @@ const KeySpec: React.FC<{ label: string; value: string; icon?: React.ReactNode }
   const filled = hasValue(value);
   return (
     <div className="rounded-xl border border-slate-200/80 bg-slate-50/80 px-2.5 py-2">
-      <span className="block text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-400">
+      <span className="block text-xs font-bold uppercase tracking-[0.1em] text-slate-400">
         {label}
       </span>
       <span
-        className={`mt-0.5 flex items-center gap-1.5 text-xs font-semibold tabular ${
+        className={`mt-0.5 flex items-center gap-1.5 text-xs font-bold tabular ${
           filled ? 'text-[#0B1D3F]' : 'text-slate-400'
         }`}
       >
@@ -100,7 +100,7 @@ export const QuickViewModal: React.FC = () => {
               <div>
                 {/* pr-10 keeps the heading clear of the close button. */}
                 <div className="flex items-center justify-between gap-3 pr-10">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+                  <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
                     {product.machineType} uskunasi
                   </span>
                   {product.reviewsCount > 0 && (
@@ -112,17 +112,17 @@ export const QuickViewModal: React.FC = () => {
                   )}
                 </div>
 
-                <h2 className="mt-2 text-xl sm:text-2xl font-extrabold leading-tight text-[#0B1D3F] pr-10">
+                <h2 className="mt-2 text-xl sm:text-2xl font-bold text-[#0B1D3F] pr-10">
                   {product.name}
                 </h2>
 
-                <div className="mt-1.5 flex items-center gap-2 text-[11px] text-slate-500">
+                <div className="mt-1.5 flex items-center gap-2 text-xs text-slate-500">
                   <span className="uppercase tracking-wider">Model</span>
                   <span className="h-3 w-px bg-slate-200" />
-                  <span className="tabular font-semibold text-slate-700">{product.model}</span>
+                  <span className="tabular font-bold text-slate-700">{product.model}</span>
                 </div>
 
-                <p className="mt-3 text-sm leading-relaxed text-slate-600 line-clamp-4">
+                <p className="mt-3 text-sm text-slate-600 line-clamp-4">
                   {product.description}
                 </p>
 
@@ -139,7 +139,7 @@ export const QuickViewModal: React.FC = () => {
                     icon={<Sparkles size={12} className="shrink-0 text-blue-600" />}
                   />
                   <KeySpec
-                    label="Cho'tka kengligi"
+                    label="Choʻtka kengligi"
                     value={product.brushWidth}
                     icon={<Ruler size={12} className="shrink-0 text-blue-600" />}
                   />
@@ -155,11 +155,11 @@ export const QuickViewModal: React.FC = () => {
               <div className="mt-5 space-y-3 border-t border-slate-100 pt-4">
                 <div className="flex flex-wrap items-end justify-between gap-x-3 gap-y-2">
                   <div className="min-w-0">
-                    <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">
+                    <span className="block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">
                       Narxi
                     </span>
                     <div className="mt-1 flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-                      <span className="tabular text-2xl sm:text-3xl font-black leading-none tracking-tight text-[#0B1D3F]">
+                      <span className="tabular text-2xl font-bold tracking-tight text-[#0B1D3F]">
                         {formatPrice(product.priceUSD)}
                       </span>
                       {product.oldPriceUSD && (
@@ -171,11 +171,11 @@ export const QuickViewModal: React.FC = () => {
                   </div>
 
                   {product.inStock ? (
-                    <span className="flex shrink-0 items-center gap-1.5 rounded-xl bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">
+                    <span className="flex shrink-0 items-center gap-1.5 rounded-xl bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-700">
                       <CheckCircle2 size={12} /> Omborda bor
                     </span>
                   ) : (
-                    <span className="flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700">
+                    <span className="flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-50 px-2.5 py-1 text-xs font-bold text-amber-700">
                       <span className="h-1.5 w-1.5 rounded-full bg-blue-500" /> Buyurtma asosida
                     </span>
                   )}
@@ -187,7 +187,7 @@ export const QuickViewModal: React.FC = () => {
                     className="btn-secondary w-full px-4"
                   >
                     <ShoppingBag size={16} className="shrink-0" />
-                    <span className="truncate">Savatga qo'shish</span>
+                    <span className="truncate">Savatga qoʻshish</span>
                   </button>
                   <button
                     onClick={() => { setQuoteModalProduct(product); setIsQuoteModalOpen(true); setQuickViewProduct(null); }}
@@ -200,9 +200,9 @@ export const QuickViewModal: React.FC = () => {
 
                 <button
                   onClick={() => { setSelectedProductId(product.id); setActivePage('product-detail'); setQuickViewProduct(null); }}
-                  className="w-full text-center text-xs font-semibold text-blue-700 hover:text-blue-800 hover:underline cursor-pointer"
+                  className="w-full text-center text-xs font-bold text-blue-700 hover:text-blue-800 hover:underline cursor-pointer"
                 >
-                  To'liq texnik ma'lumotlar →
+                  Toʻliq texnik maʼlumotlar →
                 </button>
               </div>
 

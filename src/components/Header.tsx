@@ -75,7 +75,7 @@ export const Header: React.FC = () => {
       {children}
       {count > 0 && (
         <span
-          className={`absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full text-[10px] font-bold
+          className={`absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full text-xs font-bold
                       flex items-center justify-center text-white tabular ring-2 ring-[#0B1D3F]
                       ${accent === 'rose' ? 'bg-rose-500' : 'bg-blue-600'}`}
         >
@@ -90,7 +90,7 @@ export const Header: React.FC = () => {
 
       {/* ------------------------------- utility bar ------------------------- */}
       <div
-        className={`bg-[#071531] text-slate-400 text-[11px] border-b border-white/5 overflow-hidden
+        className={`bg-[#071531] text-slate-400 text-xs border-b border-white/5 overflow-hidden
                     transition-[height,opacity] duration-300 ease-out ${scrolled ? 'h-0 opacity-0' : 'h-9 opacity-100'}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-4">
@@ -125,9 +125,9 @@ export const Header: React.FC = () => {
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value as Language)}
-                className="bg-transparent focus:outline-none cursor-pointer text-[11px] text-slate-300"
+                className="bg-transparent focus:outline-none cursor-pointer text-xs text-slate-300"
               >
-                <option value="UZ" className="bg-[#0B1D3F] text-white">O'zbekcha</option>
+                <option value="UZ" className="bg-[#0B1D3F] text-white">Oʻzbekcha</option>
                 <option value="EN" className="bg-[#0B1D3F] text-white">English</option>
                 <option value="RU" className="bg-[#0B1D3F] text-white">Русский</option>
               </select>
@@ -141,7 +141,7 @@ export const Header: React.FC = () => {
               <select
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value as Currency)}
-                className="bg-transparent focus:outline-none cursor-pointer text-[11px] text-slate-300"
+                className="bg-transparent focus:outline-none cursor-pointer text-xs text-slate-300"
               >
                 <option value="UZS" className="bg-[#0B1D3F] text-white">UZS</option>
                 <option value="USD" className="bg-[#0B1D3F] text-white">USD</option>
@@ -165,8 +165,8 @@ export const Header: React.FC = () => {
                 {isUserDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-52 bg-[#0B1D3F] border border-white/10 rounded-xl shadow-2xl py-1.5 z-50 text-xs overflow-hidden">
                     <div className="px-3 py-2 border-b border-white/10">
-                      <p className="font-semibold text-white truncate">{user.name}</p>
-                      {user.company && <p className="text-slate-400 text-[10px] truncate">{user.company}</p>}
+                      <p className="font-bold text-white truncate">{user.name}</p>
+                      {user.company && <p className="text-slate-400 text-xs truncate">{user.company}</p>}
                     </div>
                     <button
                       onClick={() => { setActivePage('dashboard'); setIsUserDropdownOpen(false); }}
@@ -237,7 +237,7 @@ export const Header: React.FC = () => {
                 <button
                   key={item.page}
                   onClick={() => setActivePage(item.page)}
-                  className={`relative px-3 py-2 rounded-lg text-[13px] font-medium transition-colors duration-200 cursor-pointer
+                  className={`relative px-3 py-2 rounded-lg text-xs font-medium transition-colors duration-200 cursor-pointer
                     ${isActive ? 'text-white' : 'text-slate-300 hover:text-white hover:bg-white/5'}`}
                 >
                   {item.label}
@@ -307,7 +307,7 @@ export const Header: React.FC = () => {
                   onClick={() => { setActivePage(item.page); setIsMobileMenuOpen(false); }}
                   className={`text-left py-3 px-3 rounded-lg text-sm transition-colors cursor-pointer
                     ${activePage === item.page
-                      ? 'bg-blue-600/15 text-blue-400 font-semibold'
+                      ? 'bg-blue-600/15 text-blue-400 font-bold'
                       : 'text-slate-300 hover:bg-white/5'}`}
                 >
                   {item.label}

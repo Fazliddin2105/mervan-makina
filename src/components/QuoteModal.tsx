@@ -89,7 +89,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
             </div>
             <div>
               <h3 className="font-bold text-lg">Official B2B Quote Request</h3>
-              <p className="text-xs text-slate-300">So'rovingiz bo'yicha siz bilan bog'lanamiz</p>
+              <p className="text-xs text-slate-300">Soʻrovingiz boʻyicha siz bilan bogʻlanamiz</p>
             </div>
           </div>
           <button 
@@ -113,7 +113,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
                   <div key={idx} className="flex items-center justify-between text-xs bg-white p-2.5 rounded-xl border border-slate-200/70">
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-blue-700">[{item.product.brand}]</span>
-                      <span className="font-semibold text-slate-800 line-clamp-1">{item.product.name}</span>
+                      <span className="font-bold text-slate-800 line-clamp-1">{item.product.name}</span>
                     </div>
                     <div className="flex items-center gap-3 shrink-0 font-bold">
                       <span>Qty: {item.quantity}</span>
@@ -136,7 +136,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
             
             <div>
-              <label className="block text-slate-700 font-semibold mb-1">Company Name *</label>
+              <label className="block text-slate-700 font-bold mb-1">Company Name *</label>
               <input 
                 type="text" 
                 required
@@ -148,7 +148,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
             </div>
 
             <div>
-              <label className="block text-slate-700 font-semibold mb-1">Contact Person Name *</label>
+              <label className="block text-slate-700 font-bold mb-1">Contact Person Name *</label>
               <input 
                 type="text" 
                 required
@@ -160,7 +160,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
             </div>
 
             <div>
-              <label className="block text-slate-700 font-semibold mb-1">Corporate Email *</label>
+              <label className="block text-slate-700 font-bold mb-1">Corporate Email *</label>
               <input 
                 type="email" 
                 required
@@ -172,7 +172,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
             </div>
 
             <div>
-              <label className="block text-slate-700 font-semibold mb-1">Phone Number *</label>
+              <label className="block text-slate-700 font-bold mb-1">Phone Number *</label>
               <input 
                 type="tel" 
                 required
@@ -184,7 +184,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
             </div>
 
             <div>
-              <label className="block text-slate-700 font-semibold mb-1">Tax ID / TIN (STIR)</label>
+              <label className="block text-slate-700 font-bold mb-1">Tax ID / TIN (STIR)</label>
               <input 
                 type="text" 
                 placeholder="9-digit TIN number"
@@ -195,7 +195,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
             </div>
 
             <div>
-              <label className="block text-slate-700 font-semibold mb-1">Facility Type</label>
+              <label className="block text-slate-700 font-bold mb-1">Facility Type</label>
               <select 
                 value={facilityType}
                 onChange={(e) => setFacilityType(e.target.value)}
@@ -214,7 +214,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
           </div>
 
           <div>
-            <label className="block text-slate-700 font-semibold mb-1 text-xs">Special Operational Notes / Leasing Request</label>
+            <label className="block text-slate-700 font-bold mb-1 text-xs">Special Operational Notes / Leasing Request</label>
             <textarea 
               rows={2}
               placeholder="Specify floor area m², special requirements, corporate installment plans, or AMC preferences..."
@@ -229,7 +229,7 @@ INCLUDES: 2-Year Enterprise Warranty, Free On-site Staff Training, 1st Year Main
             <button 
               type="button"
               onClick={handleDownloadDraft}
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors cursor-pointer"
+              className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors cursor-pointer"
             >
               <Download size={15} /> Download PDF Estimate Draft
             </button>

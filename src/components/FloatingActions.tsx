@@ -6,7 +6,7 @@ import { useApp } from '../context/AppContext';
  * Contact launcher.
  *
  * Previously three stacked circles sat permanently over the page and covered
- * the hero's own call-to-action on phones. It is now a single button that
+ * the heroʻs own call-to-action on phones. It is now a single button that
  * expands on demand, so nothing is obscured until the visitor asks for it.
  */
 export const FloatingActions: React.FC = () => {
@@ -77,8 +77,7 @@ export const FloatingActions: React.FC = () => {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Yuqoriga"
-          className="w-9 h-9 rounded-full bg-[#0B1D3F]/85 backdrop-blur-sm text-white border border-white/15
-                     hover:bg-[#12305F] flex items-center justify-center transition-colors cursor-pointer"
+          className="w-9 h-9 rounded-full bg-[#0B1D3F]/85 backdrop-blur-sm text-white border border-white/15 hover:bg-[#12305F] flex items-center justify-center transition-colors cursor-pointer"
         >
           <ChevronUp size={17} />
         </button>
@@ -111,9 +110,8 @@ export const FloatingActions: React.FC = () => {
       <button
         onClick={() => setOpen(v => !v)}
         aria-expanded={open}
-        aria-label={open ? 'Yopish' : "Bog'lanish"}
-        className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-900/30
-                   flex items-center justify-center transition-all duration-200 cursor-pointer active:scale-95"
+        aria-label={open ? 'Yopish' : "Bogʻlanish"}
+        className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-900/30 flex items-center justify-center transition-all duration-200 cursor-pointer active:scale-95"
       >
         {open ? <X size={22} /> : <MessageCircle size={23} />}
       </button>

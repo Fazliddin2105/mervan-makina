@@ -157,10 +157,10 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({
 
       {!markOnly && (
         <span className="leading-none text-left">
-          <span className="block text-[1.95em] font-black tracking-[-0.02em] text-white">
+          <span className="block text-2xl font-bold tracking-[-0.02em] text-white">
             {letters(WORD, DRIVE_MS, 'inline-block')}
           </span>
-          <span className="mt-2.5 block text-[0.66em] font-bold tracking-[0.46em] text-blue-400">
+          <span className="mt-2.5 block text-xs font-bold tracking-[0.46em] text-blue-400">
             {letters(SUB, DRIVE_MS + WORD.length * LETTER_STEP_MS + 60, 'inline-block')}
           </span>
           <span

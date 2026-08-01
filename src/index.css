@@ -19,6 +19,29 @@
   --color-accent-soft: #3B82F6;
   --color-canvas: #F5F7FA;
 
+  /* ------------------------------------------------------------------
+     Type scale — seven steps, no more.
+
+     The audit found 24 distinct font sizes, 288 of which sat between
+     10px and 12px. Redefining Tailwind's own tokens moves every existing
+     `text-xs` / `text-sm` call site onto the scale without touching them
+     one by one; only the arbitrary values had to be rewritten.
+
+     The two display steps are fluid: at these sizes a fixed value is
+     either too loud on a phone or too timid on a wide screen.
+     ------------------------------------------------------------------ */
+  --text-xs: 0.8125rem;      /* 13px — labels, meta, spec captions        */
+  --text-sm: 0.9375rem;      /* 15px — secondary copy                      */
+  --text-base: 1.0625rem;    /* 17px — body                                */
+  --text-lg: 1.125rem;       /* 18px — lead paragraph                      */
+  --text-xl: 1.25rem;        /* 20px — h3, card titles                     */
+  --text-2xl: clamp(1.75rem, 3vw, 2.5rem);   /* section heading            */
+  --text-3xl: clamp(2.5rem, 5vw, 4rem);      /* display                    */
+
+  /* Two line-heights: one for reading, one for headings. */
+  --leading-body: 1.65;
+  --leading-heading: 1.15;
+
   /* Four steps only. sm = chips/inputs, md = buttons, lg = cards/modals. */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -35,8 +58,8 @@
 
   body {
     font-family: var(--font-sans);
-    /* Inter needs optical sizing and slight negative tracking at display sizes
-       to stop headings looking loose. */
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -46,20 +69,34 @@
 
   /* Headings use the display face at an expanded width — the machinery this
      company sells is heavy, and condensed type would fight that. */
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-variation-settings: 'wdth' 112;
-    letter-spacing: -0.025em;
+    line-height: var(--leading-heading);
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
   h1 {
     font-variation-settings: 'wdth' 118;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
   }
 
+  /* Prose keeps a comfortable measure. Beyond roughly 65 characters the eye
+     loses the start of the next line. Anything that opts out does so with an
+     explicit max-w-* on the element. */
   p {
     text-wrap: pretty;
+    max-width: 65ch;
+  }
+
+  /* Centred paragraphs and grid cells set their own width; the measure cap
+     would fight the layout there. */
+  .text-center > p,
+  td p,
+  th p,
+  p.max-w-none {
+    max-width: none;
   }
 
   /* Numbers in prices and spec tables should never shift width. */

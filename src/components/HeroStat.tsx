@@ -15,8 +15,8 @@ export const HeroStat: React.FC<HeroStatProps> = ({ label, value }) => {
 
   return (
     <div ref={ref} className="flex flex-col-reverse gap-1.5 min-w-0">
-      <dt className="text-[11px] text-slate-400 leading-tight">{label}</dt>
-      <dd className="text-xl sm:text-[1.7rem] font-black text-white tabular leading-none truncate">
+      <dt className="text-xs text-slate-400">{label}</dt>
+      <dd className="text-xl sm:text-xl font-bold text-white tabular truncate">
         {numeric ? counted : value}
       </dd>
     </div>

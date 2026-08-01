@@ -12,8 +12,8 @@ export const BlogPage: React.FC = () => {
       
       <PageBanner
         eyebrow="MAQOLALAR VA MASLAHATLAR"
-        title="Texnik xizmat qo'llanmalari va obyekt boshqaruvi"
-        subtitle="Pol yuvish va supurish texnikasini tanlash, batareyaga qarash va kundalik parvarish bo'yicha texnik maqolalar."
+        title="Texnik xizmat qoʻllanmalari va obyekt boshqaruvi"
+        subtitle="Pol yuvish va supurish texnikasini tanlash, batareyaga qarash va kundalik parvarish boʻyicha texnik maqolalar."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -34,22 +34,22 @@ export const BlogPage: React.FC = () => {
 
             <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
               <div className="space-y-2">
-                <div className="flex items-center justify-between text-[10px] text-slate-400 font-semibold">
+                <div className="flex items-center justify-between text-xs text-slate-400 font-bold">
                   <span className="bg-blue-50 text-blue-700 px-2.5 py-1 rounded border border-blue-200 uppercase font-bold">{post.category}</span>
                   <span className="flex items-center gap-1"><Clock size={11} /> <span className="tabular">{post.readTime}</span></span>
                 </div>
 
-                <h3 className="font-extrabold text-[#0B1D3F] text-base group-hover:text-blue-600 transition-colors leading-snug">
+                <h3 className="font-bold text-[#0B1D3F] text-base group-hover:text-blue-600 transition-colors">
                   {post.title}
                 </h3>
 
-                <p className="text-xs text-slate-500 line-clamp-3 leading-relaxed">
+                <p className="text-xs text-slate-500 line-clamp-3">
                   {post.summary}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 text-xs font-semibold text-blue-700 flex items-center justify-between">
-                <span className="group-hover:translate-x-1 transition-transform">Maqolani o'qish →</span>
+              <div className="pt-4 border-t border-slate-100 text-xs font-bold text-blue-700 flex items-center justify-between">
+                <span className="group-hover:translate-x-1 transition-transform">Maqolani oʻqish →</span>
               </div>
             </div>
           </div>
@@ -72,7 +72,7 @@ export const BlogPage: React.FC = () => {
               <span className="bg-blue-50 text-blue-700 font-bold text-xs px-3 py-1 rounded-full border border-blue-200 uppercase">
                 {selectedPost.category}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F]">
+              <h2 className="text-2xl font-bold text-[#0B1D3F]">
                 {selectedPost.title}
               </h2>
               <div className="flex items-center gap-4 text-xs text-slate-400 font-mono pt-1">
@@ -89,7 +89,7 @@ export const BlogPage: React.FC = () => {
               referrerPolicy="no-referrer"
             />
 
-            <div className="prose prose-slate text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-line space-y-3">
+            <div className="prose prose-slate text-xs sm:text-sm text-slate-700 whitespace-pre-line space-y-3">
               {selectedPost.content}
             </div>
 

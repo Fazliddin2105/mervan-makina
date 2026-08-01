@@ -10,13 +10,13 @@ export const AboutUsPage: React.FC = () => {
 
       {/* Banner */}
       <div className="bg-[#0B1D3F] text-white rounded-2xl p-8 sm:p-12 shadow-xl border border-slate-800 space-y-4 text-center sm:text-left">
-        <span className="bg-blue-600 text-white font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">
+        <span className="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
           Biz haqimizda
         </span>
-        <h1 className="text-3xl sm:text-5xl font-black text-white">{siteSettings.brandName}</h1>
-        <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-          O'zbekistonda ko'cha va pol tozalash uchun elektr mashinalari sotuvi bilan
-          shug'ullanamiz. Katalogimizda supurish mashinalari, pol yuvish mashinalari,
+        <h1 className="text-3xl font-bold text-white">{siteSettings.brandName}</h1>
+        <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
+          Oʻzbekistonda koʻcha va pol tozalash uchun elektr mashinalari sotuvi bilan
+          shugʻullanamiz. Katalogimizda supurish mashinalari, pol yuvish mashinalari,
           bir diskli tozalash apparati, bog' changyutgichi va gusenitsali yuk tashuvchi
           arava mavjud.
         </p>
@@ -26,28 +26,28 @@ export const AboutUsPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div className="space-y-4">
           <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">Nima taklif qilamiz</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F]">
+          <h2 className="text-2xl font-bold text-[#0B1D3F]">
             Sanoat va kommunal tozalash texnikasi
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600">
             Mashinalarimiz omborxonalar, ishlab chiqarish sexlari, savdo majmualari,
-            avtoturargohlar va ko'cha hududlarini tozalash uchun mo'ljallangan.
-            Har bir model uchun to'liq texnik xarakteristikalar va narx saytda ochiq
-            ko'rsatilgan — so'rov yuborishdan oldin taqqoslab ko'rishingiz mumkin.
+            avtoturargohlar va koʻcha hududlarini tozalash uchun moʻljallangan.
+            Har bir model uchun toʻliq texnik xarakteristikalar va narx saytda ochiq
+            koʻrsatilgan — soʻrov yuborishdan oldin taqqoslab koʻrishingiz mumkin.
           </p>
 
           <div className="space-y-2 pt-2 text-xs font-medium text-slate-700">
             <div className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>Katalogda {productsList.length} ta texnika modeli, narxi ochiq ko'rsatilgan</span>
+              <span>Katalogda {productsList.length} ta texnika modeli, narxi ochiq koʻrsatilgan</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>Har bir model uchun bir nechta haqiqiy surat va to'liq xarakteristika</span>
+              <span>Har bir model uchun bir nechta haqiqiy surat va toʻliq xarakteristika</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
-              <span>Toshkentdagi ofisimizda mashinalarni jonli ko'rish imkoni</span>
+              <span>Toshkentdagi ofisimizda mashinalarni jonli koʻrish imkoni</span>
             </div>
           </div>
 
@@ -56,13 +56,13 @@ export const AboutUsPage: React.FC = () => {
               onClick={() => setIsQuoteModalOpen(true)}
               className="bg-blue-600 text-white font-bold px-6 py-3 rounded-xl text-xs hover:bg-blue-700 transition-colors cursor-pointer"
             >
-              Tijorat taklifi so'rash
+              Tijorat taklifi soʻrash
             </button>
             <button
               onClick={() => setActivePage('contact')}
               className="bg-slate-100 text-slate-800 font-bold px-6 py-3 rounded-xl text-xs hover:bg-slate-200 transition-colors cursor-pointer"
             >
-              Bog'lanish
+              Bogʻlanish
             </button>
           </div>
         </div>
@@ -92,7 +92,7 @@ export const AboutUsPage: React.FC = () => {
                 <Icon size={20} />
               </div>
               <h3 className="font-bold text-[#0B1D3F] text-sm">{item.label}</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">{item.value}</p>
+              <p className="text-xs text-slate-600">{item.value}</p>
             </div>
           );
         })}
@@ -103,12 +103,12 @@ export const AboutUsPage: React.FC = () => {
         <div className="w-12 h-12 rounded-xl bg-[#0B1D3F] text-white flex items-center justify-center">
           <Wrench size={22} />
         </div>
-        <h2 className="text-xl font-extrabold text-[#0B1D3F]">Servis va ehtiyot qismlar</h2>
-        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
-          Sotilgan texnika bo'yicha servis, ehtiyot qism va rasxodniklar masalasida
-          telefon orqali bog'laning. Kafolat muddati modelga qarab farq qiladi — aniq
-          shartlar har bir mahsulot sahifasidagi xarakteristikalar bo'limida
-          ko'rsatilgan.
+        <h2 className="text-xl font-bold text-[#0B1D3F]">Servis va ehtiyot qismlar</h2>
+        <p className="text-xs sm:text-sm text-slate-600 max-w-3xl">
+          Sotilgan texnika boʻyicha servis, ehtiyot qism va rasxodniklar masalasida
+          telefon orqali bogʻlaning. Kafolat muddati modelga qarab farq qiladi — aniq
+          shartlar har bir mahsulot sahifasidagi xarakteristikalar boʻlimida
+          koʻrsatilgan.
         </p>
         <a
           href={`tel:${siteSettings.phone.replace(/\s/g, '')}`}

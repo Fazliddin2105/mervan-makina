@@ -33,11 +33,11 @@ export const RoiCalculator: React.FC = () => {
           <div className="inline-flex items-center gap-2 bg-blue-600/20 text-blue-400 border border-blue-600/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             <Calculator size={14} /> Samadorlik va Tejash Kalkulyatori
           </div>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+          <h2 className="text-2xl font-bold text-white">
             Pol Yuvish Uskunasidan Tejash va ROI Hisoblagichi
           </h2>
           <p className="text-xs md:text-sm text-slate-300 max-w-xl">
-            Qo'lda yuvish va supurish o'rniga pol yuvish mashinasiga o'tganda korxonangiz oylik maosh va vaqtdan qancha tejashini hisoblang.
+            Qoʻlda yuvish va supurish oʻrniga pol yuvish mashinasiga oʻtganda korxonangiz oylik maosh va vaqtdan qancha tejashini hisoblang.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export const RoiCalculator: React.FC = () => {
 
           <div>
             <div className="flex justify-between items-center text-xs mb-2">
-              <label className="font-bold text-slate-200">Farroshning O'rtacha Oylik Maoshi</label>
+              <label className="font-bold text-slate-200">Farroshning Oʻrtacha Oylik Maoshi</label>
               <span className="text-blue-400 font-mono font-bold text-sm">{formatPrice(monthlySalaryUSD)} / kishi</span>
             </div>
             <input 
@@ -123,39 +123,39 @@ export const RoiCalculator: React.FC = () => {
         <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
           
           <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 flex flex-col justify-between">
-            <div className="flex items-center gap-2 text-xs text-slate-400 font-semibold">
+            <div className="flex items-center gap-2 text-xs text-slate-400 font-bold">
               <TrendingUp size={16} className="text-emerald-400" />
               <span>OYLIK TEJALADIGAN MABLAG'</span>
             </div>
             <div className="my-3">
-              <span className="text-2xl md:text-3xl font-black text-emerald-400 tracking-tight">
+              <span className="text-2xl font-bold text-emerald-400 tracking-tight">
                 {formatPrice(monthlyLaborSavings)}
               </span>
               <span className="text-xs text-slate-400 block font-normal">har oy tejaladigan maosh</span>
             </div>
-            <p className="text-[11px] text-slate-400">Hisob {cleanersCount} ta xodim o'rniga 1 ta operator qolishi taxminiga asoslangan.</p>
+            <p className="text-xs text-slate-400">Hisob {cleanersCount} ta xodim oʻrniga 1 ta operator qolishi taxminiga asoslangan.</p>
           </div>
 
           <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 flex flex-col justify-between">
-            <div className="flex items-center gap-2 text-xs text-slate-400 font-semibold">
+            <div className="flex items-center gap-2 text-xs text-slate-400 font-bold">
               <DollarSign size={16} className="text-blue-400" />
               <span>YILLIK SOF TEJASH</span>
             </div>
             <div className="my-3">
-              <span className="text-2xl md:text-3xl font-black text-blue-400 tracking-tight">
+              <span className="text-2xl font-bold text-blue-400 tracking-tight">
                 {formatPrice(annualSavingsUSD)}
               </span>
               <span className="text-xs text-slate-400 block font-normal">yillik operatsion tejamkorlik</span>
             </div>
-            <p className="text-[11px] text-slate-400">Korxonangiz byudjetiga qaytadigan tejalgan mablag'.</p>
+            <p className="text-xs text-slate-400">Korxonangiz byudjetiga qaytadigan tejalgan mablag'.</p>
           </div>
 
           <div className="sm:col-span-2 bg-gradient-to-r from-blue-600/20 to-blue-500/10 border border-blue-600/40 rounded-2xl p-5 flex items-center justify-between gap-4">
             <div className="min-w-0">
               <span className="text-xs text-blue-300 font-bold uppercase tracking-wider block">
-                O'zini oqlash muddati
+                Oʻzini oqlash muddati
               </span>
-              <div className="text-xl md:text-2xl font-black text-white mt-0.5">
+              <div className="text-xl md:text-2xl font-bold text-white mt-0.5">
                 {paybackMonths !== null ? (
                   <>
                     Taxminan <span className="text-blue-400 tabular">{paybackMonths}</span> oy
@@ -165,7 +165,7 @@ export const RoiCalculator: React.FC = () => {
                 )}
               </div>
               {machine && (
-                <p className="text-[11px] text-slate-400 mt-1 truncate">
+                <p className="text-xs text-slate-400 mt-1 truncate">
                   {machine.name} — {formatPrice(machine.priceUSD)}
                 </p>
               )}
@@ -173,8 +173,8 @@ export const RoiCalculator: React.FC = () => {
             <ShieldCheck size={36} className="text-blue-400 shrink-0" />
           </div>
 
-          <p className="sm:col-span-2 text-[11px] text-slate-500 leading-relaxed">
-            Hisob siz kiritgan ma'lumotlar asosidagi taxminiy baho. Real natija obyekt
+          <p className="sm:col-span-2 text-xs text-slate-500">
+            Hisob siz kiritgan maʼlumotlar asosidagi taxminiy baho. Real natija obyekt
             turi, ish rejimi va foydalanish sharoitiga qarab farq qiladi.
           </p>
 

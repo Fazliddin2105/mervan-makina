@@ -24,7 +24,7 @@ export const Toast: React.FC = () => {
     >
       <div className="flex items-start gap-3 bg-[#0B1D3F] text-white px-4 py-3 rounded-2xl shadow-2xl border border-slate-700 animate-in fade-in slide-in-from-bottom-4 duration-200">
         <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-0.5" />
-        <p className="text-xs leading-relaxed flex-1 min-w-0">{toastMessage}</p>
+        <p className="text-xs flex-1 min-w-0">{toastMessage}</p>
         <button
           onClick={() => setVisible(false)}
           aria-label="Yopish"

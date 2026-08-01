@@ -67,7 +67,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
   const specs = [
     { label: 'Kuchlanish', value: product.voltage },
     { label: 'Unumdorlik', value: product.productivity },
-    { label: "Cho'tka kengligi", value: product.brushWidth }
+    { label: "Choʻtka kengligi", value: product.brushWidth }
   ].filter(s => s.value && !EMPTY_SPEC.has(s.value.trim().toLowerCase()));
 
   /* At most two badges so the photograph is never boxed in. */
@@ -82,7 +82,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
 
   const stockLine = (
     <span
-      className={`inline-flex items-center gap-1.5 text-[11px] font-semibold shrink-0 ${
+      className={`inline-flex items-center gap-1.5 text-xs font-bold shrink-0 ${
         product.inStock ? 'text-emerald-600' : 'text-slate-500'
       }`}
     >
@@ -151,10 +151,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
       <div className="absolute bottom-3 inset-x-3 z-20 flex opacity-0 translate-y-2 pointer-events-none transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
         <button
           onClick={() => setQuickViewProduct(product)}
-          className="flex-1 min-w-0 bg-[#0B1D3F]/90 backdrop-blur text-white text-xs font-semibold py-2 rounded-xl flex items-center justify-center gap-1.5 shadow-lg hover:bg-[#0B1D3F] transition-colors duration-200 cursor-pointer"
+          className="flex-1 min-w-0 bg-[#0B1D3F]/90 backdrop-blur text-white text-xs font-bold py-2 rounded-xl flex items-center justify-center gap-1.5 shadow-lg hover:bg-[#0B1D3F] transition-colors duration-200 cursor-pointer"
         >
           <Eye size={14} className="shrink-0" />
-          <span className="truncate">Tezkor Ko'rish</span>
+          <span className="truncate">Tezkor Koʻrish</span>
         </button>
       </div>
     </div>
@@ -162,11 +162,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
 
   const priceBlock = (
     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-      <span className="text-xl font-black text-[#0B1D3F] tabular leading-none">
+      <span className="text-xl font-bold text-[#0B1D3F] tabular">
         {formatPrice(product.priceUSD)}
       </span>
       {product.oldPriceUSD && (
-        <span className="text-xs font-semibold text-slate-400 line-through tabular">
+        <span className="text-xs font-bold text-slate-400 line-through tabular">
           {formatPrice(product.oldPriceUSD)}
         </span>
       )}
@@ -174,7 +174,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
   );
 
   const priceCaption = (
-    <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">
+    <span className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">
       Rasmiy Narxi
     </span>
   );
@@ -194,12 +194,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
           <div className="flex items-center justify-between gap-3">
             <span className="flex items-center gap-2.5 min-w-0">
               <BrandLogo brandId={product.brandId} name={product.brand} variant="tile" size="sm" />
-              <span className="truncate text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
+              <span className="truncate text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
                 {product.machineType} Uskunasi
               </span>
             </span>
             {product.reviewsCount > 0 && (
-              <span className="flex items-center gap-1 text-[11px] shrink-0">
+              <span className="flex items-center gap-1 text-xs shrink-0">
                 <Star size={12} className="fill-blue-400 text-blue-400" />
                 <span className="font-bold text-slate-700 tabular">{product.rating}</span>
                 <span className="text-slate-400 tabular">({product.reviewsCount})</span>
@@ -210,12 +210,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
           <h3
             onClick={handleCardClick}
             title={product.name}
-            className="mt-3 text-lg font-bold text-[#0B1D3F] leading-snug hover:text-blue-700 cursor-pointer transition-colors duration-200"
+            className="mt-3 text-lg font-bold text-[#0B1D3F] hover:text-blue-700 cursor-pointer transition-colors duration-200"
           >
             {product.name}
           </h3>
 
-          <p className="mt-2 text-sm text-slate-600 leading-relaxed line-clamp-2">
+          <p className="mt-2 text-sm text-slate-600 line-clamp-2">
             {product.description}
           </p>
 
@@ -223,8 +223,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
             <dl className="mt-4 pt-4 border-t border-slate-200/70 flex flex-wrap gap-x-8 gap-y-3">
               {specs.map(s => (
                 <div key={s.label} className="min-w-0">
-                  <dt className="text-[11px] text-slate-500">{s.label}</dt>
-                  <dd className="mt-0.5 text-xs font-semibold text-[#0B1D3F] tabular">{s.value}</dd>
+                  <dt className="text-xs text-slate-500">{s.label}</dt>
+                  <dd className="mt-0.5 text-xs font-bold text-[#0B1D3F] tabular">{s.value}</dd>
                 </div>
               ))}
             </dl>
@@ -248,7 +248,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
               className="btn-secondary w-full px-4"
             >
               <ShoppingBag size={15} className="shrink-0" />
-              <span className="truncate">Savatga Qo'shish</span>
+              <span className="truncate">Savatga Qoʻshish</span>
             </button>
             <button
               onClick={() => { setQuoteModalProduct(product); setIsQuoteModalOpen(true); }}
@@ -275,12 +275,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
         <div className="flex items-center justify-between gap-3">
           <span className="flex items-center gap-2.5 min-w-0">
             <BrandLogo brandId={product.brandId} name={product.brand} variant="tile" size="sm" />
-            <span className="truncate text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
+            <span className="truncate text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
               {product.machineType} Uskunasi
             </span>
           </span>
           {product.reviewsCount > 0 && (
-            <span className="flex items-center gap-1 text-[11px] shrink-0">
+            <span className="flex items-center gap-1 text-xs shrink-0">
               <Star size={12} className="fill-blue-400 text-blue-400" />
               <span className="font-bold text-slate-700 tabular">{product.rating}</span>
               <span className="text-slate-400 tabular">({product.reviewsCount})</span>
@@ -291,7 +291,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
         <h3
           onClick={handleCardClick}
           title={product.name}
-          className="mt-3 text-[15px] font-bold text-[#0B1D3F] leading-snug line-clamp-2 min-h-[2.6rem] hover:text-blue-700 cursor-pointer transition-colors duration-200"
+          className="mt-3 text-sm font-bold text-[#0B1D3F] line-clamp-2 min-h-[2.6rem] hover:text-blue-700 cursor-pointer transition-colors duration-200"
         >
           {product.name}
         </h3>
@@ -300,8 +300,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
           <dl className="mt-4 border-t border-slate-100 divide-y divide-slate-100">
             {specs.map(s => (
               <div key={s.label} className="flex items-baseline justify-between gap-3 py-2">
-                <dt className="text-[11px] text-slate-500 truncate">{s.label}</dt>
-                <dd className="text-xs font-semibold text-[#0B1D3F] tabular text-right shrink-0">{s.value}</dd>
+                <dt className="text-xs text-slate-500 truncate">{s.label}</dt>
+                <dd className="text-xs font-bold text-[#0B1D3F] tabular text-right shrink-0">{s.value}</dd>
               </div>
             ))}
           </dl>
@@ -321,7 +321,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, viewMode = 'g
               className="btn-secondary flex-1 min-w-0 px-4"
             >
               <ShoppingBag size={15} className="shrink-0" />
-              <span className="truncate">Savatga Qo'shish</span>
+              <span className="truncate">Savatga Qoʻshish</span>
             </button>
             <button
               onClick={() => { setQuoteModalProduct(product); setIsQuoteModalOpen(true); }}

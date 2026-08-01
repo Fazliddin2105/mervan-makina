@@ -10,11 +10,11 @@ export const ComparePage: React.FC = () => {
       
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F] flex items-center gap-2">
+          <h1 className="text-2xl font-bold text-[#0B1D3F] flex items-center gap-2">
             <GitCompare size={28} className="text-blue-600" /> Texnik taqqoslash jadvali
           </h1>
           <p className="text-xs text-slate-500 mt-1">
-            Unumdorlik, kuchlanish, cho'tka kengligi va suv baklari hajmini yonma-yon solishtiring.
+            Unumdorlik, kuchlanish, choʻtka kengligi va suv baklari hajmini yonma-yon solishtiring.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export const ComparePage: React.FC = () => {
                       <button 
                         onClick={() => removeFromCompare(p.id)}
                         className="absolute -top-2 -right-2 p-1 rounded-full bg-rose-100 text-rose-600 hover:bg-rose-200 cursor-pointer"
-                        title="O'chirish"
+                        title="Oʻchirish"
                       >
                         <X size={12} />
                       </button>
@@ -59,7 +59,7 @@ export const ComparePage: React.FC = () => {
                       onClick={() => addToCart(p)}
                       className="btn-secondary w-full"
                     >
-                      Savatga qo'shish
+                      Savatga qoʻshish
                     </button>
                   </th>
                 ))}
@@ -72,7 +72,7 @@ export const ComparePage: React.FC = () => {
               <tr>
                 <td className="p-4 font-bold text-slate-700 bg-slate-50/50 sticky left-0">Brend va model</td>
                 {compareList.map(p => (
-                  <td key={p.id} className="p-4 text-center font-semibold text-slate-900">{p.brand} ({p.model})</td>
+                  <td key={p.id} className="p-4 text-center font-bold text-slate-900">{p.brand} ({p.model})</td>
                 ))}
               </tr>
 
@@ -91,7 +91,7 @@ export const ComparePage: React.FC = () => {
               </tr>
 
               <tr>
-                <td className="p-4 font-bold text-slate-700 bg-slate-50/50 sticky left-0">Cho'tka kengligi / Ish yo'lagi</td>
+                <td className="p-4 font-bold text-slate-700 bg-slate-50/50 sticky left-0">Choʻtka kengligi / Ish yoʻlagi</td>
                 {compareList.map(p => (
                   <td key={p.id} className="p-4 text-center font-medium tabular">{p.brushWidth}</td>
                 ))}
@@ -119,7 +119,7 @@ export const ComparePage: React.FC = () => {
                     <td key={p.id} className="p-4 text-center font-bold">
                       {warranty
                         ? <span className="text-emerald-600 tabular">{warranty}</span>
-                        : <span className="text-slate-400 font-medium">So'rov bo'yicha</span>}
+                        : <span className="text-slate-400 font-medium">Soʻrov boʻyicha</span>}
                     </td>
                   );
                 })}
@@ -136,13 +136,13 @@ export const ComparePage: React.FC = () => {
           </div>
           <h3 className="text-lg font-bold text-[#0B1D3F]">Taqqoslash uchun texnika tanlanmagan</h3>
           <p className="text-xs text-slate-500">
-            Texnik parametrlarni yonma-yon ko'rish uchun mahsulot kartochkalaridagi "Solishtirish" belgisini bosing.
+            Texnik parametrlarni yonma-yon koʻrish uchun mahsulot kartochkalaridagi "Solishtirish" belgisini bosing.
           </p>
           <button
             onClick={() => setActivePage('products')}
             className="btn-secondary"
           >
-            Katalogga o'tish
+            Katalogga oʻtish
           </button>
         </div>
       )}

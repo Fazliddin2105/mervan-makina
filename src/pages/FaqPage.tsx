@@ -23,8 +23,8 @@ export const FaqPage: React.FC = () => {
       
       <PageBanner
         eyebrow="YORDAM MARKAZI"
-        title="Ko'p so'raladigan savollar"
-        subtitle="Kafolat, ehtiyot qismlar, yetkazib berish, lizing va texnik xizmat bo'yicha ko'p so'raladigan savollarga javoblar."
+        title="Koʻp soʻraladigan savollar"
+        subtitle="Kafolat, ehtiyot qismlar, yetkazib berish, lizing va texnik xizmat boʻyicha koʻp soʻraladigan savollarga javoblar."
       >
         {/* Search Bar */}
         <div className="max-w-md mx-auto sm:mx-0 relative">
@@ -41,7 +41,7 @@ export const FaqPage: React.FC = () => {
 
       {/* Categories Switcher */}
       <div className="flex flex-wrap justify-center gap-2 text-xs">
-        {['Barchasi', 'Uskunalar', 'Kafolat', 'Yetkazib berish', 'Servis va Ijara', 'Lizing va To\'lov'].map((cat) => (
+        {['Barchasi', 'Uskunalar', 'Kafolat', 'Yetkazib berish', 'Servis va Ijara', 'Lizing va Toʻlov'].map((cat) => (
           <button
             key={cat}
             onClick={() => setActiveCat(cat)}
@@ -94,7 +94,7 @@ export const FaqPage: React.FC = () => {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-5 pb-5 pt-4 text-xs text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/50">
+                  <div className="px-5 pb-5 pt-4 text-xs text-slate-600 border-t border-slate-100 bg-slate-50/50">
                     {faq.answer}
                   </div>
                 </div>
@@ -107,13 +107,13 @@ export const FaqPage: React.FC = () => {
       {/* Contact CTA */}
       <div className="bg-slate-100 rounded-2xl p-8 text-center space-y-3 max-w-xl mx-auto border border-slate-200">
         <h3 className="font-bold text-[#0B1D3F] text-base">Hali ham savollaringiz bormi?</h3>
-        <p className="text-xs text-slate-500">Texnik qo'llab-quvvatlash: {siteSettings.workingHours}</p>
+        <p className="text-xs text-slate-500">Texnik qoʻllab-quvvatlash: {siteSettings.workingHours}</p>
         <div className="pt-2 flex flex-wrap justify-center gap-3">
           <a href={`tel:${siteSettings.phone.replace(/\s/g, '')}`} className="btn-primary">
-            <span><span className="tabular">{siteSettings.phone}</span> ga qo'ng'iroq qiling</span>
+            <span><span className="tabular">{siteSettings.phone}</span> ga qoʻngʻiroq qiling</span>
           </a>
           <button onClick={() => setIsQuoteModalOpen(true)} className="btn-secondary">
-            B2B taklif so'rash
+            B2B taklif soʻrash
           </button>
         </div>
       </div>

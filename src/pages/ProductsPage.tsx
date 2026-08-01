@@ -27,10 +27,10 @@ const MACHINE_TYPE_LABELS: Record<string, string> = {
 
 /* One label treatment for every filter group keeps the sidebar reading as a
    single panel instead of six unrelated controls. */
-const GROUP_LABEL = 'block text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400';
+const GROUP_LABEL = 'block text-xs font-bold uppercase tracking-[0.18em] text-slate-400';
 const FIELD =
   'w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 pl-3.5 pr-9 py-2.5 ' +
-  'text-xs font-semibold text-[#0B1D3F] cursor-pointer transition-colors duration-200 ' +
+  'text-xs font-bold text-[#0B1D3F] cursor-pointer transition-colors duration-200 ' +
   'hover:border-slate-300 focus:outline-none focus:border-blue-600';
 
 export const ProductsPage: React.FC = () => {
@@ -79,9 +79,9 @@ export const ProductsPage: React.FC = () => {
     Boolean(filters.searchQuery);
 
   const chip = (label: string, value: string, onClear: () => void) => (
-    <span className="inline-flex items-center gap-1.5 max-w-full rounded-xl border border-slate-200 bg-slate-50 pl-2.5 pr-1 py-1 text-[11px]">
+    <span className="inline-flex items-center gap-1.5 max-w-full rounded-xl border border-slate-200 bg-slate-50 pl-2.5 pr-1 py-1 text-xs">
       <span className="text-slate-400 font-medium shrink-0">{label}:</span>
-      <span className="font-semibold text-[#0B1D3F] truncate">{value}</span>
+      <span className="font-bold text-[#0B1D3F] truncate">{value}</span>
       <button
         onClick={onClear}
         className="shrink-0 rounded-xl p-0.5 text-slate-400 hover:text-rose-600 transition-colors duration-200 cursor-pointer"
@@ -106,7 +106,7 @@ export const ProductsPage: React.FC = () => {
           <Search size={15} className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
-            placeholder="Model yoki nom bo'yicha qidiring..."
+            placeholder="Model yoki nom boʻyicha qidiring..."
             value={filters.searchQuery}
             onChange={(e) => setFilters(prev => ({ ...prev, searchQuery: e.target.value }))}
             className="w-full rounded-xl border border-white/15 bg-white/5 pl-10 pr-4 py-3 text-xs font-medium text-white placeholder-slate-400 transition-colors duration-200 hover:border-white/25 focus:outline-none focus:border-blue-600"
@@ -121,14 +121,14 @@ export const ProductsPage: React.FC = () => {
           className={`${isMobileFilterOpen ? 'block' : 'hidden'} lg:block lg:col-span-3 surface overflow-hidden lg:sticky lg:top-24`}
         >
           <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-slate-100">
-            <h2 className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0B1D3F]">
+            <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0B1D3F]">
               <SlidersHorizontal size={14} className="text-blue-600 shrink-0" />
               Uskuna filtrlari
             </h2>
             <div className="flex items-center gap-1 shrink-0">
               <button
                 onClick={resetFilters}
-                className="inline-flex items-center gap-1 rounded-xl px-2 py-1 text-[11px] font-bold text-slate-500 hover:text-blue-700 transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center gap-1 rounded-xl px-2 py-1 text-xs font-bold text-slate-500 hover:text-blue-700 transition-colors duration-200 cursor-pointer"
               >
                 <RotateCcw size={12} /> Tozalash
               </button>
@@ -200,7 +200,7 @@ export const ProductsPage: React.FC = () => {
                         onChange={() => setFilters(prev => ({ ...prev, machineType: type }))}
                         className="w-3.5 h-3.5 shrink-0 accent-blue-600 cursor-pointer"
                       />
-                      <span className={`text-xs truncate ${active ? 'font-semibold text-[#0B1D3F]' : 'text-slate-600'}`}>
+                      <span className={`text-xs truncate ${active ? 'font-bold text-[#0B1D3F]' : 'text-slate-600'}`}>
                         {MACHINE_TYPE_LABELS[type] || type}
                       </span>
                     </label>
@@ -239,14 +239,14 @@ export const ProductsPage: React.FC = () => {
                   onChange={(e) => setFilters(prev => ({ ...prev, inStockOnly: e.target.checked }))}
                   className="w-4 h-4 shrink-0 accent-blue-600 rounded cursor-pointer"
                 />
-                <span className="text-xs font-semibold text-slate-700">Faqat omborda bor mashinalar</span>
+                <span className="text-xs font-bold text-slate-700">Faqat omborda bor mashinalar</span>
               </label>
             </div>
 
             {/* Mobile-only: confirm and return to the results */}
             <div className="lg:hidden px-5 py-5">
               <button onClick={() => setIsMobileFilterOpen(false)} className="btn-secondary w-full">
-                <span className="tabular">{filtered.length}</span> ta modelni ko'rish
+                <span className="tabular">{filtered.length}</span> ta modelni koʻrish
               </button>
             </div>
 
@@ -269,8 +269,8 @@ export const ProductsPage: React.FC = () => {
                 </button>
 
                 <p className="text-xs text-slate-500 truncate">
-                  <span className="text-sm font-extrabold text-[#0B1D3F] tabular">{filtered.length}</span>
-                  {' '}ta model ko'rsatilmoqda
+                  <span className="text-sm font-bold text-[#0B1D3F] tabular">{filtered.length}</span>
+                  {' '}ta model koʻrsatilmoqda
                 </p>
               </div>
 
@@ -278,20 +278,20 @@ export const ProductsPage: React.FC = () => {
 
                 {/* Sort selector */}
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="hidden md:inline text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400 shrink-0">
+                  <span className="hidden md:inline text-xs font-bold uppercase tracking-[0.18em] text-slate-400 shrink-0">
                     Saralash
                   </span>
                   <div className="relative min-w-0">
                     <select
                       value={filters.sortBy}
                       onChange={(e) => setFilters(prev => ({ ...prev, sortBy: e.target.value as any }))}
-                      className="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 pl-3 pr-8 py-2 text-xs font-semibold text-[#0B1D3F] cursor-pointer transition-colors duration-200 hover:border-slate-300 focus:outline-none focus:border-blue-600"
+                      className="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 pl-3 pr-8 py-2 text-xs font-bold text-[#0B1D3F] cursor-pointer transition-colors duration-200 hover:border-slate-300 focus:outline-none focus:border-blue-600"
                       aria-label="Saralash"
                     >
                       <option value="featured">Tavsiya etilganlar</option>
                       <option value="price-low">Narx: arzondan qimmatga</option>
                       <option value="price-high">Narx: qimmatdan arzonga</option>
-                      <option value="rating">Reyting bo'yicha</option>
+                      <option value="rating">Reyting boʻyicha</option>
                       <option value="newest">Yangi modellar</option>
                     </select>
                     <ChevronDown size={14} className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -305,8 +305,8 @@ export const ProductsPage: React.FC = () => {
                     className={`p-1.5 rounded-xl transition-colors duration-200 cursor-pointer ${
                       viewMode === 'grid' ? 'bg-white text-[#0B1D3F] shadow-sm' : 'text-slate-400 hover:text-slate-700'
                     }`}
-                    title="Katak ko'rinishi"
-                    aria-label="Katak ko'rinishi"
+                    title="Katak koʻrinishi"
+                    aria-label="Katak koʻrinishi"
                   >
                     <Grid size={16} />
                   </button>
@@ -315,8 +315,8 @@ export const ProductsPage: React.FC = () => {
                     className={`p-1.5 rounded-xl transition-colors duration-200 cursor-pointer ${
                       viewMode === 'list' ? 'bg-white text-[#0B1D3F] shadow-sm' : 'text-slate-400 hover:text-slate-700'
                     }`}
-                    title="Ro'yxat ko'rinishi"
-                    aria-label="Ro'yxat ko'rinishi"
+                    title="Roʻyxat koʻrinishi"
+                    aria-label="Roʻyxat koʻrinishi"
                   >
                     <List size={16} />
                   </button>
@@ -329,7 +329,7 @@ export const ProductsPage: React.FC = () => {
             {/* Active Filter Tags — part of the same bar, not a floating row */}
             {hasActiveFilters && (
               <div className="flex flex-wrap items-center gap-2 px-4 py-3 border-t border-slate-100 bg-slate-50/60">
-                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400 shrink-0">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400 shrink-0">
                   Faol filtrlar
                 </span>
 
@@ -348,7 +348,7 @@ export const ProductsPage: React.FC = () => {
 
                 <button
                   onClick={resetFilters}
-                  className="ml-auto shrink-0 text-[11px] font-bold text-slate-500 hover:text-blue-700 transition-colors duration-200 cursor-pointer"
+                  className="ml-auto shrink-0 text-xs font-bold text-slate-500 hover:text-blue-700 transition-colors duration-200 cursor-pointer"
                 >
                   Hammasini tozalash
                 </button>
@@ -371,11 +371,11 @@ export const ProductsPage: React.FC = () => {
               <div className="mx-auto w-14 h-14 rounded-2xl bg-slate-100 border border-slate-200/80 flex items-center justify-center text-slate-400">
                 <Search size={22} />
               </div>
-              <h2 className="mt-5 text-2xl font-extrabold text-[#0B1D3F]">
-                So'rovingizga mos mashina topilmadi
+              <h2 className="mt-5 text-2xl font-bold text-[#0B1D3F]">
+                Soʻrovingizga mos mashina topilmadi
               </h2>
-              <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
-                Narx oralig'ini kengaytiring yoki brend va mashina turi filtrlarini tozalab ko'ring.
+              <p className="mt-3 text-sm text-slate-600 max-w-md mx-auto">
+                Narx oraligʻini kengaytiring yoki brend va mashina turi filtrlarini tozalab koʻring.
               </p>
               <button onClick={resetFilters} className="btn-primary mt-7">
                 <RotateCcw size={14} /> Filtrlarni tozalash

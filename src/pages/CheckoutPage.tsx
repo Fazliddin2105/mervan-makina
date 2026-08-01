@@ -50,7 +50,7 @@ export const CheckoutPage: React.FC = () => {
 
     clearCart();
     setOrderComplete(true);
-    showToast(`${orderId} raqamli buyurtma qayd etildi. Menejerimiz siz bilan bog'lanadi.`);
+    showToast(`${orderId} raqamli buyurtma qayd etildi. Menejerimiz siz bilan bogʻlanadi.`);
   };
 
   if (orderComplete) {
@@ -64,7 +64,7 @@ export const CheckoutPage: React.FC = () => {
           <span className="pill bg-emerald-100 text-emerald-800">
             BUYURTMA QAYD ETILDI
           </span>
-          <h1 className="text-3xl font-black text-[#0B1D3F]">Buyurtmangiz uchun rahmat!</h1>
+          <h1 className="text-3xl font-bold text-[#0B1D3F]">Buyurtmangiz uchun rahmat!</h1>
           <p className="text-xs text-slate-500 font-mono">Buyurtma raqami: <span className="tabular font-bold text-slate-900">{completedOrderNum}</span></p>
         </div>
 
@@ -78,13 +78,13 @@ export const CheckoutPage: React.FC = () => {
             <span className="tabular">{taxId}</span>
           </div>
           <div className="flex justify-between font-bold text-[#0B1D3F]">
-            <span>Tanlangan to'lov usuli:</span>
-            <span>{paymentMethod === 'wire' ? 'Bank o\'tkazmasi' : paymentMethod === 'card' ? 'Karta orqali to\'lov' : 'Lizing / bo\'lib to\'lash'}</span>
+            <span>Tanlangan toʻlov usuli:</span>
+            <span>{paymentMethod === 'wire' ? 'Bank oʻtkazmasi' : paymentMethod === 'card' ? 'Karta orqali toʻlov' : 'Lizing / boʻlib toʻlash'}</span>
           </div>
         </div>
 
-        <p className="text-xs text-slate-500 leading-relaxed">
-          Buyurtmangiz qayd etildi. Menejerimiz <span className="tabular font-bold text-slate-800">{phone}</span> raqamiga qo'ng'iroq qilib, buyurtma tarkibi, to'lov va yetkazib berish shartlarini tasdiqlaydi. Hisob-faktura va shartnoma shundan keyin rasmiylashtiriladi.
+        <p className="text-xs text-slate-500">
+          Buyurtmangiz qayd etildi. Menejerimiz <span className="tabular font-bold text-slate-800">{phone}</span> raqamiga qoʻngʻiroq qilib, buyurtma tarkibi, toʻlov va yetkazib berish shartlarini tasdiqlaydi. Hisob-faktura va shartnoma shundan keyin rasmiylashtiriladi.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 pt-2">
@@ -109,11 +109,11 @@ export const CheckoutPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-8">
       
       <div className="border-b border-slate-200 pb-4">
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F] flex items-center gap-2">
+        <h1 className="text-2xl font-bold text-[#0B1D3F] flex items-center gap-2">
           <Lock size={26} className="text-emerald-600" /> Buyurtmani rasmiylashtirish
         </h1>
         <p className="text-xs text-slate-500 mt-1">
-          Kompaniya ma'lumotlarini kiriting — menejerimiz buyurtmani telefon orqali tasdiqlaydi.
+          Kompaniya maʼlumotlarini kiriting — menejerimiz buyurtmani telefon orqali tasdiqlaydi.
         </p>
       </div>
 
@@ -124,13 +124,13 @@ export const CheckoutPage: React.FC = () => {
           
           {/* Step 1: Company details */}
           <div className="surface p-6 space-y-4">
-            <h2 className="text-base font-extrabold text-[#0B1D3F] flex items-center gap-2">
-              <Building2 size={18} className="text-blue-600" /> 1. Tashkilot va soliq ma'lumotlari
+            <h2 className="text-base font-bold text-[#0B1D3F] flex items-center gap-2">
+              <Building2 size={18} className="text-blue-600" /> 1. Tashkilot va soliq maʼlumotlari
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div>
-                <label className="block text-slate-700 font-semibold mb-1">Kompaniyaning rasmiy nomi *</label>
+                <label className="block text-slate-700 font-bold mb-1">Kompaniyaning rasmiy nomi *</label>
                 <input 
                   type="text" 
                   required
@@ -141,7 +141,7 @@ export const CheckoutPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-slate-700 font-semibold mb-1">STIR (soliq to'lovchi raqami) *</label>
+                <label className="block text-slate-700 font-bold mb-1">STIR (soliq toʻlovchi raqami) *</label>
                 <input
                   type="text"
                   required
@@ -152,7 +152,7 @@ export const CheckoutPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-slate-700 font-semibold mb-1">Mas'ul shaxs ismi *</label>
+                <label className="block text-slate-700 font-bold mb-1">Masʼul shaxs ismi *</label>
                 <input 
                   type="text" 
                   required
@@ -163,7 +163,7 @@ export const CheckoutPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-slate-700 font-semibold mb-1">Telefon raqami *</label>
+                <label className="block text-slate-700 font-bold mb-1">Telefon raqami *</label>
                 <input
                   type="tel"
                   required
@@ -174,7 +174,7 @@ export const CheckoutPage: React.FC = () => {
               </div>
 
               <div className="sm:col-span-2">
-                <label className="block text-slate-700 font-semibold mb-1">Korporativ elektron pochta *</label>
+                <label className="block text-slate-700 font-bold mb-1">Korporativ elektron pochta *</label>
                 <input 
                   type="email" 
                   required
@@ -188,13 +188,13 @@ export const CheckoutPage: React.FC = () => {
 
           {/* Step 2: Shipping */}
           <div className="surface p-6 space-y-4">
-            <h2 className="text-base font-extrabold text-[#0B1D3F] flex items-center gap-2">
+            <h2 className="text-base font-bold text-[#0B1D3F] flex items-center gap-2">
               <Truck size={18} className="text-blue-600" /> 2. Yetkazib berish manzili
             </h2>
 
             <div className="space-y-3 text-xs">
               <div>
-                <label className="block text-slate-700 font-semibold mb-1">To'liq manzil *</label>
+                <label className="block text-slate-700 font-bold mb-1">Toʻliq manzil *</label>
                 <input 
                   type="text" 
                   required
@@ -204,22 +204,22 @@ export const CheckoutPage: React.FC = () => {
                 />
               </div>
 
-              <label className="flex items-center gap-2 text-slate-700 font-semibold cursor-pointer">
+              <label className="flex items-center gap-2 text-slate-700 font-bold cursor-pointer">
                 <input 
                   type="checkbox" 
                   checked={needsRamp}
                   onChange={(e) => setNeedsRamp(e.target.checked)}
                   className="w-4 h-4 accent-blue-600"
                 />
-                <span>Yuklamani tushirish uchun gidravlik ko'targichli mashina kerak</span>
+                <span>Yuklamani tushirish uchun gidravlik koʻtargichli mashina kerak</span>
               </label>
             </div>
           </div>
 
           {/* Step 3: Payment */}
           <div className="surface p-6 space-y-4">
-            <h2 className="text-base font-extrabold text-[#0B1D3F] flex items-center gap-2">
-              <CreditCard size={18} className="text-blue-600" /> 3. To'lov usuli
+            <h2 className="text-base font-bold text-[#0B1D3F] flex items-center gap-2">
+              <CreditCard size={18} className="text-blue-600" /> 3. Toʻlov usuli
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
@@ -230,8 +230,8 @@ export const CheckoutPage: React.FC = () => {
                 }`}
               >
                 <FileText size={20} className="text-blue-600 mb-1" />
-                <div className="text-slate-900">Bank o'tkazmasi</div>
-                <div className="text-[10px] text-slate-500 font-normal mt-1">Rekvizitlar va hisob-faktura menejer bilan tasdiqlanadi</div>
+                <div className="text-slate-900">Bank oʻtkazmasi</div>
+                <div className="text-xs text-slate-500 font-normal mt-1">Rekvizitlar va hisob-faktura menejer bilan tasdiqlanadi</div>
               </div>
 
               <div 
@@ -241,8 +241,8 @@ export const CheckoutPage: React.FC = () => {
                 }`}
               >
                 <CreditCard size={20} className="text-blue-600 mb-1" />
-                <div className="text-slate-900">Karta orqali to'lov</div>
-                <div className="text-[10px] text-slate-500 font-normal mt-1">Uzcard, Humo, Visa, Mastercard</div>
+                <div className="text-slate-900">Karta orqali toʻlov</div>
+                <div className="text-xs text-slate-500 font-normal mt-1">Uzcard, Humo, Visa, Mastercard</div>
               </div>
 
               <div 
@@ -252,8 +252,8 @@ export const CheckoutPage: React.FC = () => {
                 }`}
               >
                 <Building2 size={20} className="text-blue-600 mb-1" />
-                <div className="text-slate-900">Lizing / bo'lib to'lash</div>
-                <div className="text-[10px] text-slate-500 font-normal mt-1">Shartlar menejer bilan alohida kelishiladi</div>
+                <div className="text-slate-900">Lizing / boʻlib toʻlash</div>
+                <div className="text-xs text-slate-500 font-normal mt-1">Shartlar menejer bilan alohida kelishiladi</div>
               </div>
             </div>
           </div>
@@ -262,14 +262,14 @@ export const CheckoutPage: React.FC = () => {
 
         {/* Order Summary Right */}
         <div className="lg:col-span-4 surface p-6 space-y-6">
-          <h3 className="font-extrabold text-[#0B1D3F] text-lg">Buyurtma tarkibi</h3>
+          <h3 className="font-bold text-[#0B1D3F] text-lg">Buyurtma tarkibi</h3>
 
           <div className="space-y-3 divide-y divide-slate-100 text-xs max-h-60 overflow-y-auto">
             {cart.map(c => (
               <div key={c.product.id} className="pt-2 first:pt-0 flex justify-between items-center">
                 <div>
                   <div className="font-bold text-slate-900">{c.product.name}</div>
-                  <div className="tabular text-[10px] text-slate-400">{c.quantity} dona</div>
+                  <div className="tabular text-xs text-slate-400">{c.quantity} dona</div>
                 </div>
                 <div className="tabular font-bold text-[#0B1D3F] font-mono">
                   {formatPrice(c.product.priceUSD * c.quantity)}
@@ -280,8 +280,8 @@ export const CheckoutPage: React.FC = () => {
 
           <div className="pt-4 border-t border-slate-200 space-y-2 text-xs">
             <div className="flex justify-between items-baseline">
-              <span className="font-extrabold text-[#0B1D3F] text-base">Jami summa</span>
-              <span className="tabular text-xl font-black text-blue-700 font-mono">{formatPrice(cartSubtotalUSD)}</span>
+              <span className="font-bold text-[#0B1D3F] text-base">Jami summa</span>
+              <span className="tabular text-xl font-bold text-blue-700 font-mono">{formatPrice(cartSubtotalUSD)}</span>
             </div>
           </div>
 

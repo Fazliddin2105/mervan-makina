@@ -163,14 +163,14 @@ const EXCHANGE_RATES = {
  * the message reached the company — the others tell the truth.
  */
 const DELIVERY_MESSAGE: Record<DeliveryResult, (phone: string) => string> = {
-  sent: () => "So'rovingiz yuborildi. Tez orada bog'lanamiz.",
-  handoff: () => "So'rov matni nusxalandi va Telegram ochildi — yuborish uchun \"Send\" tugmasini bosing.",
-  failed: (phone) => `So'rovni yuborib bo'lmadi. Iltimos, ${phone} raqamiga qo'ng'iroq qiling.`
+  sent: () => "Soʻrovingiz yuborildi. Tez orada bogʻlanamiz.",
+  handoff: () => "Soʻrov matni nusxalandi va Telegram ochildi — yuborish uchun \"Send\" tugmasini bosing.",
+  failed: (phone) => `Soʻrovni yuborib boʻlmadi. Iltimos, ${phone} raqamiga qoʻngʻiroq qiling.`
 };
 
 const SYMBOLS = {
   USD: '$',
-  UZS: " so'm",
+  UZS: " soʻm",
   EUR: '€'
 };
 
@@ -180,7 +180,7 @@ const DEFAULT_SITE_SETTINGS: SiteSettings = {
   tagline: 'Sanoat va Kommunal Tozalash Uskunalari Rasmiy Yetkazib Beruvchisi',
   logoUrl: '',
   heroTitle: 'Sanoat Darajasidagi Tozalash Uskunalari',
-  heroSubtitle: 'Ko\'chalar, ombor va zavodlar uchun professional supurish va pol yuvish mashinalari. To\'g\'ridan-to\'g\'ri ishlab chiqaruvchidan, kafolat bilan.',
+  heroSubtitle: 'Koʻchalar, ombor va zavodlar uchun professional supurish va pol yuvish mashinalari. Toʻgʻridan-toʻgʻri ishlab chiqaruvchidan, kafolat bilan.',
   heroImage: '/images/products/mk-3/1.webp',
   primaryColor: '#0B1D3F',
   accentColor: '#2563EB',
@@ -191,7 +191,7 @@ const DEFAULT_SITE_SETTINGS: SiteSettings = {
   // admin panel once a real address is confirmed.
   email: '',
   emailSecondary: '',
-  address: 'Sergeli tumani, Yangi Sergeli ko\'chasi 1',
+  address: 'Sergeli tumani, Yangi Sergeli koʻchasi 1',
   city: 'Toshkent',
   workingHours: 'Dush-Juma 09:00-18:00 (tanaffus 13:00-14:00), Shan-Yak: dam olish',
   mapEmbedUrl: 'https://maps.google.com/maps?q=Yangi%20Sergeli%20ko%27chasi%201%2C%20Sergeli%2C%20Toshkent&t=&z=15&ie=UTF8&iwloc=&output=embed',
@@ -205,7 +205,7 @@ const DEFAULT_SITE_SETTINGS: SiteSettings = {
     { id: 's5', platform: 'facebook', label: 'Facebook', url: '', enabled: false },
     { id: 's6', platform: 'whatsapp', label: 'WhatsApp', url: 'https://wa.me/998910718757', enabled: true }
   ],
-  aboutShort: 'Mervan Makina — O\'zbekiston bo\'ylab sanoat va kommunal tozalash uskunalari sohasida ishonchli hamkoringiz. Bevosita ishlab chiqaruvchidan, kafolatli mahsulotlar va tezkor xizmat.',
+  aboutShort: 'Mervan Makina — Oʻzbekiston boʻylab sanoat va kommunal tozalash uskunalari sohasida ishonchli hamkoringiz. Bevosita ishlab chiqaruvchidan, kafolatli mahsulotlar va tezkor xizmat.',
   copyrightText: '© 2026 Mervan Makina. Barcha huquqlar himoyalangan.'
 };
 
@@ -359,10 +359,10 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     'nav.about': { EN: 'About Us', UZ: 'Biz haqimizda', RU: 'О нас' },
     'nav.blog': { EN: 'Blog', UZ: 'Blog', RU: 'Блог' },
     'nav.contact': { EN: 'Contact', UZ: 'Aloqa', RU: 'Контакты' },
-    'btn.shopNow': { EN: 'Shop Equipment', UZ: 'Uskunalarni ko\'rish', RU: 'Каталог оборудования' },
+    'btn.shopNow': { EN: 'Shop Equipment', UZ: 'Uskunalarni koʻrish', RU: 'Каталог оборудования' },
     'btn.quote': { EN: 'Request Quote', UZ: 'Tijorat taklifi', RU: 'Запросить КП' },
-    'btn.addToCart': { EN: 'Add to Cart', UZ: 'Savatga qo\'shish', RU: 'В корзину' },
-    'btn.quickView': { EN: 'Quick View', UZ: 'Tezkor ko\'rish', RU: 'Быстрый просмотр' }
+    'btn.addToCart': { EN: 'Add to Cart', UZ: 'Savatga qoʻshish', RU: 'В корзину' },
+    'btn.quickView': { EN: 'Quick View', UZ: 'Tezkor koʻrish', RU: 'Быстрый просмотр' }
   };
 
   const t = (key: string): string => {
@@ -383,7 +383,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       }
       return [...prev, { product, quantity }];
     });
-    showToast(`${product.name} savatga qo'shildi`);
+    showToast(`${product.name} savatga qoʻshildi`);
   };
 
   const removeFromCart = (productId: string) => {
@@ -409,16 +409,16 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     if (upper === 'CLEAN2026' || upper === 'MEGAVAN10' || upper === 'MERVAN10') {
       setCouponCode(upper);
       setCouponDiscountPercent(10);
-      showToast('10% korporativ chegirma qo\'llandi!');
+      showToast('10% korporativ chegirma qoʻllandi!');
       return true;
     }
     if (upper === 'VIPOFFER') {
       setCouponCode('VIPOFFER');
       setCouponDiscountPercent(15);
-      showToast('15% VIP chegirma qo\'llandi!');
+      showToast('15% VIP chegirma qoʻllandi!');
       return true;
     }
-    showToast('Noto\'g\'ri kupon kodi');
+    showToast('Notoʻgʻri kupon kodi');
     return false;
   };
 
@@ -430,7 +430,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         showToast('Sevimlilardan olib tashlandi');
         return prev.filter(p => p.id !== product.id);
       }
-      showToast('Sevimlilarga qo\'shildi');
+      showToast('Sevimlilarga qoʻshildi');
       return [...prev, product];
     });
   };
@@ -445,7 +445,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     }
     if (!compareList.some(p => p.id === product.id)) {
       setCompareList(prev => [...prev, product]);
-      showToast('Solishtirishga qo\'shildi');
+      showToast('Solishtirishga qoʻshildi');
     }
   };
 
@@ -484,7 +484,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       showToast('Administrator sifatida tizimga kirdingiz');
       return true;
     }
-    showToast('Login yoki parol noto\'g\'ri');
+    showToast('Login yoki parol notoʻgʻri');
     return false;
   };
 
@@ -506,12 +506,12 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
   const resetSiteSettings = () => {
     setSiteSettings(DEFAULT_SITE_SETTINGS);
-    showToast('Sozlamalar boshlang\'ich holatga qaytarildi');
+    showToast('Sozlamalar boshlangʻich holatga qaytarildi');
   };
 
   const updateAdminCredentials = (creds: AdminCredentials) => {
     setAdminCredentials(creds);
-    showToast('Administrator ma\'lumotlari o\'zgartirildi');
+    showToast('Administrator ma\'lumotlari oʻzgartirildi');
   };
 
   // Orders
@@ -523,12 +523,12 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
   const updateOrderStatus = (id: string, status: Order['status']) => {
     setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
-    showToast(`Buyurtma holati o'zgartirildi: ${status}`);
+    showToast(`Buyurtma holati oʻzgartirildi: ${status}`);
   };
 
   const deleteOrder = (id: string) => {
     setOrders(prev => prev.filter(o => o.id !== id));
-    showToast('Buyurtma o\'chirildi');
+    showToast('Buyurtma oʻchirildi');
   };
 
   /** The company's own Telegram, as configured in the admin panel. */
@@ -546,7 +546,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     setQuoteRequests(prev => [newQuote, ...prev]);
     setIsQuoteModalOpen(false);
 
-    const message = buildLeadMessage('YANGI TIJORAT TAKLIFI SO\'ROVI', [
+    const message = buildLeadMessage('YANGI TIJORAT TAKLIFI SOʻROVI', [
       { label: 'Kompaniya', value: newQuote.companyName },
       { label: 'Aloqa uchun shaxs', value: newQuote.contactName },
       { label: 'Telefon', value: newQuote.phone },
@@ -566,18 +566,18 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
   const updateQuoteStatus = (id: string, status: QuoteRequest['status']) => {
     setQuoteRequests(prev => prev.map(q => q.id === id ? { ...q, status } : q));
-    showToast(`So'rov holati o'zgartirildi: ${status}`);
+    showToast(`Soʻrov holati oʻzgartirildi: ${status}`);
   };
 
   const deleteQuote = (id: string) => {
     setQuoteRequests(prev => prev.filter(q => q.id !== id));
-    showToast('So\'rov o\'chirildi');
+    showToast('Soʻrov oʻchirildi');
   };
 
   // Product CRUD
   const addNewProduct = (product: Product) => {
     setProductsList(prev => [product, ...prev]);
-    showToast(`${product.name} katalogga qo'shildi`);
+    showToast(`${product.name} katalogga qoʻshildi`);
   };
 
   const updateProduct = (updated: Product) => {
@@ -587,7 +587,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
   const deleteProduct = (id: string) => {
     setProductsList(prev => prev.filter(p => p.id !== id));
-    showToast('Mahsulot katalogdan o\'chirildi');
+    showToast('Mahsulot katalogdan oʻchirildi');
   };
 
   const navigateToPage = (page: PageType) => {

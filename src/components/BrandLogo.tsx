@@ -48,7 +48,7 @@ interface BrandLogoProps {
   className?: string;
 }
 
-const TILE_SIZE = { sm: 'w-8 h-8 text-[11px]', md: 'w-11 h-11 text-sm', lg: 'w-16 h-16 text-xl' };
+const TILE_SIZE = { sm: 'w-8 h-8 text-xs', md: 'w-11 h-11 text-sm', lg: 'w-16 h-16 text-xl' };
 const WORD_SIZE = { sm: 'text-xs', md: 'text-sm', lg: 'text-lg' };
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
@@ -64,7 +64,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   const tile = (
     <span
       aria-hidden="true"
-      className={`${TILE_SIZE[size]} shrink-0 rounded-xl flex items-center justify-center font-black tracking-tight shadow-sm ring-1 ring-black/5`}
+      className={`${TILE_SIZE[size]} shrink-0 rounded-xl flex items-center justify-center font-bold tracking-tight shadow-sm ring-1 ring-black/5`}
       style={{ backgroundColor: tone.bg, color: tone.fg }}
     >
       {monogram}
@@ -84,7 +84,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <span className={`inline-flex items-center gap-2.5 min-w-0 ${className}`}>
       {tile}
       <span
-        className={`${WORD_SIZE[size]} font-extrabold tracking-tight text-current truncate leading-tight`}
+        className={`${WORD_SIZE[size]} font-bold tracking-tight text-current truncate`}
       >
         {name}
       </span>

@@ -56,13 +56,13 @@ export const ContactPage: React.FC = () => {
     setSending(false);
 
     if (result === 'failed') {
-      showToast(`Xabarni yuborib bo'lmadi. Iltimos, ${siteSettings.phone} raqamiga qo'ng'iroq qiling.`);
+      showToast(`Xabarni yuborib boʻlmadi. Iltimos, ${siteSettings.phone} raqamiga qoʻngʻiroq qiling.`);
       return;
     }
 
     showToast(
       result === 'sent'
-        ? 'Murojaatingiz yuborildi. Tez orada bog\'lanamiz.'
+        ? 'Murojaatingiz yuborildi. Tez orada bogʻlanamiz.'
         : 'Xabar matni nusxalandi va Telegram ochildi — endi yuborish tugmasini bosing.'
     );
     // Only clear the form once the lead has actually left the page.
@@ -79,8 +79,8 @@ export const ContactPage: React.FC = () => {
 
       {/* Banner */}
       <PageBanner
-        eyebrow={`${siteSettings.brandName} — Bog'lanish`}
-        title="Biz bilan bog'laning"
+        eyebrow={`${siteSettings.brandName} — Bogʻlanish`}
+        title="Biz bilan bogʻlaning"
         subtitle={siteSettings.aboutShort}
       />
 
@@ -90,7 +90,7 @@ export const ContactPage: React.FC = () => {
         <div className="lg:col-span-6 space-y-8">
 
           <div className="surface p-6 sm:p-8 space-y-6">
-            <h2 className="text-xl font-extrabold text-[#0B1D3F]">Aloqa Ma'lumotlari</h2>
+            <h2 className="text-xl font-bold text-[#0B1D3F]">Aloqa Maʼlumotlari</h2>
 
             <div className="space-y-4 text-sm text-slate-700">
               <div className="flex items-start gap-3">
@@ -157,11 +157,11 @@ export const ContactPage: React.FC = () => {
 
           {/* Quick Form */}
           <form onSubmit={handleSubmit} className="surface p-6 sm:p-8 space-y-4 text-xs">
-            <h3 className="text-base font-extrabold text-[#0B1D3F]">Tezkor Xabar Yuborish</h3>
+            <h3 className="text-base font-bold text-[#0B1D3F]">Tezkor Xabar Yuborish</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-slate-700 font-semibold mb-1">Ismingiz *</label>
+                <label className="block text-slate-700 font-bold mb-1">Ismingiz *</label>
                 <input
                   type="text"
                   required
@@ -173,7 +173,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-slate-700 font-semibold mb-1">Telefon raqamingiz *</label>
+                <label className="block text-slate-700 font-bold mb-1">Telefon raqamingiz *</label>
                 <input
                   type="tel"
                   required
@@ -186,7 +186,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-slate-700 font-semibold mb-1">Kompaniya / Tashkilot</label>
+              <label className="block text-slate-700 font-bold mb-1">Kompaniya / Tashkilot</label>
               <input
                 type="text"
                 placeholder="Kompaniya nomi"
@@ -197,7 +197,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-slate-700 font-semibold mb-1">Xabar / Talab</label>
+              <label className="block text-slate-700 font-bold mb-1">Xabar / Talab</label>
               <textarea
                 rows={3}
                 placeholder="Qanday mahsulot va qancha miqdorda kerak..."
@@ -219,7 +219,7 @@ export const ContactPage: React.FC = () => {
           <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl flex flex-col justify-between text-white space-y-6">
             <div className="space-y-1">
               <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">Joylashuv</span>
-              <h3 className="font-extrabold text-xl">{siteSettings.brandName} — {siteSettings.city}</h3>
+              <h3 className="font-bold text-xl">{siteSettings.brandName} — {siteSettings.city}</h3>
             </div>
 
             {siteSettings.mapEmbedUrl ? (
@@ -240,7 +240,7 @@ export const ContactPage: React.FC = () => {
                     <Building2 size={32} />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-lg">{siteSettings.address}</h4>
+                    <h4 className="font-bold text-lg">{siteSettings.address}</h4>
                     <p className="text-xs text-slate-300 mt-1">{siteSettings.city}</p>
                   </div>
                 </div>

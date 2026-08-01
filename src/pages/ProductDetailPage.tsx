@@ -42,11 +42,11 @@ const KeySpec: React.FC<{
   const filled = hasValue(value);
   return (
     <div className="rounded-xl border border-slate-200/80 bg-slate-50/80 px-3 py-2.5">
-      <span className="block text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-400">
+      <span className="block text-xs font-bold uppercase tracking-[0.1em] text-slate-400">
         {label}
       </span>
       <span
-        className={`mt-1 flex items-center gap-1.5 text-xs font-semibold tabular ${
+        className={`mt-1 flex items-center gap-1.5 text-xs font-bold tabular ${
           filled ? 'text-[#0B1D3F]' : 'text-slate-400'
         }`}
       >
@@ -59,7 +59,7 @@ const KeySpec: React.FC<{
 
 const TAB_ITEMS = [
   { id: 'specs', label: 'Texnik xususiyatlar' },
-  { id: 'desc', label: 'Tavsif va qo\'llanilishi' },
+  { id: 'desc', label: 'Tavsif va qoʻllanilishi' },
   { id: 'downloads', label: 'Hujjatlar' },
   { id: 'video', label: 'Video' },
   { id: 'reviews', label: 'Sharhlar' }
@@ -132,7 +132,7 @@ export const ProductDetailPage: React.FC = () => {
           <ChevronRight size={12} className="text-slate-300 shrink-0" />
           <span className="shrink-0">Mahsulotlar</span>
           <ChevronRight size={12} className="text-slate-300 shrink-0" />
-          <span className="font-semibold text-slate-800 truncate">{product.name}</span>
+          <span className="font-bold text-slate-800 truncate">{product.name}</span>
         </div>
       </div>
 
@@ -189,7 +189,7 @@ export const ProductDetailPage: React.FC = () => {
                   <ChevronRight size={18} />
                 </button>
 
-                <span className="absolute bottom-4 right-4 rounded-xl bg-[#0B1D3F]/90 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-sm">
+                <span className="absolute bottom-4 right-4 rounded-xl bg-[#0B1D3F]/90 px-2.5 py-1 text-xs font-bold text-white backdrop-blur-sm">
                   <span className="tabular">{activeImgIndex + 1}</span>
                   <span className="text-white/50"> / </span>
                   <span className="tabular text-white/70">{product.images.length}</span>
@@ -233,7 +233,7 @@ export const ProductDetailPage: React.FC = () => {
           {/* Identity */}
           <div className="space-y-2.5">
             <div className="flex items-center justify-between gap-3">
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
                 {product.machineType} uskunasi
               </span>
               {product.reviewsCount > 0 && (
@@ -245,18 +245,18 @@ export const ProductDetailPage: React.FC = () => {
               )}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl font-black text-[#0B1D3F] leading-[1.08]">
+            <h1 className="text-3xl xl:text-3xl font-bold text-[#0B1D3F]">
               {product.name}
             </h1>
 
-            <div className="flex items-center gap-2 text-[11px] text-slate-500">
+            <div className="flex items-center gap-2 text-xs text-slate-500">
               <span className="uppercase tracking-wider">Model</span>
               <span className="h-3 w-px bg-slate-200" />
-              <span className="tabular font-semibold text-slate-700">{product.model}</span>
+              <span className="tabular font-bold text-slate-700">{product.model}</span>
             </div>
           </div>
 
-          <p className="mt-4 text-sm text-slate-600 leading-relaxed">
+          <p className="mt-4 text-sm text-slate-600">
             {product.description}
           </p>
 
@@ -286,13 +286,13 @@ export const ProductDetailPage: React.FC = () => {
 
           {/* Price — the anchor of the panel */}
           <div className="mt-6 rounded-2xl border border-slate-200/80 bg-gradient-to-b from-slate-50 to-white p-4">
-            <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">
+            <span className="block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">
               Narxi
             </span>
             <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              {/* text-2xl at the smallest step: "361 057 800 so'm" at text-3xl
+              {/* text-2xl at the smallest step: "361 057 800 soʻm" at text-3xl
                   is ~253px against ~256px of usable panel width at 360px. */}
-              <span className="tabular text-2xl sm:text-4xl font-black leading-none tracking-tight text-[#0B1D3F]">
+              <span className="tabular text-2xl font-bold tracking-tight text-[#0B1D3F]">
                 {formatPrice(product.priceUSD)}
               </span>
               {product.oldPriceUSD && (
@@ -306,12 +306,12 @@ export const ProductDetailPage: React.FC = () => {
               {product.inStock ? (
                 <>
                   <CheckCircle2 size={14} className="text-emerald-600 shrink-0" />
-                  <span className="text-xs font-semibold text-emerald-700">Omborda bor</span>
+                  <span className="text-xs font-bold text-emerald-700">Omborda bor</span>
                 </>
               ) : (
                 <>
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
-                  <span className="text-xs font-semibold text-amber-700">Buyurtma asosida</span>
+                  <span className="text-xs font-bold text-amber-700">Buyurtma asosida</span>
                 </>
               )}
             </div>
@@ -343,7 +343,7 @@ export const ProductDetailPage: React.FC = () => {
                 className="btn-secondary flex-1 min-w-0 px-4"
               >
                 <ShoppingBag size={16} className="shrink-0" />
-                <span className="truncate">Savatga qo'shish</span>
+                <span className="truncate">Savatga qoʻshish</span>
               </button>
             </div>
 
@@ -351,7 +351,7 @@ export const ProductDetailPage: React.FC = () => {
               onClick={() => { setQuoteModalProduct(product); setIsQuoteModalOpen(true); }}
               className="btn-primary w-full uppercase tracking-[0.08em]"
             >
-              <FileText size={16} className="shrink-0" /> Tijorat taklifini so'rash
+              <FileText size={16} className="shrink-0" /> Tijorat taklifini soʻrash
             </button>
           </div>
 
@@ -360,17 +360,17 @@ export const ProductDetailPage: React.FC = () => {
           <div className="mt-4 grid grid-cols-3 gap-1 border-t border-slate-100 pt-3">
             <button
               onClick={() => toggleWishlist(product)}
-              className={`flex flex-col items-center gap-1.5 rounded-xl px-1 py-2 text-[11px] font-semibold leading-tight text-center transition-colors cursor-pointer ${
+              className={`flex flex-col items-center gap-1.5 rounded-xl px-1 py-2 text-xs font-bold text-center transition-colors cursor-pointer ${
                 isWish ? 'text-rose-500' : 'text-slate-600 hover:bg-slate-50 hover:text-blue-700'
               }`}
             >
               <Heart size={16} className={isWish ? 'fill-current' : ''} />
-              <span>{isWish ? 'Saqlanganlarda' : 'Saqlanganlarga qo\'shish'}</span>
+              <span>{isWish ? 'Saqlanganlarda' : 'Saqlanganlarga qoʻshish'}</span>
             </button>
 
             <button
               onClick={() => addToCompare(product)}
-              className={`flex flex-col items-center gap-1.5 rounded-xl px-1 py-2 text-[11px] font-semibold leading-tight text-center transition-colors cursor-pointer ${
+              className={`flex flex-col items-center gap-1.5 rounded-xl px-1 py-2 text-xs font-bold text-center transition-colors cursor-pointer ${
                 isComp ? 'text-blue-700' : 'text-slate-600 hover:bg-slate-50 hover:text-blue-700'
               }`}
             >
@@ -380,7 +380,7 @@ export const ProductDetailPage: React.FC = () => {
 
             <button
               onClick={() => { navigator.clipboard.writeText(window.location.href); showToast('Mahsulot havolasi nusxalandi!'); }}
-              className="flex flex-col items-center gap-1.5 rounded-xl px-1 py-2 text-[11px] font-semibold leading-tight text-center text-slate-600 hover:bg-slate-50 hover:text-blue-700 transition-colors cursor-pointer"
+              className="flex flex-col items-center gap-1.5 rounded-xl px-1 py-2 text-xs font-bold text-center text-slate-600 hover:bg-slate-50 hover:text-blue-700 transition-colors cursor-pointer"
             >
               <Share2 size={16} />
               <span>Ulashish</span>
@@ -426,11 +426,11 @@ export const ProductDetailPage: React.FC = () => {
         {activeTab === 'specs' && (
           <div className="space-y-4">
             <div className="space-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
                 Spetsifikatsiya
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F]">
-                To'liq texnik xususiyatlar
+              <h2 className="text-2xl font-bold text-[#0B1D3F]">
+                Toʻliq texnik xususiyatlar
               </h2>
             </div>
 
@@ -440,10 +440,10 @@ export const ProductDetailPage: React.FC = () => {
               <table className="w-full min-w-[520px] border-collapse text-left">
                 <thead>
                   <tr className="bg-[#0B1D3F] text-white">
-                    <th className="w-[42%] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.14em]">
+                    <th className="w-[42%] px-4 py-3 text-xs font-bold uppercase tracking-[0.14em]">
                       Parametr
                     </th>
-                    <th className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.14em]">
+                    <th className="px-4 py-3 text-xs font-bold uppercase tracking-[0.14em]">
                       Qiymat
                     </th>
                   </tr>
@@ -457,7 +457,7 @@ export const ProductDetailPage: React.FC = () => {
                       <td className="px-4 py-3.5 align-top text-xs font-medium text-slate-500">
                         {spec.label}
                       </td>
-                      <td className="tabular px-4 py-3.5 align-top text-xs font-semibold text-[#0B1D3F]">
+                      <td className="tabular px-4 py-3.5 align-top text-xs font-bold text-[#0B1D3F]">
                         {spec.value}
                       </td>
                     </tr>
@@ -471,25 +471,25 @@ export const ProductDetailPage: React.FC = () => {
         {activeTab === 'desc' && (
           <div className="space-y-5">
             <div className="space-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
                 Tavsif
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F]">
-                Batafsil ma'lumot
+              <h2 className="text-2xl font-bold text-[#0B1D3F]">
+                Batafsil maʼlumot
               </h2>
             </div>
 
-            <p className="max-w-3xl text-sm text-slate-600 leading-relaxed">
+            <p className="max-w-3xl text-sm text-slate-600">
               {product.longDescription}
             </p>
 
             <div className="space-y-3 pt-2">
-              <h3 className="text-sm font-bold text-[#0B1D3F]">Qo'llanilish sohalari</h3>
+              <h3 className="text-sm font-bold text-[#0B1D3F]">Qoʻllanilish sohalari</h3>
               <div className="flex flex-wrap gap-2">
                 {product.usageArea.map((area, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700"
+                    className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-700"
                   >
                     <span className="h-1.5 w-1.5 rounded-full bg-blue-600 shrink-0" />
                     {area}
@@ -503,13 +503,13 @@ export const ProductDetailPage: React.FC = () => {
         {activeTab === 'downloads' && (
           <div className="space-y-5">
             <div className="space-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
                 Hujjatlar
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F]">
+              <h2 className="text-2xl font-bold text-[#0B1D3F]">
                 Texnik hujjatlar
               </h2>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600">
                 Quyidagi hujjatlar hozircha yuklab olish uchun tayyor emas.
               </p>
             </div>
@@ -517,7 +517,7 @@ export const ProductDetailPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
                 { name: `${product.model} texnik xususiyatlar broshyurasi (PDF)` },
-                { name: `Foydalanuvchi qo'llanmasi (PDF)` },
+                { name: `Foydalanuvchi qoʻllanmasi (PDF)` },
                 { name: `3D CAD chizma (DWG)` }
               ].map((doc, idx) => (
                 <div
@@ -526,8 +526,8 @@ export const ProductDetailPage: React.FC = () => {
                 >
                   <div className="min-w-0 space-y-1.5">
                     <FileText size={16} className="text-slate-400" />
-                    <p className="text-xs font-bold text-slate-600 leading-snug">{doc.name}</p>
-                    <p className="text-[11px] text-slate-400">Hozircha mavjud emas</p>
+                    <p className="text-xs font-bold text-slate-600">{doc.name}</p>
+                    <p className="text-xs text-slate-400">Hozircha mavjud emas</p>
                   </div>
                   <button
                     onClick={() => showToast('Hujjat hozircha yuklab olish uchun mavjud emas.')}
@@ -545,10 +545,10 @@ export const ProductDetailPage: React.FC = () => {
         {activeTab === 'video' && (
           <div className="space-y-5">
             <div className="space-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
                 Video
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F]">
+              <h2 className="text-2xl font-bold text-[#0B1D3F]">
                 Mashinaning ish jarayoni
               </h2>
             </div>
@@ -569,12 +569,12 @@ export const ProductDetailPage: React.FC = () => {
                 <div className="mx-auto w-12 h-12 rounded-xl bg-slate-200 text-slate-500 flex items-center justify-center mb-3">
                   <Play size={22} />
                 </div>
-                <p className="text-sm font-semibold text-[#0B1D3F]">
-                  Bu model uchun video hozircha yo'q
+                <p className="text-sm font-bold text-[#0B1D3F]">
+                  Bu model uchun video hozircha yoʻq
                 </p>
-                <p className="mt-1 text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
-                  Mashinaning ishlashini ko'rmoqchi bo'lsangiz, biz bilan bog'laning —
-                  obyektingizda jonli ko'rsatib beramiz.
+                <p className="mt-1 text-xs text-slate-500 max-w-sm mx-auto">
+                  Mashinaning ishlashini koʻrmoqchi boʻlsangiz, biz bilan bogʻlaning —
+                  obyektingizda jonli koʻrsatib beramiz.
                 </p>
               </div>
             )}
@@ -584,10 +584,10 @@ export const ProductDetailPage: React.FC = () => {
         {activeTab === 'reviews' && (
           <div className="space-y-6">
             <div className="space-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
                 Sharhlar
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F]">
+              <h2 className="text-2xl font-bold text-[#0B1D3F]">
                 Mijozlar sharhlari
               </h2>
             </div>
@@ -600,7 +600,7 @@ export const ProductDetailPage: React.FC = () => {
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <span className="block text-sm font-bold text-[#0B1D3F] truncate">{r.userName}</span>
-                        <span className="block text-[11px] text-slate-500 truncate">{r.company}</span>
+                        <span className="block text-xs text-slate-500 truncate">{r.company}</span>
                       </div>
                       <div className="flex shrink-0 text-blue-400">
                         {Array.from({ length: r.rating }).map((_, i) => (
@@ -608,7 +608,7 @@ export const ProductDetailPage: React.FC = () => {
                         ))}
                       </div>
                     </div>
-                    <p className="text-sm text-slate-600 leading-relaxed">{r.comment}</p>
+                    <p className="text-sm text-slate-600">{r.comment}</p>
                   </div>
                 ))
               ) : (
@@ -617,9 +617,9 @@ export const ProductDetailPage: React.FC = () => {
                     <MessageSquare size={20} className="text-slate-400" />
                   </div>
                   <h3 className="mt-4 text-sm font-bold text-[#0B1D3F]">
-                    Bu mashina uchun hozircha sharh yo'q
+                    Bu mashina uchun hozircha sharh yoʻq
                   </h3>
-                  <p className="mt-1 max-w-sm text-[11px] text-slate-500 leading-relaxed">
+                  <p className="mt-1 max-w-sm text-xs text-slate-500">
                     Birinchi sharhni siz qoldirishingiz mumkin.
                   </p>
                 </div>
@@ -669,11 +669,11 @@ export const ProductDetailPage: React.FC = () => {
       {accessories.length > 0 && (
         <div className="surface p-6 sm:p-8 space-y-5">
           <div className="space-y-1">
-            <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-700">
               Aksessuarlar
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1D3F]">
-              Ko'pincha shu bilan birga olinadi
+            <h2 className="text-2xl font-bold text-[#0B1D3F]">
+              Koʻpincha shu bilan birga olinadi
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -682,15 +682,15 @@ export const ProductDetailPage: React.FC = () => {
                 <div className="flex min-w-0 items-center gap-3">
                   <img width={800} height={600} loading="lazy" decoding="async" src={acc.images[0]} alt="" className="h-14 w-14 shrink-0 rounded-xl bg-white p-1 object-contain border border-slate-200/80" referrerPolicy="no-referrer" />
                   <div className="min-w-0">
-                    <h3 className="text-xs font-bold text-[#0B1D3F] leading-snug line-clamp-2">{acc.name}</h3>
-                    <span className="tabular mt-0.5 block text-sm font-black text-[#0B1D3F]">{formatPrice(acc.priceUSD)}</span>
+                    <h3 className="text-xs font-bold text-[#0B1D3F] line-clamp-2">{acc.name}</h3>
+                    <span className="tabular mt-0.5 block text-sm font-bold text-[#0B1D3F]">{formatPrice(acc.priceUSD)}</span>
                   </div>
                 </div>
                 <button
                   onClick={() => addToCart(acc)}
                   className="btn-primary shrink-0 px-3 py-2"
                 >
-                  <Plus size={14} /> Qo'shish
+                  <Plus size={14} /> Qoʻshish
                 </button>
               </div>
             ))}

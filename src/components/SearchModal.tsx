@@ -28,7 +28,7 @@ export const SearchModal: React.FC = () => {
           <input
             type="text"
             autoFocus
-            placeholder="Model, nom yoki turi bo'yicha qidiring (MK-3, pol yuvish...)"
+            placeholder="Model, nom yoki turi boʻyicha qidiring (MK-3, pol yuvish...)"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full text-base font-medium text-slate-800 placeholder-slate-400 focus:outline-none"
@@ -47,7 +47,7 @@ export const SearchModal: React.FC = () => {
           {query.trim().length > 1 ? (
             results.length > 0 ? (
               <div className="space-y-2">
-                <div className="text-xs text-slate-400 font-semibold px-2 mb-1 uppercase"><span className="tabular">{results.length}</span> ta mashina topildi:</div>
+                <div className="text-xs text-slate-400 font-bold px-2 mb-1 uppercase"><span className="tabular">{results.length}</span> ta mashina topildi:</div>
                 {results.map((product) => (
                   <div
                     key={product.id}
@@ -66,16 +66,16 @@ export const SearchModal: React.FC = () => {
                         referrerPolicy="no-referrer"
                       />
                       <div>
-                        <span className="text-[10px] font-bold text-blue-700 uppercase bg-blue-50 px-1.5 py-0.5 rounded">
+                        <span className="text-xs font-bold text-blue-700 uppercase bg-blue-50 px-1.5 py-0.5 rounded">
                           {product.brand}
                         </span>
                         <h4 className="font-bold text-slate-900 text-xs line-clamp-1">{product.name}</h4>
-                        <span className="tabular text-[11px] text-slate-400 font-mono">{product.productivity} • {product.voltage}</span>
+                        <span className="tabular text-xs text-slate-400 font-mono">{product.productivity} • {product.voltage}</span>
                       </div>
                     </div>
 
                     <div className="text-right shrink-0">
-                      <div className="tabular text-xs font-black text-[#0B1D3F]">{formatPrice(product.priceUSD)}</div>
+                      <div className="tabular text-xs font-bold text-[#0B1D3F]">{formatPrice(product.priceUSD)}</div>
                       <ArrowRight size={14} className="text-blue-600 ml-auto mt-1" />
                     </div>
                   </div>
@@ -83,12 +83,12 @@ export const SearchModal: React.FC = () => {
               </div>
             ) : (
               <div className="text-center py-8 text-xs text-slate-500">
-                "{query}" bo'yicha mashina topilmadi. <span className="font-bold text-slate-700">Pol yuvish</span>, <span className="font-bold text-slate-700">Supurish</span>, <span className="font-bold text-slate-700">MK-3</span> yoki <span className="font-bold text-slate-700">Mervan Makina</span> so'zlarini sinab ko'ring.
+                "{query}" boʻyicha mashina topilmadi. <span className="font-bold text-slate-700">Pol yuvish</span>, <span className="font-bold text-slate-700">Supurish</span>, <span className="font-bold text-slate-700">MK-3</span> yoki <span className="font-bold text-slate-700">Mervan Makina</span> soʻzlarini sinab koʻring.
               </div>
             )
           ) : (
             <div className="space-y-3 p-2">
-              <span className="text-xs text-slate-400 font-semibold block uppercase tracking-wider">Ommabop qidiruvlar</span>
+              <span className="text-xs text-slate-400 font-bold block uppercase tracking-wider">Ommabop qidiruvlar</span>
               <div className="flex flex-wrap gap-2 text-xs">
                 {['MK-3', 'MK-6', 'Supurish mashinasi', 'Pol yuvish', 'Changyutgich', 'Litiy batareya'].map((tag) => (
                   <button

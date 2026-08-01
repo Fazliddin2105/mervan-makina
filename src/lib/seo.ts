@@ -71,7 +71,7 @@ const PRODUCT_SCHEMA_ID = 'ld-product';
  * again on unmount so a stale product never lingers on another view.
  *
  * Prices are stored as USD and converted for display, so the offer is
- * published in USD — stating a so'm figure that the page might render
+ * published in USD — stating a soʻm figure that the page might render
  * differently would be worse than stating none.
  */
 export function useProductSchema(product: Product | undefined) {

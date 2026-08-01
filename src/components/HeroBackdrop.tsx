@@ -8,7 +8,7 @@ interface HeroBackdropProps {
 }
 
 /**
- * The hero's photo layer.
+ * The heroʻs photo layer.
  *
  * Parallax lives here rather than in HomePage on purpose: the hook updates
  * state on every painted frame while scrolling, and if that state sat in the

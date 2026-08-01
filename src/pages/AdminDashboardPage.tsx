@@ -68,7 +68,7 @@ const AdminLoginScreen: React.FC = () => {
     e.preventDefault();
     setError('');
     const ok = adminLogin(username, password);
-    if (!ok) setError('Login yoki parol noto\'g\'ri');
+    if (!ok) setError('Login yoki parol notoʻgʻri');
   };
 
   const isDefault = adminCredentials.username === 'admin' && adminCredentials.password === 'admin123';
@@ -80,17 +80,17 @@ const AdminLoginScreen: React.FC = () => {
           <div className="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg">
             <ShieldAlert size={32} />
           </div>
-          <h1 className="text-2xl font-black">Admin Panel</h1>
+          <h1 className="text-2xl font-bold">Admin Panel</h1>
           <p className="text-slate-300 text-sm mt-1">Boshqaruv paneliga kirish</p>
         </div>
 
         <form onSubmit={handleSubmit} className="p-8 space-y-4">
           {isDefault && (
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800">
-              <b>Boshlang'ich ma'lumotlar:</b><br />
+              <b>Boshlangʻich maʼlumotlar:</b><br />
               Login: <code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono">admin</code><br />
               Parol: <code className="bg-amber-100 px-1.5 py-0.5 rounded font-mono">admin123</code><br />
-              <span className="italic">Kirgach, ushbu ma'lumotlarni almashtiring.</span>
+              <span className="italic">Kirgach, ushbu maʼlumotlarni almashtiring.</span>
             </div>
           )}
 
@@ -127,7 +127,7 @@ const AdminLoginScreen: React.FC = () => {
           </div>
 
           {error && (
-            <div className="text-xs text-rose-600 font-semibold">{error}</div>
+            <div className="text-xs text-rose-600 font-bold">{error}</div>
           )}
 
           <button
@@ -182,8 +182,8 @@ const ProductFormModal: React.FC<{
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
       <div className="w-full max-w-3xl bg-white rounded-2xl shadow-2xl my-8">
         <div className="sticky top-0 bg-white z-10 flex items-center justify-between px-6 py-4 border-b rounded-t-3xl">
-          <h2 className="font-black text-lg text-[#0B1D3F]">
-            {initial ? 'Mahsulotni Tahrirlash' : 'Yangi Mahsulot Qo\'shish'}
+          <h2 className="font-bold text-lg text-[#0B1D3F]">
+            {initial ? 'Mahsulotni Tahrirlash' : 'Yangi Mahsulot Qoʻshish'}
           </h2>
           <button onClick={onClose} className="p-2 rounded-lg hover:bg-slate-100">
             <X size={20} />
@@ -220,7 +220,7 @@ const ProductFormModal: React.FC<{
               <option value="industrial-vacuums">Maxsus Vakuum</option>
               <option value="pressure-washers">Yuqori Bosim</option>
               <option value="carpet-cleaners">Gilam Yuvish</option>
-              <option value="steam-cleaners">Bug'li Tozalagichlar</option>
+              <option value="steam-cleaners">Bugʻli Tozalagichlar</option>
               <option value="cleaning-chemicals">Kimyoviy Vositalar</option>
               <option value="accessories">Aksessuarlar</option>
             </select>
@@ -274,14 +274,14 @@ const ProductFormModal: React.FC<{
           </div>
 
           <div>
-            <label className="text-xs font-bold text-slate-600 uppercase">Cho'tka Kengligi</label>
+            <label className="text-xs font-bold text-slate-600 uppercase">Choʻtka Kengligi</label>
             <input value={p.brushWidth} onChange={e => patch({ brushWidth: e.target.value })}
               placeholder="510 mm"
               className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
           </div>
 
           <div>
-            <label className="text-xs font-bold text-slate-600 uppercase">Bak Sig'imi</label>
+            <label className="text-xs font-bold text-slate-600 uppercase">Bak Sigʻimi</label>
             <input value={p.tankCapacity} onChange={e => patch({ tankCapacity: e.target.value })}
               placeholder="50L / 55L"
               className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
@@ -309,7 +309,7 @@ const ProductFormModal: React.FC<{
           </div>
 
           <div className="sm:col-span-2">
-            <label className="text-xs font-bold text-slate-600 uppercase">To'liq Tavsif</label>
+            <label className="text-xs font-bold text-slate-600 uppercase">Toʻliq Tavsif</label>
             <textarea value={p.longDescription} onChange={e => patch({ longDescription: e.target.value })}
               rows={4}
               className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
@@ -334,7 +334,7 @@ const ProductFormModal: React.FC<{
           <div className="flex flex-wrap gap-4 sm:col-span-2 text-xs">
             <label className="flex items-center gap-2">
               <input type="checkbox" checked={p.isFeatured ?? false} onChange={e => patch({ isFeatured: e.target.checked })} />
-              <span>Bosh sahifada ko'rsatish (Featured)</span>
+              <span>Bosh sahifada koʻrsatish (Featured)</span>
             </label>
             <label className="flex items-center gap-2">
               <input type="checkbox" checked={p.isNew ?? false} onChange={e => patch({ isNew: e.target.checked })} />
@@ -344,7 +344,7 @@ const ProductFormModal: React.FC<{
 
           <div className="sm:col-span-2 flex justify-end gap-3 pt-4 border-t">
             <button type="button" onClick={onClose}
-              className="px-5 py-2.5 border border-slate-300 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50">
+              className="px-5 py-2.5 border border-slate-300 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-50">
               Bekor qilish
             </button>
             <button type="submit"
@@ -409,10 +409,10 @@ export const AdminDashboardPage: React.FC = () => {
       {/* Top Banner */}
       <div className="bg-gradient-to-r from-[#0B1D3F] to-[#071531] text-white rounded-2xl p-6 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <span className="bg-blue-600 text-white font-mono text-[10px] font-bold px-2.5 py-0.5 rounded uppercase">
+          <span className="bg-blue-600 text-white font-mono text-xs font-bold px-2.5 py-0.5 rounded uppercase">
             {siteSettings.brandName} — Admin Panel
           </span>
-          <h1 className="text-2xl font-black text-white mt-1">Boshqaruv Konsoli</h1>
+          <h1 className="text-2xl font-bold text-white mt-1">Boshqaruv Konsoli</h1>
           <p className="text-xs text-slate-300">Xush kelibsiz, {user.name}</p>
         </div>
         <button
@@ -429,7 +429,7 @@ export const AdminDashboardPage: React.FC = () => {
           { id: 'kpi', label: 'Dashboard', icon: BarChart3 },
           { id: 'products', label: `Mahsulotlar (${productsList.length})`, icon: Package },
           { id: 'orders', label: `Buyurtmalar (${orders.length})`, icon: ShoppingBag },
-          { id: 'quotes', label: `So'rovlar (${quoteRequests.length})`, icon: FileText },
+          { id: 'quotes', label: `Soʻrovlar (${quoteRequests.length})`, icon: FileText },
           { id: 'settings', label: 'Sayt Sozlamalari', icon: Settings },
           { id: 'socials', label: 'Ijtimoiy Tarmoqlar', icon: Share2 },
           { id: 'credentials', label: 'Admin Ma\'lumotlari', icon: KeyRound }
@@ -456,24 +456,24 @@ export const AdminDashboardPage: React.FC = () => {
       {activeTab === 'kpi' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-            <span className="text-[10px] text-slate-400 font-bold uppercase">Umumiy Daromad</span>
-            <div className="text-2xl font-black text-[#0B1D3F] mt-1">{formatPrice(totalRevenue)}</div>
-            <p className="text-[11px] text-slate-500 mt-1">{orders.length} buyurtma</p>
+            <span className="text-xs text-slate-400 font-bold uppercase">Umumiy Daromad</span>
+            <div className="text-2xl font-bold text-[#0B1D3F] mt-1">{formatPrice(totalRevenue)}</div>
+            <p className="text-xs text-slate-500 mt-1">{orders.length} buyurtma</p>
           </div>
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-            <span className="text-[10px] text-slate-400 font-bold uppercase">Mahsulotlar</span>
-            <div className="text-2xl font-black text-[#0B1D3F] mt-1">{productsList.length}</div>
-            <p className="text-[11px] text-slate-500 mt-1">Katalogda</p>
+            <span className="text-xs text-slate-400 font-bold uppercase">Mahsulotlar</span>
+            <div className="text-2xl font-bold text-[#0B1D3F] mt-1">{productsList.length}</div>
+            <p className="text-xs text-slate-500 mt-1">Katalogda</p>
           </div>
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-            <span className="text-[10px] text-slate-400 font-bold uppercase">Kutilayotgan</span>
-            <div className="text-2xl font-black text-blue-700 mt-1">{pendingOrders}</div>
-            <p className="text-[11px] text-slate-500 mt-1">Buyurtmalar</p>
+            <span className="text-xs text-slate-400 font-bold uppercase">Kutilayotgan</span>
+            <div className="text-2xl font-bold text-blue-700 mt-1">{pendingOrders}</div>
+            <p className="text-xs text-slate-500 mt-1">Buyurtmalar</p>
           </div>
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-            <span className="text-[10px] text-slate-400 font-bold uppercase">So'rovlar</span>
-            <div className="text-2xl font-black text-emerald-600 mt-1">{quoteRequests.length}</div>
-            <p className="text-[11px] text-slate-500 mt-1">Yangi mijozlar</p>
+            <span className="text-xs text-slate-400 font-bold uppercase">Soʻrovlar</span>
+            <div className="text-2xl font-bold text-emerald-600 mt-1">{quoteRequests.length}</div>
+            <p className="text-xs text-slate-500 mt-1">Yangi mijozlar</p>
           </div>
         </div>
       )}
@@ -498,7 +498,7 @@ export const AdminDashboardPage: React.FC = () => {
                 onClick={() => setIsCreating(true)}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors"
               >
-                <Plus size={14} /> Qo'shish
+                <Plus size={14} /> Qoʻshish
               </button>
             </div>
           </div>
@@ -506,7 +506,7 @@ export const AdminDashboardPage: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="bg-slate-50 text-slate-500 font-bold uppercase text-[10px]">
+                <tr className="bg-slate-50 text-slate-500 font-bold uppercase text-xs">
                   <th className="p-3">Mahsulot</th>
                   <th className="p-3">Brend / Model</th>
                   <th className="p-3">Narx</th>
@@ -528,8 +528,8 @@ export const AdminDashboardPage: React.FC = () => {
                     <td className="p-3 font-mono font-bold text-[#0B1D3F]">{formatPrice(p.priceUSD)}</td>
                     <td className="p-3 font-mono text-slate-500">{p.stockCount}</td>
                     <td className="p-3">
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${p.inStock ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700'}`}>
-                        {p.inStock ? 'Mavjud' : 'Yo\'q'}
+                      <span className={`px-2 py-0.5 rounded text-xs font-bold ${p.inStock ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700'}`}>
+                        {p.inStock ? 'Mavjud' : 'Yoʻq'}
                       </span>
                     </td>
                     <td className="p-3 text-right space-x-1">
@@ -542,10 +542,10 @@ export const AdminDashboardPage: React.FC = () => {
                       </button>
                       <button
                         onClick={() => {
-                          if (confirm(`"${p.name}" mahsulotini o'chirasizmi?`)) deleteProduct(p.id);
+                          if (confirm(`"${p.name}" mahsulotini oʻchirasizmi?`)) deleteProduct(p.id);
                         }}
                         className="p-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg"
-                        title="O'chirish"
+                        title="Oʻchirish"
                       >
                         <Trash2 size={13} />
                       </button>
@@ -566,7 +566,7 @@ export const AdminDashboardPage: React.FC = () => {
         <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
           <h2 className="font-bold text-[#0B1D3F] text-base">Buyurtmalar</h2>
           {orders.length === 0 ? (
-            <p className="text-sm text-slate-400 py-8 text-center">Hozircha buyurtmalar yo'q</p>
+            <p className="text-sm text-slate-400 py-8 text-center">Hozircha buyurtmalar yoʻq</p>
           ) : (
             <div className="space-y-3">
               {orders.map(o => (
@@ -580,9 +580,9 @@ export const AdminDashboardPage: React.FC = () => {
       {/* --- Quotes Tab --- */}
       {activeTab === 'quotes' && (
         <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
-          <h2 className="font-bold text-[#0B1D3F] text-base">Tijorat Taklifi So'rovlari</h2>
+          <h2 className="font-bold text-[#0B1D3F] text-base">Tijorat Taklifi Soʻrovlari</h2>
           {quoteRequests.length === 0 ? (
-            <p className="text-sm text-slate-400 py-8 text-center">Hozircha so'rovlar yo'q</p>
+            <p className="text-sm text-slate-400 py-8 text-center">Hozircha soʻrovlar yoʻq</p>
           ) : (
             <div className="space-y-3">
               {quoteRequests.map(q => (
@@ -641,11 +641,11 @@ const OrderRow: React.FC<{
         <div className="text-xs text-slate-400 mt-0.5">{order.date} • {order.items.length} mahsulot</div>
       </div>
       <div className="text-right">
-        <div className="font-black text-[#0B1D3F]">{formatPrice(order.totalUSD)}</div>
+        <div className="font-bold text-[#0B1D3F]">{formatPrice(order.totalUSD)}</div>
         <select
           value={order.status}
           onChange={e => onStatus(order.id, e.target.value as Order['status'])}
-          className="mt-2 text-[10px] border border-slate-300 rounded px-2 py-1 bg-white font-semibold"
+          className="mt-2 text-xs border border-slate-300 rounded px-2 py-1 bg-white font-bold"
         >
           <option value="Processing">Processing</option>
           <option value="Shipped">Shipped</option>
@@ -654,7 +654,7 @@ const OrderRow: React.FC<{
         </select>
       </div>
       <button
-        onClick={() => { if (confirm('Buyurtmani o\'chirasizmi?')) onDelete(order.id); }}
+        onClick={() => { if (confirm('Buyurtmani oʻchirasizmi?')) onDelete(order.id); }}
         className="p-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg self-start"
       >
         <Trash2 size={13} />
@@ -683,7 +683,7 @@ const QuoteRow: React.FC<{
         <select
           value={quote.status}
           onChange={e => onStatus(quote.id, e.target.value as QuoteRequest['status'])}
-          className="text-[10px] border border-slate-300 rounded px-2 py-1 bg-white font-semibold"
+          className="text-xs border border-slate-300 rounded px-2 py-1 bg-white font-bold"
         >
           <option value="Pending">Pending</option>
           <option value="In Review">In Review</option>
@@ -692,7 +692,7 @@ const QuoteRow: React.FC<{
         </select>
       </div>
       <button
-        onClick={() => { if (confirm('So\'rovni o\'chirasizmi?')) onDelete(quote.id); }}
+        onClick={() => { if (confirm('Soʻrovni oʻchirasizmi?')) onDelete(quote.id); }}
         className="p-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg self-start"
       >
         <Trash2 size={13} />
@@ -725,7 +725,7 @@ const SiteSettingsForm: React.FC<{
         </h2>
         <button
           type="button"
-          onClick={() => { if (confirm('Barcha sozlamalarni boshlang\'ich holatga qaytarasizmi?')) { onReset(); setS(settings); } }}
+          onClick={() => { if (confirm('Barcha sozlamalarni boshlangʻich holatga qaytarasizmi?')) { onReset(); setS(settings); } }}
           className="text-xs text-slate-500 hover:text-rose-600 flex items-center gap-1"
         >
           <RotateCcw size={13} /> Qayta tiklash
@@ -751,7 +751,7 @@ const SiteSettingsForm: React.FC<{
         </div>
 
         <div className="sm:col-span-2">
-          <label className="text-xs font-bold text-slate-600 uppercase flex items-center gap-1"><ImageIcon size={12} /> Logo URL (bo'sh — harf ko'rsatiladi)</label>
+          <label className="text-xs font-bold text-slate-600 uppercase flex items-center gap-1"><ImageIcon size={12} /> Logo URL (boʻsh — harf koʻrsatiladi)</label>
           <input value={s.logoUrl} onChange={e => patch({ logoUrl: e.target.value })}
             placeholder="https://..."
             className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600 font-mono text-xs" />
@@ -802,7 +802,7 @@ const SiteSettingsForm: React.FC<{
             className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
         </div>
         <div>
-          <label className="text-xs font-bold text-slate-600 uppercase">Telefon (qo'shimcha)</label>
+          <label className="text-xs font-bold text-slate-600 uppercase">Telefon (qoʻshimcha)</label>
           <input value={s.phoneSecondary} onChange={e => patch({ phoneSecondary: e.target.value })}
             className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
         </div>
@@ -813,7 +813,7 @@ const SiteSettingsForm: React.FC<{
             className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
         </div>
         <div>
-          <label className="text-xs font-bold text-slate-600 uppercase">Email (qo'shimcha)</label>
+          <label className="text-xs font-bold text-slate-600 uppercase">Email (qoʻshimcha)</label>
           <input value={s.emailSecondary} onChange={e => patch({ emailSecondary: e.target.value })}
             className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-600" />
         </div>
@@ -894,7 +894,7 @@ const SocialsEditor: React.FC<{
           onClick={add}
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1.5"
         >
-          <Plus size={13} /> Qo'shish
+          <Plus size={13} /> Qoʻshish
         </button>
       </div>
 
@@ -914,7 +914,7 @@ const SocialsEditor: React.FC<{
               <option value="other">Boshqa</option>
             </select>
             <input value={s.label} onChange={e => patchOne(s.id, { label: e.target.value })}
-              placeholder="Ko'rsatiladigan nom"
+              placeholder="Koʻrsatiladigan nom"
               className="border border-slate-300 rounded-lg px-2 py-1.5 text-xs" />
             <input value={s.url} onChange={e => patchOne(s.id, { url: e.target.value })}
               placeholder="https://..."
@@ -923,14 +923,14 @@ const SocialsEditor: React.FC<{
               <input type="checkbox" checked={s.enabled} onChange={e => patchOne(s.id, { enabled: e.target.checked })} />
               <span>Yoq</span>
             </label>
-            <button onClick={() => { if (confirm('O\'chirasizmi?')) remove(s.id); }}
+            <button onClick={() => { if (confirm('Oʻchirasizmi?')) remove(s.id); }}
               className="p-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg">
               <Trash2 size={13} />
             </button>
           </div>
         ))}
         {list.length === 0 && (
-          <p className="text-center text-slate-400 py-6 text-sm">Ijtimoiy tarmoqlar qo'shilmagan</p>
+          <p className="text-center text-slate-400 py-6 text-sm">Ijtimoiy tarmoqlar qoʻshilmagan</p>
         )}
       </div>
 
@@ -961,8 +961,8 @@ const CredentialsForm: React.FC<{
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    if (!username.trim()) { setError('Login bo\'sh bo\'lmasligi kerak'); return; }
-    if (password && password.length < 4) { setError('Parol kamida 4 belgidan iborat bo\'lsin'); return; }
+    if (!username.trim()) { setError('Login boʻsh boʻlmasligi kerak'); return; }
+    if (password && password.length < 4) { setError('Parol kamida 4 belgidan iborat boʻlsin'); return; }
     if (password && password !== confirmPassword) { setError('Parollar mos kelmayapti'); return; }
 
     onSave({
@@ -976,7 +976,7 @@ const CredentialsForm: React.FC<{
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4 max-w-lg">
       <h2 className="font-bold text-[#0B1D3F] text-base flex items-center gap-2">
-        <KeyRound size={18} /> Admin Ma'lumotlarini O'zgartirish
+        <KeyRound size={18} /> Admin Maʼlumotlarini Oʻzgartirish
       </h2>
       <p className="text-xs text-slate-500">Ushbu login va parol admin panelga kirish uchun ishlatiladi. Xavfsiz saqlang.</p>
 
@@ -987,7 +987,7 @@ const CredentialsForm: React.FC<{
       </div>
 
       <div>
-        <label className="text-xs font-bold text-slate-600 uppercase">Yangi Parol (bo'sh — o'zgartirilmaydi)</label>
+        <label className="text-xs font-bold text-slate-600 uppercase">Yangi Parol (boʻsh — oʻzgartirilmaydi)</label>
         <div className="relative mt-1">
           <input type={showPassword ? 'text' : 'password'} value={password} onChange={e => setPassword(e.target.value)}
             placeholder="••••••••"
@@ -1006,12 +1006,12 @@ const CredentialsForm: React.FC<{
           className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-600" />
       </div>
 
-      {error && <div className="text-xs text-rose-600 font-semibold">{error}</div>}
+      {error && <div className="text-xs text-rose-600 font-bold">{error}</div>}
 
       <div className="flex justify-end pt-2">
         <button type="submit"
           className="px-6 py-3 bg-[#0B1D3F] hover:bg-blue-600 text-white rounded-xl text-sm font-bold flex items-center gap-2 transition-colors">
-          <Save size={16} /> O'zgarishlarni Saqlash
+          <Save size={16} /> Oʻzgarishlarni Saqlash
         </button>
       </div>
     </form>

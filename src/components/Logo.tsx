@@ -66,13 +66,13 @@ export const Logo: React.FC<LogoProps> = ({ tone = 'dark', className = '' }) => 
     <LogoMark className="w-9 h-9 shrink-0" />
     <span className="leading-none text-left">
       <span
-        className={`block text-[17px] font-black tracking-tight ${
+        className={`block text-base font-bold tracking-tight ${
           tone === 'dark' ? 'text-white' : 'text-[#0B1D3F]'
         }`}
       >
         MERVAN
       </span>
-      <span className="block text-[10px] font-bold tracking-[0.34em] text-blue-500 mt-0.5">
+      <span className="block text-xs font-bold tracking-[0.34em] text-blue-500 mt-0.5">
         MAKINA
       </span>
     </span>

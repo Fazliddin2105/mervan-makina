@@ -23,13 +23,13 @@ export const PageBanner: React.FC<PageBannerProps> = ({ eyebrow, title, subtitle
     <div className="relative">
       <span className="rise-in pill bg-blue-600 text-white">{eyebrow}</span>
 
-      <h1 className="mt-4 text-3xl sm:text-[2.6rem] font-black leading-[1.05] tracking-[-0.03em] text-white">
+      <h1 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-white">
         <SplitText text={title} delay={120} />
       </h1>
 
       {subtitle && (
         <p
-          className="rise-in mt-4 text-sm text-slate-300/85 max-w-2xl leading-relaxed"
+          className="rise-in mt-4 text-sm text-slate-300/85 max-w-2xl"
           style={{ animationDelay: '260ms' }}
         >
           {subtitle}

@@ -35,7 +35,7 @@ const NAV_LINKS: { label: string; page: PageType }[] = [
   { label: 'Biz haqimizda', page: 'about' },
   { label: 'Maqolalar', page: 'blog' },
   { label: 'Savol-javob', page: 'faq' },
-  { label: "Bog'lanish", page: 'contact' }
+  { label: "Bogʻlanish", page: 'contact' }
 ];
 
 export const Footer: React.FC = () => {
@@ -54,10 +54,10 @@ export const Footer: React.FC = () => {
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-1.5">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               Qaysi mashina kerakligini bilmayapsizmi?
             </h2>
-            <p className="text-sm text-slate-400 max-w-xl leading-relaxed">
+            <p className="text-sm text-slate-400 max-w-xl">
               Obyektingiz maydoni va ish rejimini ayting — mos modelni tanlab, narxini
               hisoblab beramiz.
             </p>
@@ -70,9 +70,7 @@ export const Footer: React.FC = () => {
             </button>
             <a
               href={tel}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold
-                         text-white bg-white/10 border border-white/20 hover:bg-white/15
-                         transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold text-white bg-white/10 border border-white/20 hover:bg-white/15 transition-colors duration-200"
             >
               <Phone size={15} />
               <span className="tabular">{siteSettings.phone}</span>
@@ -101,7 +99,7 @@ export const Footer: React.FC = () => {
             )}
           </button>
 
-          <p className="text-sm text-slate-400 leading-relaxed max-w-md">
+          <p className="text-sm text-slate-400 max-w-md">
             {siteSettings.aboutShort}
           </p>
 
@@ -150,9 +148,7 @@ export const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     title={s.label}
                     aria-label={s.label}
-                    className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 text-slate-300
-                               hover:bg-blue-600 hover:border-blue-600 hover:text-white
-                               flex items-center justify-center transition-colors duration-200"
+                    className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white flex items-center justify-center transition-colors duration-200"
                   >
                     <Icon size={16} />
                   </a>
@@ -164,7 +160,7 @@ export const Footer: React.FC = () => {
 
         {/* Navigation */}
         <nav className="lg:col-span-3">
-          <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">
+          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">
             Sahifalar
           </h3>
           <ul className="space-y-2.5 text-sm">
@@ -183,7 +179,7 @@ export const Footer: React.FC = () => {
 
         {/* Machines — generated from the catalog, never hardcoded */}
         <div className="lg:col-span-4">
-          <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">
+          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">
             Texnika
           </h3>
           <ul className="space-y-2.5 text-sm">
@@ -200,7 +196,7 @@ export const Footer: React.FC = () => {
             <li>
               <button
                 onClick={() => setActivePage('products')}
-                className="text-blue-400 hover:text-blue-300 font-semibold transition-colors cursor-pointer inline-flex items-center gap-1"
+                className="text-blue-400 hover:text-blue-300 font-bold transition-colors cursor-pointer inline-flex items-center gap-1"
               >
                 Barchasi <ChevronRight size={13} />
               </button>

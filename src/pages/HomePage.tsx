@@ -73,7 +73,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
     <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
       <div className="max-w-2xl">
         <span
-          className={`inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] ${
+          className={`inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] ${
             dark ? 'text-blue-400' : 'text-blue-700'
           }`}
         >
@@ -89,7 +89,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
             </span>
           )}
           {index !== undefined && (
-            <span className={`tabular font-black ${dark ? 'text-white/25' : 'text-[#0B1D3F]/20'}`}>
+            <span className={`tabular font-bold ${dark ? 'text-white/25' : 'text-[#0B1D3F]/20'}`}>
               {String(index).padStart(2, '0')}
             </span>
           )}
@@ -100,7 +100,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         {/* Heading steps up a size from the previous pass — section titles were
             competing with card titles instead of leading them. */}
         <h2
-          className={`mt-3 text-[1.75rem] sm:text-4xl lg:text-[2.75rem] font-extrabold leading-[1.05] tracking-[-0.03em] ${
+          className={`mt-3 text-2xl  lg:text-2xl font-bold tracking-[-0.03em] ${
             dark ? 'text-white' : 'text-[#0B1D3F]'
           }`}
         >
@@ -108,7 +108,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         </h2>
 
         {description && (
-          <p className={`mt-3 text-sm leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
+          <p className={`mt-3 text-sm ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
             {description}
           </p>
         )}
@@ -120,7 +120,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           {action && (
             <button
               onClick={action.onClick}
-              className={`group inline-flex items-center gap-1.5 text-left text-xs font-bold leading-snug
+              className={`group inline-flex items-center gap-1.5 text-left text-xs font-bold
                           transition-colors cursor-pointer ${
                             dark ? 'text-white hover:text-blue-400' : 'text-[#0B1D3F] hover:text-blue-700'
                           }`}
@@ -245,7 +245,7 @@ export const HomePage: React.FC = () => {
           <AnimatedLogo className="h-16 sm:h-24 lg:h-32 mb-6 sm:mb-8" />
 
           <span
-            className="rise-in flex items-center gap-3 text-[11px] font-bold tracking-[0.24em] uppercase text-blue-300"
+            className="rise-in flex items-center gap-3 text-xs font-bold tracking-[0.24em] uppercase text-blue-300"
             style={{ animationDelay: '1900ms' }}
           >
             <span className="h-px w-9 bg-blue-400" />
@@ -257,7 +257,7 @@ export const HomePage: React.FC = () => {
 
           {/* Deliberately oversized: at these sizes the second and third lines
               run past the scrim and onto the photograph, which is the point. */}
-          <h1 className="mt-5 font-black leading-[0.87] tracking-[-0.045em] text-[2.9rem] sm:text-[4.6rem] lg:text-[6.4rem] xl:text-[7.4rem]">
+          <h1 className="mt-5 font-bold tracking-[-0.045em] text-3xl">
             <span className="block">
               <SplitText text="Sanoat" delay={2000} />
             </span>
@@ -271,7 +271,7 @@ export const HomePage: React.FC = () => {
 
           <div className="mt-7 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <p
-              className="rise-in max-w-md text-sm sm:text-base text-slate-300/80 leading-relaxed"
+              className="rise-in max-w-md text-sm sm:text-base text-slate-300/80"
               style={{ animationDelay: '2380ms' }}
             >
               {siteSettings.heroSubtitle}
@@ -286,7 +286,7 @@ export const HomePage: React.FC = () => {
                 onPointerMove={magnet.onPointerMove}
                 onPointerLeave={magnet.onPointerLeave}
                 onClick={() => setActivePage('products')}
-                className="btn-primary magnetic px-8 py-4 text-[13px]"
+                className="btn-primary magnetic px-8 py-4 text-xs"
               >
                 Katalogni ko&apos;rish
                 <ArrowRight size={17} />
@@ -294,9 +294,7 @@ export const HomePage: React.FC = () => {
 
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-[13px] font-bold
-                           text-white bg-white/10 border border-white/25 backdrop-blur-md
-                           hover:bg-white/20 transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xs font-bold text-white bg-white/10 border border-white/25 backdrop-blur-md hover:bg-white/20 transition-all duration-200 cursor-pointer active:scale-[0.98]"
               >
                 <FileText size={17} />
                 Narxini so&apos;rash
@@ -310,7 +308,7 @@ export const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
 
             <div className="min-w-0 lg:flex-1">
-              <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-blue-300">
+              <span className="block text-xs font-bold uppercase tracking-[0.2em] text-blue-300">
                 {heroProduct?.model}
               </span>
               <button
@@ -342,7 +340,7 @@ export const HomePage: React.FC = () => {
                   const Icon = spec.icon;
                   return (
                     <div key={spec.label} className="shrink-0">
-                      <dt className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-slate-400">
+                      <dt className="flex items-center gap-1.5 text-xs uppercase tracking-wider text-slate-400">
                         <Icon size={12} className="text-blue-400" />
                         {spec.label}
                       </dt>
@@ -411,7 +409,7 @@ export const HomePage: React.FC = () => {
           <SectionHeader
             index={1}
             icon={Grid3x3}
-            eyebrow="To'liq mahsulotlar katalogi"
+            eyebrow="Toʻliq mahsulotlar katalogi"
             title="Uskuna Kategoriyalarini Tanlang"
           />
 
@@ -420,11 +418,7 @@ export const HomePage: React.FC = () => {
               <button
                 key={category.id}
                 onClick={() => { setSelectedCategoryId(category.id); setActivePage('products'); }}
-                className="group relative h-64 lg:h-72 rounded-2xl overflow-hidden text-left cursor-pointer
-                           ring-1 ring-[#0B1D3F]/10
-                           transition-all duration-300 ease-out hover:-translate-y-1
-                           hover:shadow-[0_28px_55px_-28px_rgba(10,37,64,0.55)]
-                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                className="group relative h-64 lg:h-72 rounded-2xl overflow-hidden text-left cursor-pointer ring-1 ring-[#0B1D3F]/10 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_28px_55px_-28px_rgba(10,37,64,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
                 <img width={800} height={600} loading="lazy" decoding="async"
                   src={cover.images[0]}
@@ -439,14 +433,14 @@ export const HomePage: React.FC = () => {
                 </span>
 
                 <span className="absolute inset-x-0 bottom-0 p-5 flex flex-col gap-1.5">
-                  <span className="text-base font-bold text-white leading-tight">
+                  <span className="text-base font-bold text-white">
                     {category.name}
                   </span>
-                  <span className="text-[11px] text-slate-300 line-clamp-2 leading-relaxed">
+                  <span className="text-xs text-slate-300 line-clamp-2">
                     {category.description}
                   </span>
-                  <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.14em] text-blue-400">
-                    Ko'rish
+                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.14em] text-blue-400">
+                    Koʻrish
                     <ChevronRight size={13} className="transition-transform group-hover:translate-x-1" />
                   </span>
                 </span>
@@ -465,7 +459,7 @@ export const HomePage: React.FC = () => {
           <SectionHeader
             index={2}
             icon={Sparkles}
-            eyebrow="Og'ir sanoat sharoitlari uchun"
+            eyebrow="Ogʻir sanoat sharoitlari uchun"
             title="Saralangan Sanoat Uskunalari"
             trailing={
               /* Segmented control: one bordered track, the active segment filled. */
@@ -474,7 +468,7 @@ export const HomePage: React.FC = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`rounded-xl px-3.5 py-2 text-[11px] font-bold transition-colors cursor-pointer ${
+                    className={`rounded-xl px-3.5 py-2 text-xs font-bold transition-colors cursor-pointer ${
                       activeTab === tab.id
                         ? 'bg-[#0B1D3F] text-white shadow-sm'
                         : 'text-slate-600 hover:bg-slate-100 hover:text-[#0B1D3F]'
@@ -498,10 +492,10 @@ export const HomePage: React.FC = () => {
                like the page failed to load. */
             <div className="mt-10 surface p-10 sm:p-14 text-center">
               <p className="text-sm text-slate-600">
-                Tanlangan filtr bo'yicha model topilmadi.
+                Tanlangan filtr boʻyicha model topilmadi.
               </p>
               <button onClick={() => setActiveTab('all')} className="btn-ghost mt-5">
-                Barcha saralanganlarni ko'rsatish
+                Barcha saralanganlarni koʻrsatish
               </button>
             </div>
           )}
@@ -529,7 +523,7 @@ export const HomePage: React.FC = () => {
             icon={Calculator}
               eyebrow="Ishlash tartibimiz"
               title="Nima uchun bizni tanlashadi?"
-              description="Ochiq narx, to'liq texnik ma'lumot va haqiqiy suratlar — xarid qarorini telefon qilmasdan oldin ham qabul qila olasiz."
+              description="Ochiq narx, toʻliq texnik maʼlumot va haqiqiy suratlar — xarid qarorini telefon qilmasdan oldin ham qabul qila olasiz."
             />
           </div>
 
@@ -540,32 +534,32 @@ export const HomePage: React.FC = () => {
                   {
                     icon: FileText,
                     title: "Narxlar ochiq",
-                    desc: "Har bir mashinaning narxi saytda ko'rsatilgan. So'rov yuborishdan oldin taqqoslab ko'rishingiz mumkin."
+                    desc: "Har bir mashinaning narxi saytda koʻrsatilgan. Soʻrov yuborishdan oldin taqqoslab koʻrishingiz mumkin."
                   },
                   {
                     icon: CheckCircle2,
-                    title: "To'liq texnik ma'lumot",
-                    desc: "Kuchlanish, quvvat, bak hajmi, unumdorlik, og'irlik — zavod ko'rsatkichlari to'liq keltirilgan."
+                    title: "Toʻliq texnik maʼlumot",
+                    desc: "Kuchlanish, quvvat, bak hajmi, unumdorlik, ogʻirlik — zavod koʻrsatkichlari toʻliq keltirilgan."
                   },
                   {
                     icon: Box,
                     title: "Haqiqiy mahsulot suratlari",
-                    desc: "Katalogdagi suratlar — aynan biz sotadigan mashinalarning o'zi, stok rasm emas."
+                    desc: "Katalogdagi suratlar — aynan biz sotadigan mashinalarning oʻzi, stok rasm emas."
                   },
                   {
                     icon: Building2,
                     title: "Toshkentda ofis va ombor",
-                    desc: `${siteSettings.address}. Mashinani kelib ko'rishingiz mumkin.`
+                    desc: `${siteSettings.address}. Mashinani kelib koʻrishingiz mumkin.`
                   },
                   {
                     icon: ShieldCheck,
                     title: "Kafolat",
-                    desc: "Kafolat muddati modelga qarab farq qiladi va mahsulot sahifasida ko'rsatilgan."
+                    desc: "Kafolat muddati modelga qarab farq qiladi va mahsulot sahifasida koʻrsatilgan."
                   },
                   {
                     icon: Wrench,
                     title: "Servis va ehtiyot qismlar",
-                    desc: "Sotilgan texnika bo'yicha sozlash, texnik yordam va ehtiyot qism masalasida bog'laning."
+                    desc: "Sotilgan texnika boʻyicha sozlash, texnik yordam va ehtiyot qism masalasida bogʻlaning."
                   }
                 ].map((item, idx) => {
                   const Icon = item.icon;
@@ -578,8 +572,8 @@ export const HomePage: React.FC = () => {
                         <Icon size={18} />
                       </span>
                       <div className="min-w-0">
-                        <h3 className="text-[15px] font-bold text-[#0B1D3F]">{item.title}</h3>
-                        <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                        <h3 className="text-sm font-bold text-[#0B1D3F]">{item.title}</h3>
+                        <p className="mt-1.5 text-sm text-slate-600">{item.desc}</p>
                       </div>
                     </div>
                   );
@@ -611,7 +605,7 @@ export const HomePage: React.FC = () => {
             eyebrow="Kafolat va servis"
             title="Korxona Uskunalariga Servis Xizmati va YTXK"
             action={{
-              label: "Barcha Xizmatlar va Servis Rejalarini Ko'rish",
+              label: "Barcha Xizmatlar va Servis Rejalarini Koʻrish",
               onClick: () => setActivePage('services')
             }}
           />
@@ -620,11 +614,10 @@ export const HomePage: React.FC = () => {
             {SERVICES_DATA.slice(0, 3).map((svc) => (
               <div
                 key={svc.id}
-                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-6
-                           transition-colors hover:border-blue-600/40 hover:bg-white/[0.07]"
+                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-blue-600/40 hover:bg-white/[0.07]"
               >
-                <h3 className="text-base font-bold text-white leading-snug">{svc.title}</h3>
-                <p className="mt-3 text-sm text-slate-300 leading-relaxed">{svc.summary}</p>
+                <h3 className="text-base font-bold text-white">{svc.title}</h3>
+                <p className="mt-3 text-sm text-slate-300">{svc.summary}</p>
 
                 <ul className="mt-5 space-y-2 border-t border-white/10 pt-5 text-xs text-slate-400">
                   {svc.benefits.map((b, i) => (
@@ -638,8 +631,7 @@ export const HomePage: React.FC = () => {
                 <div className="mt-auto pt-6">
                   <button
                     onClick={() => setIsQuoteModalOpen(true)}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 py-3 text-xs font-bold text-white
-                               transition-colors hover:border-blue-600 hover:bg-blue-600 cursor-pointer"
+                    className="w-full rounded-xl border border-white/15 bg-white/5 py-3 text-xs font-bold text-white transition-colors hover:border-blue-600 hover:bg-blue-600 cursor-pointer"
                   >
                     Servis Konsultatsiyasini Olish
                   </button>
@@ -656,10 +648,10 @@ export const HomePage: React.FC = () => {
           <SectionHeader
             index={5}
             icon={Newspaper}
-            eyebrow="Maqolalar va qo'llanmalar"
-            title="So'nggi Sanoat Tozalash Maqolalari"
+            eyebrow="Maqolalar va qoʻllanmalar"
+            title="Soʻnggi Sanoat Tozalash Maqolalari"
             action={{
-              label: "Barcha Maqola va Qo'llanmalarni O'qish",
+              label: "Barcha Maqola va Qoʻllanmalarni Oʻqish",
               onClick: () => setActivePage('blog')
             }}
           />
@@ -684,18 +676,18 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="text-[11px] text-slate-500">{post.readTime}</span>
+                  <span className="text-xs text-slate-500">{post.readTime}</span>
 
-                  <h3 className="mt-2 text-[15px] font-bold text-[#0B1D3F] leading-snug transition-colors group-hover:text-blue-700">
+                  <h3 className="mt-2 text-sm font-bold text-[#0B1D3F] transition-colors group-hover:text-blue-700">
                     {post.title}
                   </h3>
 
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed line-clamp-3">
+                  <p className="mt-2 text-sm text-slate-600 line-clamp-3">
                     {post.summary}
                   </p>
 
                   <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-xs font-bold text-blue-700">
-                    Maqolani O'qish
+                    Maqolani Oʻqish
                     <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>
@@ -710,8 +702,7 @@ export const HomePage: React.FC = () => {
           same navy gradient, same accent wash, same drafting grid. */}
       <Reveal as="section" className="bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#071531] via-[#0B1D3F] to-[#12305F]
-                          px-6 py-10 sm:px-12 sm:py-14 shadow-[0_40px_80px_-40px_rgba(10,37,64,0.7)]">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#071531] via-[#0B1D3F] to-[#12305F] px-6 py-10 sm:px-12 sm:py-14 shadow-[0_40px_80px_-40px_rgba(10,37,64,0.7)]">
 
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full bg-blue-600/25 blur-[140px]" />
@@ -732,12 +723,12 @@ export const HomePage: React.FC = () => {
                   BEPUL OBYEKT AUDITI
                 </span>
 
-                <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-black text-white leading-[1.1]">
+                <h2 className="mt-4 text-3xl font-bold text-white">
                   Sanoat Tozalash Texnikalaringizni Yangilamoqchimisiz?
                 </h2>
 
-                <p className="mt-4 text-sm text-slate-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  Obyektingizda mashinani jonli sinab ko'rish uchun biz bilan bog'laning.
+                <p className="mt-4 text-sm text-slate-300 max-w-xl mx-auto lg:mx-0">
+                  Obyektingizda mashinani jonli sinab koʻrish uchun biz bilan bogʻlaning.
                 </p>
               </div>
 
@@ -751,12 +742,10 @@ export const HomePage: React.FC = () => {
 
                 <a
                   href={`tel:${siteSettings.phone.replace(/\s/g, '')}`}
-                  className="sm:flex-1 inline-flex flex-wrap items-center justify-center gap-x-1.5 rounded-xl
-                             border border-white/20 bg-white/10 px-6 sm:px-8 py-4 text-center text-xs font-bold
-                             leading-snug text-white transition-all hover:bg-white/20 active:scale-[0.98] cursor-pointer"
+                  className="sm:flex-1 inline-flex flex-wrap items-center justify-center gap-x-1.5 rounded-xl border border-white/20 bg-white/10 px-6 sm:px-8 py-4 text-center text-xs font-bold text-white transition-all hover:bg-white/20 active:scale-[0.98] cursor-pointer"
                 >
                   <span className="tabular">{siteSettings.phone}</span>
-                  <span>ga qo'ng'iroq qiling</span>
+                  <span>ga qoʻngʻiroq qiling</span>
                 </a>
               </div>
 

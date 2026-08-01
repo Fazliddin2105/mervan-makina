@@ -7,16 +7,16 @@ import { PageBanner } from '../components/PageBanner';
  *  the admin panel, so only the label shown to the customer is translated. */
 const ORDER_STATUS_LABELS: Record<string, string> = {
   Processing: 'Rasmiylashtirilmoqda',
-  Shipped: 'Yo\'lda',
+  Shipped: 'Yoʻlda',
   Delivered: 'Yetkazildi',
   Cancelled: 'Bekor qilindi'
 };
 
 const PAYMENT_METHOD_LABELS: Record<string, string> = {
-  'Bank Transfer': 'Bank o\'tkazmasi',
-  'Credit Card': 'Karta orqali to\'lov',
+  'Bank Transfer': 'Bank oʻtkazmasi',
+  'Credit Card': 'Karta orqali toʻlov',
   'Corporate Invoice': 'Hisob-faktura',
-  Installments: 'Bo\'lib to\'lash'
+  Installments: 'Boʻlib toʻlash'
 };
 
 export const CustomerDashboardPage: React.FC = () => {
@@ -30,13 +30,13 @@ export const CustomerDashboardPage: React.FC = () => {
       <PageBanner
         eyebrow="B2B KORPORATIV HISOB"
         title={user?.company || 'MegaLogistics Central LLC'}
-        subtitle={`Mas'ul shaxs: ${user?.name || '—'} • STIR: ${user?.tin || '—'}`}
+        subtitle={`Masʼul shaxs: ${user?.name || '—'} • STIR: ${user?.tin || '—'}`}
       >
         <button
           onClick={() => setIsQuoteModalOpen(true)}
           className="btn-primary uppercase tracking-wider"
         >
-          Yangi so'rov yuborish
+          Yangi soʻrov yuborish
         </button>
       </PageBanner>
 
@@ -94,7 +94,7 @@ export const CustomerDashboardPage: React.FC = () => {
                   </div>
 
                   <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
-                    <span className="font-extrabold text-[#0B1D3F]">Jami summa: <span className="tabular">{formatPrice(order.totalUSD)}</span></span>
+                    <span className="font-bold text-[#0B1D3F]">Jami summa: <span className="tabular">{formatPrice(order.totalUSD)}</span></span>
                     <button
                       onClick={() => showToast('Hisob-fakturani yuklab olish hozircha mavjud emas.')}
                       className="text-blue-700 font-bold hover:underline flex items-center gap-1 cursor-pointer shrink-0"
@@ -106,7 +106,7 @@ export const CustomerDashboardPage: React.FC = () => {
               ))}
             </div>
           ) : (
-            <p className="text-xs text-slate-500 italic">Hozircha buyurtmalar yo'q.</p>
+            <p className="text-xs text-slate-500 italic">Hozircha buyurtmalar yoʻq.</p>
           )}
         </div>
       )}
@@ -115,14 +115,14 @@ export const CustomerDashboardPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="surface p-6 space-y-3 text-xs">
             <h3 className="font-bold text-[#0B1D3F] text-base">Texnik xizmat shartnomalari</h3>
-            <p className="text-slate-600 leading-relaxed">
-              Hisobingizda hozircha faol texnik xizmat shartnomasi yo'q. Rejali texnik ko'rik shartnomasini rasmiylashtirish uchun menejerimizga so'rov qoldiring.
+            <p className="text-slate-600">
+              Hisobingizda hozircha faol texnik xizmat shartnomasi yoʻq. Rejali texnik koʻrik shartnomasini rasmiylashtirish uchun menejerimizga soʻrov qoldiring.
             </p>
             <button
               onClick={() => setIsQuoteModalOpen(true)}
               className="btn-primary"
             >
-              So'rov qoldirish
+              Soʻrov qoldirish
             </button>
           </div>
         </div>
@@ -132,10 +132,10 @@ export const CustomerDashboardPage: React.FC = () => {
         <div className="surface p-6 max-w-xl space-y-4 text-xs">
           <h3 className="font-bold text-[#0B1D3F] text-base">Kompaniya rekvizitlari</h3>
           <div className="space-y-2 text-slate-700">
-            <div><span className="font-semibold text-slate-400">Rasmiy nomi:</span> {user?.company}</div>
-            <div><span className="font-semibold text-slate-400">STIR:</span> <span className="tabular">{user?.tin}</span></div>
-            <div><span className="font-semibold text-slate-400">Elektron pochta:</span> {user?.email}</div>
-            <div><span className="font-semibold text-slate-400">Telefon:</span> <span className="tabular">{user?.phone}</span></div>
+            <div><span className="font-bold text-slate-400">Rasmiy nomi:</span> {user?.company}</div>
+            <div><span className="font-bold text-slate-400">STIR:</span> <span className="tabular">{user?.tin}</span></div>
+            <div><span className="font-bold text-slate-400">Elektron pochta:</span> {user?.email}</div>
+            <div><span className="font-bold text-slate-400">Telefon:</span> <span className="tabular">{user?.phone}</span></div>
           </div>
         </div>
       )}
