@@ -12,3 +12,6 @@ coverage/
 !public/**/*.png
 
 .vercel
+
+# Claude Code lokal sozlamalari — bu repoga tegishli emas
+.claude/
