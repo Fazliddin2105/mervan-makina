@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { X, FileText, CheckCircle2, ArrowLeft, User, Phone, Building2 } from 'lucide-react';
+import { X, Download, CheckCircle2, ArrowLeft, User, Phone, Building2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { printQuote } from '../lib/quotePdf';
 
 /**
  * A labelled field with its glyph inside the control, matching the checkout
@@ -28,7 +29,8 @@ export const QuoteModal: React.FC = () => {
     setQuoteModalProduct,
     submitQuoteRequest,
     formatPrice,
-    cart
+    cart,
+    siteSettings
   } = useApp();
 
   const [contactName, setContactName] = useState('');
@@ -191,13 +193,32 @@ export const QuoteModal: React.FC = () => {
 
           {/* Actions */}
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <button
-              type="button"
-              onClick={close}
-              className="w-full sm:w-auto px-4 py-2 rounded-lg border border-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors duration-200 cursor-pointer"
-            >
-              <ArrowLeft size={15} /> Ortga
-            </button>
+            <div className="flex w-full sm:w-auto flex-col sm:flex-row gap-4">
+              <button
+                type="button"
+                onClick={close}
+                className="px-4 py-2 rounded-lg border border-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors duration-200 cursor-pointer"
+              >
+                <ArrowLeft size={15} /> Ortga
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  printQuote({
+                    settings: siteSettings,
+                    contactName,
+                    phone,
+                    facilityType,
+                    items: targetProducts,
+                    formatPrice
+                  })
+                }
+                className="px-4 py-2 rounded-lg border border-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors duration-200 cursor-pointer"
+              >
+                <Download size={15} /> Taklifni PDF qilib olish
+              </button>
+            </div>
 
             <button
               type="submit"
