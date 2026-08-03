@@ -250,22 +250,25 @@ export const HomePage: React.FC = () => {
           >
             <span className="h-px w-9 bg-blue-400" />
             <span className="whitespace-nowrap">
-              {siteSettings.city} &middot; <span className="tabular">{productsList.length}</span> ta model
+              Ishlab chiqaruvchi &middot; {siteSettings.city} &middot;{' '}
+              <span className="tabular">2020</span>-yildan beri
             </span>
             <span className="hidden sm:inline">&middot; narxlar ochiq</span>
           </span>
 
           {/* Deliberately oversized: at these sizes the second and third lines
-              run past the scrim and onto the photograph, which is the point. */}
+              run past the scrim and onto the photograph, which is the point.
+              The claim itself is the headline — the company builds the machines
+              rather than reselling them, and that is what separates it. */}
           <h1 className="mt-6 font-bold tracking-[-0.045em] text-3xl">
             <span className="block">
-              <SplitText text="Sanoat" delay={2000} />
+              <SplitText text="Biz sotmaymiz," delay={2000} />
             </span>
             <span className="block text-blue-400">
-              <SplitText text="tozalash" delay={2120} />
+              <SplitText text="biz ishlab" delay={2120} />
             </span>
-            <span className="block">
-              <SplitText text="texnikasi" delay={2240} />
+            <span className="block text-blue-400">
+              <SplitText text="chiqaramiz" delay={2240} />
             </span>
           </h1>
 

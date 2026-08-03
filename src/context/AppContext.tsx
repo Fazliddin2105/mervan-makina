@@ -177,10 +177,10 @@ const SYMBOLS = {
 const DEFAULT_SITE_SETTINGS: SiteSettings = {
   brandName: 'Mervan Makina',
   brandShort: 'MM',
-  tagline: 'Sanoat va Kommunal Tozalash Uskunalari Rasmiy Yetkazib Beruvchisi',
+  tagline: 'Koʻcha supuruvchi va pol yuvuvchi mashinalar ishlab chiqaruvchi zavod',
   logoUrl: '',
-  heroTitle: 'Sanoat Darajasidagi Tozalash Uskunalari',
-  heroSubtitle: 'Koʻchalar, ombor va zavodlar uchun professional supurish va pol yuvish mashinalari. Toʻgʻridan-toʻgʻri ishlab chiqaruvchidan, kafolat bilan.',
+  heroTitle: 'Biz sotmaymiz, biz ishlab chiqaramiz',
+  heroSubtitle: '2020-yildan beri — 5 yildan ortiq koʻcha supuruvchi va pol yuvuvchi texnika ishlab chiqaramiz. Oʻz zavodimiz, bojxona omborimiz, temir yoʻl tarmogʻimiz va logistikamiz bor. OEM buyurtma — sizning brendingiz va rangingizda.',
   heroImage: '/images/products/mk-3/1.webp',
   primaryColor: '#0B1D3F',
   accentColor: '#2563EB',
@@ -191,10 +191,10 @@ const DEFAULT_SITE_SETTINGS: SiteSettings = {
   // admin panel once a real address is confirmed.
   email: '',
   emailSecondary: '',
-  address: 'Sergeli tumani, Yangi Sergeli koʻchasi 1',
+  address: 'Yangi Sergeli koʻchasi, 35-uy',
   city: 'Toshkent',
   workingHours: 'Dush-Juma 09:00-18:00 (tanaffus 13:00-14:00), Shan-Yak: dam olish',
-  mapEmbedUrl: 'https://maps.google.com/maps?q=Yangi%20Sergeli%20ko%27chasi%201%2C%20Sergeli%2C%20Toshkent&t=&z=15&ie=UTF8&iwloc=&output=embed',
+  mapEmbedUrl: 'https://maps.google.com/maps?q=Yangi%20Sergeli%20ko%27chasi%2035%2C%20Toshkent&t=&z=15&ie=UTF8&iwloc=&output=embed',
   socials: [
     // Confirmed by the owner. The instagram/facebook handles on the old site
     // belonged to GLOTR, its hosting platform — not to this company.
@@ -205,7 +205,7 @@ const DEFAULT_SITE_SETTINGS: SiteSettings = {
     { id: 's5', platform: 'facebook', label: 'Facebook', url: '', enabled: false },
     { id: 's6', platform: 'whatsapp', label: 'WhatsApp', url: 'https://wa.me/998910718757', enabled: true }
   ],
-  aboutShort: 'Mervan Makina — Oʻzbekiston boʻylab sanoat va kommunal tozalash uskunalari sohasida ishonchli hamkoringiz. Bevosita ishlab chiqaruvchidan, kafolatli mahsulotlar va tezkor xizmat.',
+  aboutShort: 'Mervan Makina — koʻcha supuruvchi va pol yuvuvchi texnika ishlab chiqaruvchi zavod. 2020-yildan beri Toshkentda. Vositachilarsiz, toʻgʻridan-toʻgʻri ishlab chiqaruvchidan. OEM buyurtma — sizning brendingiz va rangingizda.',
   copyrightText: '© 2026 Mervan Makina. Barcha huquqlar himoyalangan.'
 };
 
@@ -235,7 +235,7 @@ const LS_KEYS = {
  * must reach browsers that already cached the previous values. Doing so discards
  * only the seeded data — carts, wishlists, orders, quotes and logins survive.
  */
-const SEED_VERSION = '2026-07-31-real-mervan-catalog-v3';
+const SEED_VERSION = '2026-08-01-manufacturer-positioning-v4';
 
 function loadLS<T>(key: string, fallback: T): T {
   try {
