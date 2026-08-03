@@ -545,23 +545,11 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     };
     setQuoteRequests(prev => [newQuote, ...prev]);
     setIsQuoteModalOpen(false);
+    setQuoteModalProduct(null);
 
-    const message = buildLeadMessage('YANGI TIJORAT TAKLIFI SOʻROVI', [
-      { label: 'Kompaniya', value: newQuote.companyName },
-      { label: 'Aloqa uchun shaxs', value: newQuote.contactName },
-      { label: 'Telefon', value: newQuote.phone },
-      { label: 'Email', value: newQuote.email },
-      { label: 'Shahar', value: newQuote.city },
-      { label: 'Obyekt turi', value: newQuote.facilityType },
-      { label: 'Maydon (m2)', value: newQuote.facilityAreaM2 },
-      { label: 'STIR', value: newQuote.tinNumber },
-      { label: 'Mahsulotlar', value: newQuote.items.map(i => `${i.product.name} x${i.quantity}`).join(', ') },
-      { label: 'Izoh', value: newQuote.notes }
-    ]);
-
-    deliverLead(message, companyTelegramUrl()).then(result => {
-      showToast(DELIVERY_MESSAGE[result](siteSettings.phone));
-    });
+    // Deliberately not sent to Telegram: the client asked for these to land in
+    // the admin panel instead, which is where the Soʻrovlar tab reads from.
+    showToast('Soʻrovingiz qabul qilindi — tez orada bogʻlanamiz');
   };
 
   const updateQuoteStatus = (id: string, status: QuoteRequest['status']) => {

@@ -71,8 +71,6 @@ const AdminLoginScreen: React.FC = () => {
     if (!ok) setError('Login yoki parol notoʻgʻri');
   };
 
-  const isDefault = adminCredentials.username === 'admin' && adminCredentials.password === 'admin123';
-
   return (
     <div className="min-h-[70vh] flex items-center justify-center p-6">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden">
@@ -85,15 +83,6 @@ const AdminLoginScreen: React.FC = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="p-8 space-y-4">
-          {isDefault && (
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-800">
-              <b>Boshlangʻich maʼlumotlar:</b><br />
-              Login: <code className="bg-amber-100 px-2 py-1 rounded font-mono">admin</code><br />
-              Parol: <code className="bg-amber-100 px-2 py-1 rounded font-mono">admin123</code><br />
-              <span className="italic">Kirgach, ushbu maʼlumotlarni almashtiring.</span>
-            </div>
-          )}
-
           <div>
             <label className="text-xs font-bold text-slate-600 uppercase">Login</label>
             <input

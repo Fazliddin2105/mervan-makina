@@ -14,7 +14,7 @@ import {
   FileText
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { PageType, SocialLink } from '../types';
+import { SocialLink } from '../types';
 import { Logo } from './Logo';
 
 const SOCIAL_ICONS: Record<SocialLink['platform'], React.ComponentType<{ size?: number; className?: string }>> = {
@@ -29,17 +29,10 @@ const SOCIAL_ICONS: Record<SocialLink['platform'], React.ComponentType<{ size?: 
   other: ChevronRight
 };
 
-const NAV_LINKS: { label: string; page: PageType }[] = [
-  { label: 'Mahsulotlar katalogi', page: 'products' },
-  { label: 'Xizmatlar', page: 'services' },
-  { label: 'Biz haqimizda', page: 'about' },
-  { label: 'Maqolalar', page: 'blog' },
-  { label: 'Savol-javob', page: 'faq' },
-  { label: "Bogʻlanish", page: 'contact' }
-];
+
 
 export const Footer: React.FC = () => {
-  const { setActivePage, setIsQuoteModalOpen, siteSettings, productsList } = useApp();
+  const { setActivePage, setSelectedProductId, setIsQuoteModalOpen, siteSettings, productsList } = useApp();
 
   const enabledSocials = siteSettings.socials.filter(s => s.enabled && s.url);
   const tel = `tel:${siteSettings.phone.replace(/\s/g, '')}`;
@@ -158,27 +151,8 @@ export const Footer: React.FC = () => {
           )}
         </div>
 
-        {/* Navigation */}
-        <nav className="lg:col-span-3">
-          <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">
-            Sahifalar
-          </h3>
-          <ul className="space-y-2 text-sm">
-            {NAV_LINKS.map(link => (
-              <li key={link.page}>
-                <button
-                  onClick={() => setActivePage(link.page)}
-                  className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer text-left"
-                >
-                  {link.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
         {/* Machines — generated from the catalog, never hardcoded */}
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-7">
           <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">
             Texnika
           </h3>
@@ -186,7 +160,10 @@ export const Footer: React.FC = () => {
             {machineLinks.map(p => (
               <li key={p.id}>
                 <button
-                  onClick={() => { setActivePage('products'); }}
+                  onClick={() => {
+                    setSelectedProductId(p.id);
+                    setActivePage('product-detail');
+                  }}
                   className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer text-left line-clamp-1"
                 >
                   {p.name}

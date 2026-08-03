@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 import { FAQ_ITEMS } from '../data/mockData';
-import { Search, ChevronDown, HelpCircle, PhoneCall } from 'lucide-react';
+import { Search, ChevronDown, HelpCircle, Send } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { PageBanner } from '../components/PageBanner';
 
+/**
+ * Opens Telegram with the question already written out.
+ *
+ * The company's Telegram link is a phone invite (t.me/+998…), and an invite
+ * link cannot carry a ?text= payload — only bot and username links can. So the
+ * share sheet is used instead: it is the one route that genuinely arrives with
+ * the text already typed, and the customer picks the chat in one tap.
+ */
+const telegramAskUrl = (question: string, siteUrl: string): string => {
+  const body = `Savol: ${question}`;
+  return `https://t.me/share/url?url=${encodeURIComponent(siteUrl)}&text=${encodeURIComponent(body)}`;
+};
+
 export const FaqPage: React.FC = () => {
-  const { setIsQuoteModalOpen, siteSettings } = useApp();
   const [query, setQuery] = useState('');
   const [openId, setOpenId] = useState<string | null>(FAQ_ITEMS[0].id);
   const [activeCat, setActiveCat] = useState<string>('Barchasi');
@@ -13,14 +25,17 @@ export const FaqPage: React.FC = () => {
   const filtered = FAQ_ITEMS.filter(f => {
     if (activeCat !== 'Barchasi' && f.category !== activeCat) return false;
     if (query.trim()) {
-      return f.question.toLowerCase().includes(query.toLowerCase()) || f.answer.toLowerCase().includes(query.toLowerCase());
+      return (
+        f.question.toLowerCase().includes(query.toLowerCase()) ||
+        f.answer.toLowerCase().includes(query.toLowerCase())
+      );
     }
     return true;
   });
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 font-sans space-y-12">
-      
+
       <PageBanner
         eyebrow="YORDAM MARKAZI"
         title="Koʻp soʻraladigan savollar"
@@ -94,28 +109,24 @@ export const FaqPage: React.FC = () => {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-6 pb-6 pt-4 text-xs text-slate-600 border-t border-slate-100 bg-slate-50/50">
-                    {faq.answer}
+                  <div className="px-6 pb-6 pt-4 border-t border-slate-100 bg-slate-50/50 space-y-4">
+                    <p className="text-xs text-slate-600 max-w-none">{faq.answer}</p>
+
+                    <a
+                      href={telegramAskUrl(faq.question, window.location.origin)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-colors duration-200"
+                    >
+                      <Send size={14} />
+                      Shu savolni yuborish
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           );
         })}
-      </div>
-
-      {/* Contact CTA */}
-      <div className="bg-slate-100 rounded-lg p-8 text-center space-y-4 max-w-xl mx-auto border border-slate-200">
-        <h3 className="font-bold text-[#0B1D3F] text-base">Hali ham savollaringiz bormi?</h3>
-        <p className="text-xs text-slate-500">Texnik qoʻllab-quvvatlash: {siteSettings.workingHours}</p>
-        <div className="pt-2 flex flex-wrap justify-center gap-4">
-          <a href={`tel:${siteSettings.phone.replace(/\s/g, '')}`} className="btn-primary">
-            <span><span className="tabular">{siteSettings.phone}</span> ga qoʻngʻiroq qiling</span>
-          </a>
-          <button onClick={() => setIsQuoteModalOpen(true)} className="btn-secondary">
-            B2B taklif soʻrash
-          </button>
-        </div>
       </div>
 
     </div>
